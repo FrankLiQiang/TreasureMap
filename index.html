@@ -1,11 +1,18 @@
 <!DOCTYPE html>
 <html lang="zh-CN">
+
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>TreasureMap – 技术支持</title>
   <style>
-    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    *,
+    *::before,
+    *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
 
     body {
       font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
@@ -21,14 +28,25 @@
       text-align: center;
       position: relative;
     }
-    header h1 { font-size: 2rem; font-weight: 700; letter-spacing: -0.5px; }
-    header p  { margin-top: 0.4rem; color: #a1a1a6; font-size: 1rem; }
+
+    header h1 {
+      font-size: 2rem;
+      font-weight: 700;
+      letter-spacing: -0.5px;
+    }
+
+    header p {
+      margin-top: 0.4rem;
+      color: #a1a1a6;
+      font-size: 1rem;
+    }
 
     #lang-selector {
       position: absolute;
       top: 1rem;
       right: 1.5rem;
     }
+
     #lang-selector select {
       background: #2c2c2e;
       color: #f5f5f7;
@@ -39,7 +57,10 @@
       cursor: pointer;
       outline: none;
     }
-    #lang-selector select:hover { border-color: #636366; }
+
+    #lang-selector select:hover {
+      border-color: #636366;
+    }
 
     main {
       max-width: 760px;
@@ -52,7 +73,7 @@
       border-radius: 12px;
       padding: 2rem;
       margin-bottom: 1.5rem;
-      box-shadow: 0 1px 4px rgba(0,0,0,.08);
+      box-shadow: 0 1px 4px rgba(0, 0, 0, .08);
     }
 
     section h2 {
@@ -62,7 +83,8 @@
       color: #1d1d1f;
     }
 
-    section p, section li {
+    section p,
+    section li {
       font-size: 0.975rem;
       color: #3a3a3c;
     }
@@ -70,10 +92,19 @@
     section ul {
       padding-left: 1.4rem;
     }
-    section ul li { margin-bottom: 0.5rem; }
 
-    a { color: #0071e3; text-decoration: none; }
-    a:hover { text-decoration: underline; }
+    section ul li {
+      margin-bottom: 0.5rem;
+    }
+
+    a {
+      color: #0071e3;
+      text-decoration: none;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
 
     .contact-btn {
       display: inline-block;
@@ -86,7 +117,11 @@
       font-weight: 500;
       transition: background 0.2s;
     }
-    .contact-btn:hover { background: #0077ed; text-decoration: none; }
+
+    .contact-btn:hover {
+      background: #0077ed;
+      text-decoration: none;
+    }
 
     footer {
       text-align: center;
@@ -96,159 +131,163 @@
     }
   </style>
 </head>
+
 <body>
 
-<header>
-  <div id="lang-selector">
-    <select id="lang-select" onchange="setLang(this.value)">
-      <option value="zh-CN">简体中文</option>
-      <option value="zh-TW">繁体中文</option>
-      <option value="en">English</option>
-      <option value="ja">日本語</option>
-    </select>
-  </div>
-  <h1>TreasureMap</h1>
-  <p id="header-subtitle"></p>
-</header>
+  <header>
+    <div id="lang-selector">
+      <select id="lang-select" onchange="setLang(this.value)">
+        <option value="zh-CN">简体中文</option>
+        <option value="zh-TW">繁体中文</option>
+        <option value="en">English</option>
+        <option value="ja">日本語</option>
+      </select>
+    </div>
+    <h1 id="site-title">TreasureMap</h1>
+    <p id="header-subtitle"></p>
+  </header>
 
-<main>
+  <main>
 
-  <section>
-    <h2 id="about-title"></h2>
-    <p id="about-p1"></p>
-  </section>
+    <section>
+      <h2 id="about-title"></h2>
+      <p id="about-p1"></p>
+    </section>
 
-  <section>
-    <h2 id="faq-title"></h2>
-    <ul id="faq-list"></ul>
-  </section>
+    <section>
+      <h2 id="faq-title"></h2>
+      <ul id="faq-list"></ul>
+    </section>
 
-  <section>
-    <h2 id="privacy-title"></h2>
-    <p id="privacy-p1"></p>
-  </section>
+    <section>
+      <h2 id="privacy-title"></h2>
+      <p id="privacy-p1"></p>
+    </section>
 
-  <section>
-    <h2 id="contact-title"></h2>
-    <p id="contact-p1"></p>
-    <a class="contact-btn" id="contact-btn" href="https://github.com/FrankLiQiang/TreasureMap/issues"></a>
-  </section>
+    <section>
+      <h2 id="contact-title"></h2>
+      <p id="contact-p1"></p>
+      <a class="contact-btn" id="contact-btn" href="https://github.com/FrankLiQiang/TreasureMap/issues"></a>
+    </section>
 
-</main>
+  </main>
 
-<footer id="footer-text"></footer>
+  <footer id="footer-text"></footer>
 
-<script>
-  var i18n = {
-    'zh-CN': {
-      htmlLang: 'zh-CN',
-      pageTitle: 'TreasureMap – 技术支持',
-      headerSubtitle: '技术支持',
-      aboutTitle: '📖 关于本应用',
-      aboutP1: '\u201C\u85CF\u5B9D\u56FE\u201D\u662F\u4E00\u6B3E\u7528\u4E8E\u4FDD\u62A4\u673A\u5BC6\u4FE1\u606F\u7684\u8DE8\u5E73\u53F0\u5E94\u7528\uFF0C\u53EF\u5C06\u6587\u6863\u3001\u56FE\u7247\u3001\u97F3\u9891\u548C\u89C6\u9891\u7B49\u4FE1\u606F\u5B89\u5168\u5730\u5D4C\u5165\u56FE\u7247\uFF0C\u4E14\u5916\u89C2\u65E0\u660E\u663E\u53D8\u5316\u3002\n\u4E3B\u8981\u529F\u80FD\uFF1A\u5217\u8868\u3001\u6587\u5B57\u3001\u6587\u4EF6\u7684\u5D4C\u5165\uFF0C\u4EE5\u53CA\u6587\u4EF6\u81EA\u8EAB\u52A0\u5BC6\uFF08\u65E0\u9700\u56FE\u7247\uFF09',
-      faqTitle: '\u2753 \u5e38\u89c1\u95ee\u9898',
-      faqItems: [
-        { q: '\u5982\u4f55\u5f00\u59cb\u4f7f\u7528\uff1f', a: '\u4e0b\u8f7d\u5e94\u7528\u540e\uff0c\u6309\u7167\u5f15\u5bfc\u521b\u5efa\u60a8\u7684\u7b2c\u4e00\u5f20\u5730\u56fe\u5373\u53ef\u3002' },
-        { q: '\u6570\u636e\u5b58\u50a8\u5728\u54ea\u91cc\uff1f', a: '\u6240\u6709\u6570\u636e\u5747\u4fdd\u5b58\u5728\u60a8\u7684\u8bbe\u5907\u672c\u5730\uff0c\u4e0d\u4f1a\u4e0a\u4f20\u81f3\u4efb\u4f55\u670d\u52a1\u5668\u3002' },
-        { q: '\u652f\u6301\u54ea\u4e9b\u5e73\u53f0\uff1f', a: '\u5f53\u524d\u652f\u6301 iOS / Android / macOS / Windows\u3002' }
-      ],
-      privacyTitle: '\uD83D\uDD12 \u9690\u79c1\u653f\u7b56',
-      privacyP1: '\u672c\u5e94\u7528\u4e0d\u6536\u96c6\u4efb\u4f55\u4e2a\u4eba\u4fe1\u606f\uff0c\u4e0d\u8ffd\u8e2a\u7528\u6237\u884c\u4e3a\uff0c\u4e0d\u5411\u7b2c\u4e09\u65b9\u5171\u4eab\u6570\u636e\u3002',
-      contactTitle: '\uD83D\uDCEC \u8054\u7cfb\u6211\u4eec',
-      contactP1: '\u5982\u6709\u4efb\u4f55\u95ee\u9898\u6216\u5efa\u8bae\uff0c\u6b22\u8fce\u901a\u8fc7\u4ee5\u4e0b\u65b9\u5f0f\u8054\u7cfb\u6211\u4eec\uff1a',
-      contactBtn: '\u63d0\u4ea4\u95ee\u9898',
-      footerText: '\u00a9 2024 FrankLiQiang \u00b7 TreasureMap'
-    },
-    'zh-TW': {
-      htmlLang: 'zh-TW',
-      pageTitle: 'TreasureMap \u2013 \u6280\u8853\u652f\u63f4',
-      headerSubtitle: '\u6280\u8853\u652f\u63f4',
-      aboutTitle: '\uD83D\uDCD6 \u95dc\u65bc\u672c\u61c9\u7528',
-      aboutP1: '“藏宝圖”是一款用於保護機密資訊的跨平台應用，可將文件、影片、音訊和其他檔案安全地嵌入圖片，且外觀無明顯變化。\n主要功能：列表、文字、檔案的嵌入，以及檔案本身的加密（無需圖片）。',
-      faqTitle: '\u2753 \u5e38\u898b\u554f\u9898',
-      faqItems: [
-        { q: '\u5982\u4f55\u958b\u59cb\u4f7f\u7528\uff1f', a: '\u4e0b\u8f09\u61c9\u7528\u5f8c\uff0c\u6309\u7167\u5f15\u5c0e\u5efa\u7acb\u60a8\u7684\u7b2c\u4e00\u5f35\u5730\u5716\u5373\u53ef\u3002' },
-        { q: '\u8cc7\u6599\u5132\u5b58\u5728\u54ea\u88e1\uff1f', a: '\u6240\u6709\u8cc7\u6599\u5747\u5132\u5b58\u5728\u60a8\u7684\u88dd\u7f6e\u672c\u6a5f\uff0c\u4e0d\u6703\u4e0a\u50b3\u81f3\u4efb\u4f55\u4f3a\u670d\u5668\u3002' },
-        { q: '\u652f\u63f4\u54ea\u4e9b\u5e73\u53f0\uff1f', a: '\u76ee\u524d\u652f\u63f4 iOS / Android / macOS / Windows\u3002' }
-      ],
-      privacyTitle: '\uD83D\uDD12 \u96b1\u79c1\u653f\u7b56',
-      privacyP1: '\u672c\u61c9\u7528\u4e0d\u6536\u96c6\u4efb\u4f55\u500b\u4eba\u8cc7\u8a0a\uff0c\u4e0d\u8ffd\u8e64\u4f7f\u7528\u8005\u884c\u70ba\uff0c\u4e0d\u5411\u7b2c\u4e09\u65b9\u5171\u4eab\u8cc7\u6599\u3002',
-      contactTitle: '\uD83D\uDCEC \u806f\u7d61\u6211\u5011',
-      contactP1: '\u5982\u6709\u4efb\u4f55\u554f\u9898\u6216\u5efa\u8b70\uff0c\u6b61\u8fce\u900f\u904e\u4ee5\u4e0b\u65b9\u5f0f\u806f\u7d61\u6211\u5011\uff1a',
-      contactBtn: '\u63d0\u4ea4\u554f\u9898',
-      footerText: '\u00a9 2024 FrankLiQiang \u00b7 TreasureMap'
-    },
-    'en': {
-      htmlLang: 'en',
-      pageTitle: 'TreasureMap \u2013 Support',
-      headerSubtitle: 'Technical Support',
-      aboutTitle: '\uD83D\uDCD6 About',
-      aboutP1: '“TreasureMap” is a cross-platform app for protecting confidential information. It can safely embed documents, videos, audio, and other files into images with no noticeable change in appearance. \nMain features: embedding lists, text, and files, and file-only encryption (no image required).',
-      faqTitle: '\u2753 FAQ',
-      faqItems: [
-        { q: 'How do I get started?', a: 'After downloading, follow the onboarding guide to create your first map.' },
-        { q: 'Where is my data stored?', a: 'All data is stored locally on your device and is never uploaded to any server.' },
-        { q: 'Which platforms are supported?', a: 'Currently supports iOS / Android / macOS / Windows.' }
-      ],
-      privacyTitle: '\uD83D\uDD12 Privacy Policy',
-      privacyP1: 'This app does not collect any personal information, does not track user behavior, and does not share data with third parties.',
-      contactTitle: '\uD83D\uDCEC Contact Us',
-      contactP1: 'If you have any questions or feedback, feel free to reach out:',
-      contactBtn: 'Submit an Issue',
-      footerText: '\u00a9 2024 FrankLiQiang \u00b7 TreasureMap'
-    },
-    'ja': {
-      htmlLang: 'ja',
-      pageTitle: 'TreasureMap \u2013 \u30b5\u30dd\u30fc\u30c8',
-      headerSubtitle: '\u30c6\u30af\u30cb\u30ab\u30eb\u30b5\u30dd\u30fc\u30c8',
-      aboutTitle: '\uD83D\uDCD6 \u30a2\u30d7\u30ea\u306b\u3064\u3044\u3066',
-      aboutP1: '「トレジャーマップ」は機密情報を保護するためのクロスプラットフォームアプリで、文書、動画、音声、その他のファイルを画像に安全に埋め込め、外見にほとんど変化がありません。\n主な機能：リスト・テキスト・ファイルの埋め込み、およびファイル単体の暗号化（画像は不要）。',
-      faqTitle: '\u2753 \u3088\u304f\u3042\u308b\u8cea\u554f',
-      faqItems: [
-        { q: '\u4f7f\u3044\u59cb\u3081\u308b\u306b\u306f\uff1f', a: '\u30c0\u30a6\u30f3\u30ed\u30fc\u30c9\u5f8c\u3001\u30ac\u30a4\u30c9\u306b\u5f93\u3063\u3066\u6700\u521d\u306e\u30de\u30c3\u30d7\u3092\u4f5c\u6210\u3057\u3066\u304f\u3060\u3055\u3044\u3002' },
-        { q: '\u30c7\u30fc\u30bf\u306f\u3069\u3053\u306b\u4fdd\u5b58\u3055\u308c\u307e\u3059\u304b\uff1f', a: '\u3059\u3079\u3066\u306e\u30c7\u30fc\u30bf\u306f\u30c7\u30d0\u30a4\u30b9\u306b\u30ed\u30fc\u30ab\u30eb\u4fdd\u5b58\u3055\u308c\u3001\u30b5\u30fc\u30d0\u30fc\u306b\u30a2\u30c3\u30d7\u30ed\u30fc\u30c9\u3055\u308c\u308b\u3053\u3068\u306f\u3042\u308a\u307e\u305b\u3093\u3002' },
-        { q: '\u5bfe\u5fdc\u30d7\u30e9\u30c3\u30c8\u30d5\u30a9\u30fc\u30e0\u306f\uff1f', a: '\u73fe\u5728 iOS / Android / macOS / Windows \u306b\u5bfe\u5fdc\u3057\u3066\u3044\u307e\u3059\u3002' }
-      ],
-      privacyTitle: '\uD83D\uDD12 \u30d7\u30e9\u30a4\u30d0\u30b7\u30fc\u30dd\u30ea\u30b7\u30fc',
-      privacyP1: '\u3053\u306e\u30a2\u30d7\u30ea\u306f\u500b\u4eba\u60c5\u5831\u3092\u53ce\u96c6\u305b\u305a\u3001\u30e6\u30fc\u30b6\u30fc\u306e\u884c\u52d5\u3092\u8ffd\u8de1\u305b\u305a\u3001\u7b2c\u4e09\u8005\u3068\u30c7\u30fc\u30bf\u3092\u5171\u6709\u3057\u307e\u305b\u3093\u3002',
-      contactTitle: '\uD83D\uDCEC \u304a\u554f\u3044\u5408\u308f\u305b',
-      contactP1: '\u3054\u8cea\u554f\u3084\u3054\u610f\u898b\u304c\u3054\u3056\u3044\u307e\u3057\u305f\u3089\u3001\u4ee5\u4e0b\u306e\u65b9\u6cd5\u3067\u304a\u554f\u3044\u5408\u308f\u305b\u304f\u3060\u3055\u3044\uff1a',
-      contactBtn: 'Issue \u3092\u9001\u308b',
-      footerText: '\u00a9 2024 FrankLiQiang \u00b7 TreasureMap'
+  <script>
+    var i18n = {
+      'zh-CN': {
+        htmlLang: 'zh-CN',
+        pageTitle: '藏宝图',
+        headerSubtitle: '技术支持',
+        aboutTitle: '📖 关于本应用',
+        aboutP1: '\u201C\u85CF\u5B9D\u56FE\u201D\u662F\u4E00\u6B3E\u7528\u4E8E\u4FDD\u62A4\u673A\u5BC6\u4FE1\u606F\u7684\u8DE8\u5E73\u53F0\u5E94\u7528\uFF0C\u53EF\u5C06\u6587\u6863\u3001\u56FE\u7247\u3001\u97F3\u9891\u548C\u89C6\u9891\u7B49\u4FE1\u606F\u5B89\u5168\u5730\u5D4C\u5165\u56FE\u7247\uFF0C\u4E14\u5916\u89C2\u65E0\u660E\u663E\u53D8\u5316\u3002\n\u4E3B\u8981\u529F\u80FD\uFF1A\u5217\u8868\u3001\u6587\u5B57\u3001\u6587\u4EF6\u7684\u5D4C\u5165\uFF0C\u4EE5\u53CA\u6587\u4EF6\u81EA\u8EAB\u52A0\u5BC6\uFF08\u65E0\u9700\u56FE\u7247\uFF09',
+        faqTitle: '\u2753 \u5e38\u89c1\u95ee\u9898',
+        faqItems: [
+          { q: '\u5982\u4f55\u5f00\u59cb\u4f7f\u7528\uff1f', a: '\u4e0b\u8f7d\u5e94\u7528\u540e\uff0c\u6309\u7167\u5f15\u5bfc\u521b\u5efa\u60a8\u7684\u7b2c\u4e00\u5f20\u5730\u56fe\u5373\u53ef\u3002' },
+          { q: '\u6570\u636e\u5b58\u50a8\u5728\u54ea\u91cc\uff1f', a: '\u6240\u6709\u6570\u636e\u5747\u4fdd\u5b58\u5728\u60a8\u7684\u8bbe\u5907\u672c\u5730\uff0c\u4e0d\u4f1a\u4e0a\u4f20\u81f3\u4efb\u4f55\u670d\u52a1\u5668\u3002' },
+          { q: '\u652f\u6301\u54ea\u4e9b\u5e73\u53f0\uff1f', a: '\u5f53\u524d\u652f\u6301 iOS / Android / macOS / Windows\u3002' }
+        ],
+        privacyTitle: '\uD83D\uDD12 \u9690\u79c1\u653f\u7b56',
+        privacyP1: '\u672c\u5e94\u7528\u4e0d\u6536\u96c6\u4efb\u4f55\u4e2a\u4eba\u4fe1\u606f\uff0c\u4e0d\u8ffd\u8e2a\u7528\u6237\u884c\u4e3a\uff0c\u4e0d\u5411\u7b2c\u4e09\u65b9\u5171\u4eab\u6570\u636e\u3002',
+        contactTitle: '\uD83D\uDCEC \u8054\u7cfb\u6211\u4eec',
+        contactP1: '\u5982\u6709\u4efb\u4f55\u95ee\u9898\u6216\u5efa\u8bae\uff0c\u6b22\u8fce\u901a\u8fc7\u4ee5\u4e0b\u65b9\u5f0f\u8054\u7cfb\u6211\u4eec\uff1a',
+        contactBtn: '\u63d0\u4ea4\u95ee\u9898',
+        footerText: '\u00a9 2024 FrankLiQiang \u00b7 TreasureMap'
+      },
+      'zh-TW': {
+        htmlLang: 'zh-TW',
+        pageTitle: '藏寶圖',
+        headerSubtitle: '\u6280\u8853\u652f\u63f4',
+        aboutTitle: '\uD83D\uDCD6 \u95dc\u65bc\u672c\u61c9\u7528',
+        aboutP1: '「藏寶圖」是一款用於保護機密資訊的跨平台應用，可將文件、圖片、音訊和影片等資訊安全地嵌入圖片，且外觀無明顯變化。\n主要功能：列表、文字、檔案的嵌入，以及檔案本身的加密（無需圖片）。',
+        faqTitle: '\u2753 \u5e38\u898b\u554f\u9898',
+        faqItems: [
+          { q: '\u5982\u4f55\u958b\u59cb\u4f7f\u7528\uff1f', a: '\u4e0b\u8f09\u61c9\u7528\u5f8c\uff0c\u6309\u7167\u5f15\u5c0e\u5efa\u7acb\u60a8\u7684\u7b2c\u4e00\u5f35\u5730\u5716\u5373\u53ef\u3002' },
+          { q: '\u8cc7\u6599\u5132\u5b58\u5728\u54ea\u88e1\uff1f', a: '\u6240\u6709\u8cc7\u6599\u5747\u5132\u5b58\u5728\u60a8\u7684\u88dd\u7f6e\u672c\u6a5f\uff0c\u4e0d\u6703\u4e0a\u50b3\u81f3\u4efb\u4f55\u4f3a\u670d\u5668\u3002' },
+          { q: '\u652f\u63f4\u54ea\u4e9b\u5e73\u53f0\uff1f', a: '\u76ee\u524d\u652f\u63f4 iOS / Android / macOS / Windows\u3002' }
+        ],
+        privacyTitle: '\uD83D\uDD12 \u96b1\u79c1\u653f\u7b56',
+        privacyP1: '\u672c\u61c9\u7528\u4e0d\u6536\u96c6\u4efb\u4f55\u500b\u4eba\u8cc7\u8a0a\uff0c\u4e0d\u8ffd\u8e64\u4f7f\u7528\u8005\u884c\u70ba\uff0c\u4e0d\u5411\u7b2c\u4e09\u65b9\u5171\u4eab\u8cc7\u6599\u3002',
+        contactTitle: '\uD83D\uDCEC \u806f\u7d61\u6211\u5011',
+        contactP1: '\u5982\u6709\u4efb\u4f55\u554f\u9898\u6216\u5efa\u8b70\uff0c\u6b61\u8fce\u900f\u904e\u4ee5\u4e0b\u65b9\u5f0f\u806f\u7d61\u6211\u5011\uff1a',
+        contactBtn: '\u63d0\u4ea4\u554f\u9898',
+        footerText: '\u00a9 2024 FrankLiQiang \u00b7 TreasureMap'
+      },
+      'en': {
+        htmlLang: 'en',
+        pageTitle: 'Treasure Map',
+        headerSubtitle: 'Technical Support',
+        aboutTitle: '\uD83D\uDCD6 About',
+        aboutP1: '“TreasureMap” is a cross-platform app for protecting confidential information. It can safely embed documents, videos, audio, and other files into images with no noticeable change in appearance. \nMain features: embedding lists, text, and files, and file-only encryption (no image required).',
+        faqTitle: '\u2753 FAQ',
+        faqItems: [
+          { q: 'How do I get started?', a: 'After downloading, follow the onboarding guide to create your first map.' },
+          { q: 'Where is my data stored?', a: 'All data is stored locally on your device and is never uploaded to any server.' },
+          { q: 'Which platforms are supported?', a: 'Currently supports iOS / Android / macOS / Windows.' }
+        ],
+        privacyTitle: '\uD83D\uDD12 Privacy Policy',
+        privacyP1: 'This app does not collect any personal information, does not track user behavior, and does not share data with third parties.',
+        contactTitle: '\uD83D\uDCEC Contact Us',
+        contactP1: 'If you have any questions or feedback, feel free to reach out:',
+        contactBtn: 'Submit an Issue',
+        footerText: '\u00a9 2024 FrankLiQiang \u00b7 TreasureMap'
+      },
+      'ja': {
+        htmlLang: 'ja',
+        pageTitle: 'トレジャーマップ',
+        headerSubtitle: '\u30c6\u30af\u30cb\u30ab\u30eb\u30b5\u30dd\u30fc\u30c8',
+        aboutTitle: '\uD83D\uDCD6 \u30a2\u30d7\u30ea\u306b\u3064\u3044\u3066',
+        aboutP1: '「トレジャーマップ」は機密情報を保護するためのクロスプラットフォームアプリで、文書、動画、音声、その他のファイルを画像に安全に埋め込め、外見にほとんど変化がありません。\n主な機能：リスト・テキスト・ファイルの埋め込み、およびファイル単体の暗号化（画像は不要）。',
+        faqTitle: '\u2753 \u3088\u304f\u3042\u308b\u8cea\u554f',
+        faqItems: [
+          { q: '\u4f7f\u3044\u59cb\u3081\u308b\u306b\u306f\uff1f', a: '\u30c0\u30a6\u30f3\u30ed\u30fc\u30c9\u5f8c\u3001\u30ac\u30a4\u30c9\u306b\u5f93\u3063\u3066\u6700\u521d\u306e\u30de\u30c3\u30d7\u3092\u4f5c\u6210\u3057\u3066\u304f\u3060\u3055\u3044\u3002' },
+          { q: '\u30c7\u30fc\u30bf\u306f\u3069\u3053\u306b\u4fdd\u5b58\u3055\u308c\u307e\u3059\u304b\uff1f', a: '\u3059\u3079\u3066\u306e\u30c7\u30fc\u30bf\u306f\u30c7\u30d0\u30a4\u30b9\u306b\u30ed\u30fc\u30ab\u30eb\u4fdd\u5b58\u3055\u308c\u3001\u30b5\u30fc\u30d0\u30fc\u306b\u30a2\u30c3\u30d7\u30ed\u30fc\u30c9\u3055\u308c\u308b\u3053\u3068\u306f\u3042\u308a\u307e\u305b\u3093\u3002' },
+          { q: '\u5bfe\u5fdc\u30d7\u30e9\u30c3\u30c8\u30d5\u30a9\u30fc\u30e0\u306f\uff1f', a: '\u73fe\u5728 iOS / Android / macOS / Windows \u306b\u5bfe\u5fdc\u3057\u3066\u3044\u307e\u3059\u3002' }
+        ],
+        privacyTitle: '\uD83D\uDD12 \u30d7\u30e9\u30a4\u30d0\u30b7\u30fc\u30dd\u30ea\u30b7\u30fc',
+        privacyP1: '\u3053\u306e\u30a2\u30d7\u30ea\u306f\u500b\u4eba\u60c5\u5831\u3092\u53ce\u96c6\u305b\u305a\u3001\u30e6\u30fc\u30b6\u30fc\u306e\u884c\u52d5\u3092\u8ffd\u8de1\u305b\u305a\u3001\u7b2c\u4e09\u8005\u3068\u30c7\u30fc\u30bf\u3092\u5171\u6709\u3057\u307e\u305b\u3093\u3002',
+        contactTitle: '\uD83D\uDCEC \u304a\u554f\u3044\u5408\u308f\u305b',
+        contactP1: '\u3054\u8cea\u554f\u3084\u3054\u610f\u898b\u304c\u3054\u3056\u3044\u307e\u3057\u305f\u3089\u3001\u4ee5\u4e0b\u306e\u65b9\u6cd5\u3067\u304a\u554f\u3044\u5408\u308f\u305b\u304f\u3060\u3055\u3044\uff1a',
+        contactBtn: 'Issue \u3092\u9001\u308b',
+        footerText: '\u00a9 2024 FrankLiQiang \u00b7 TreasureMap'
+      }
+    };
+
+    function setLang(lang) {
+      var t = i18n[lang];
+      if (!t) return;
+      document.documentElement.lang = t.htmlLang;
+      document.title = t.pageTitle;
+      var siteTitle = document.getElementById('site-title');
+      if (siteTitle) siteTitle.textContent = t.pageTitle;
+      document.getElementById('header-subtitle').textContent = t.headerSubtitle;
+      document.getElementById('about-title').textContent = t.aboutTitle;
+      document.getElementById('about-p1').innerHTML = t.aboutP1.replace(/\n/g, '<br><br>');
+      document.getElementById('faq-title').textContent = t.faqTitle;
+      var faqList = document.getElementById('faq-list');
+      faqList.innerHTML = '';
+      t.faqItems.forEach(function (item) {
+        var li = document.createElement('li');
+        var strong = document.createElement('strong');
+        strong.textContent = item.q + ' ';
+        li.appendChild(strong);
+        li.appendChild(document.createTextNode(item.a));
+        faqList.appendChild(li);
+      });
+      document.getElementById('privacy-title').textContent = t.privacyTitle;
+      document.getElementById('privacy-p1').textContent = t.privacyP1;
+      document.getElementById('contact-title').textContent = t.contactTitle;
+      document.getElementById('contact-p1').textContent = t.contactP1;
+      document.getElementById('contact-btn').textContent = t.contactBtn;
+      document.getElementById('footer-text').innerHTML = t.footerText;
     }
-  };
 
-  function setLang(lang) {
-    var t = i18n[lang];
-    if (!t) return;
-    document.documentElement.lang = t.htmlLang;
-    document.title = t.pageTitle;
-    document.getElementById('header-subtitle').textContent = t.headerSubtitle;
-    document.getElementById('about-title').textContent = t.aboutTitle;
-    document.getElementById('about-p1').innerHTML = t.aboutP1.replace(/\n/g, '<br><br>');
-    document.getElementById('faq-title').textContent = t.faqTitle;
-    var faqList = document.getElementById('faq-list');
-    faqList.innerHTML = '';
-    t.faqItems.forEach(function(item) {
-      var li = document.createElement('li');
-      var strong = document.createElement('strong');
-      strong.textContent = item.q + ' ';
-      li.appendChild(strong);
-      li.appendChild(document.createTextNode(item.a));
-      faqList.appendChild(li);
-    });
-    document.getElementById('privacy-title').textContent = t.privacyTitle;
-    document.getElementById('privacy-p1').textContent = t.privacyP1;
-    document.getElementById('contact-title').textContent = t.contactTitle;
-    document.getElementById('contact-p1').textContent = t.contactP1;
-    document.getElementById('contact-btn').textContent = t.contactBtn;
-    document.getElementById('footer-text').innerHTML = t.footerText;
-  }
-
-  var defaultLang = 'zh-CN';
-  document.getElementById('lang-select').value = defaultLang;
-  setLang(defaultLang);
-</script>
+    var defaultLang = 'zh-CN';
+    document.getElementById('lang-select').value = defaultLang;
+    setLang(defaultLang);
+  </script>
 
 </body>
+
 </html>
