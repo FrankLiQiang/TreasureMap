@@ -174,6 +174,41 @@
     #about-p1 .info-line:first-of-type {
       margin-top: 0.8em;
     }
+    /* Responsive: move language selector to header's bottom-right on small screens */
+    @media (max-width: 600px) {
+      header {
+        padding: 1.25rem 1rem;
+        text-align: left;
+      }
+
+      /* place selector at header's right-bottom to reduce vertical space */
+      #lang-selector {
+        top: auto;
+        bottom: 8px;
+        right: 12px;
+        position: absolute;
+      }
+
+      /* enlarge touch target and ensure visibility */
+      #lang-selector select {
+        min-width: 44px;
+        min-height: 44px;
+        padding: 0.4rem 0.6rem;
+        font-size: 0.95rem;
+      }
+
+      /* reserve space so title doesn't overlap the selector */
+      #site-title {
+        padding-right: 110px;
+        font-size: 1.25rem;
+      }
+
+      header p {
+        margin-top: 0.3rem;
+        color: #a1a1a6;
+        font-size: 0.95rem;
+      }
+    }
   </style>
 </head>
 
