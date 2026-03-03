@@ -384,6 +384,27 @@ function setLang(lang) {
 var defaultLang = 'en';
     document.getElementById('lang-select').value = defaultLang;
     setLang(defaultLang);
+    // 将关于图像从白色卡片内部移动到卡片外面（上方居中）
+    (function moveAboutGraphic(){
+      try{
+        var main = document.querySelector('main');
+        var wrapper = document.querySelector('.about-graphic-wrapper');
+        if (!main || !wrapper) return;
+        // 如果已经在 main 顶部则不移动
+        if (main.firstElementChild === wrapper) return;
+        main.insertBefore(wrapper, main.firstElementChild);
+        wrapper.style.textAlign = 'center';
+        wrapper.style.marginBottom = '1rem';
+        var img = wrapper.querySelector('#about-graphic');
+        if (img){
+          img.style.maxWidth = '360px';
+          img.style.width = '60%';
+          img.style.height = 'auto';
+          img.style.display = 'inline-block';
+          img.style.borderRadius = '8px';
+        }
+      }catch(e){console.error(e)}
+    })();
   </script>
 
 </body>
