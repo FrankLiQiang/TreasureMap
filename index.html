@@ -281,7 +281,7 @@
         contactTitle: '\uD83D\uDCEC \u8054\u7cfb\u6211\u4eec',
         contactP1: '\u5982\u6709\u4efb\u4f55\u95ee\u9898\u6216\u5efa\u8bae\uff0c\u6b22\u8fce\u901a\u8fc7\u4ee5\u4e0b\u65b9\u5f0f\u8054\u7cfb\u6211\u4eec\uff1a',
         contactBtn: '\u63d0\u4ea4\u95ee\u9898',
-        footerText: '\u00a9 2024 FrankLiQiang \u00b7 TreasureMap'
+        footerText: '\u00a9 {year} Frank. Li Qiang \u00b7 TreasureMap'
       },
       'zh-TW': {
         htmlLang: 'zh-TW',
@@ -304,7 +304,7 @@
         contactTitle: '\uD83D\uDCEC \u806f\u7d61\u6211\u5011',
         contactP1: '\u5982\u6709\u4efb\u4f55\u554f\u9898\u6216\u5efa\u8b70\uff0c\u6b61\u8fce\u900f\u904e\u4ee5\u4e0b\u65b9\u5f0f\u806f\u7d61\u6211\u5011\uff1a',
         contactBtn: '\u63d0\u4ea4\u554f\u9898',
-        footerText: '\u00a9 2024 FrankLiQiang \u00b7 TreasureMap'
+        footerText: '\u00a9 {year} Frank. Li Qiang \u00b7 TreasureMap'
       },
       'en': {
         htmlLang: 'en',
@@ -327,7 +327,7 @@
         contactTitle: '\uD83D\uDCEC Contact Us',
         contactP1: 'If you have any questions or feedback, feel free to reach out:',
         contactBtn: 'Submit an Issue',
-        footerText: '\u00a9 2024 FrankLiQiang \u00b7 TreasureMap'
+        footerText: '\u00a9 {year} Frank. Li Qiang \u00b7 TreasureMap'
       },
       'ja': {
         htmlLang: 'ja',
@@ -350,7 +350,7 @@
         contactTitle: '\uD83D\uDCEC \u304a\u554f\u3044\u5408\u308f\u305b',
         contactP1: '\u3054\u8cea\u554f\u3084\u3054\u610f\u898b\u304c\u3054\u3056\u3044\u307e\u3057\u305f\u3089\u3001\u4ee5\u4e0b\u306e\u65b9\u6cd5\u3067\u304a\u554f\u3044\u5408\u308f\u305b\u304f\u3060\u3055\u3044\uff1a',
         contactBtn: 'Issue \u3092\u9001\u308b',
-        footerText: '\u00a9 2024 FrankLiQiang \u00b7 TreasureMap'
+        footerText: '\u00a9 {year} Frank. Li Qiang \u00b7 TreasureMap'
       }
     };
 
@@ -414,7 +414,10 @@ function setLang(lang) {
       document.getElementById('contact-title').textContent = decodeEscapes(t.contactTitle);
       document.getElementById('contact-p1').textContent = decodeEscapes(t.contactP1);
       document.getElementById('contact-btn').textContent = decodeEscapes(t.contactBtn);
-      document.getElementById('footer-text').innerHTML = decodeEscapes(t.footerText);
+      // replace {year} placeholder with current year so footer always stays up-to-date
+      var footerRaw = decodeEscapes(t.footerText || '');
+      var footerRendered = footerRaw.replace('{year}', new Date().getFullYear());
+      document.getElementById('footer-text').innerHTML = footerRendered;
     }
 var defaultLang = 'en';
     document.getElementById('lang-select').value = defaultLang;
