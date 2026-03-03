@@ -490,7 +490,7 @@
       var footerRendered = footerRaw.replace('{year}', new Date().getFullYear());
       document.getElementById('footer-text').innerHTML = footerRendered;
     }
-    var defaultLang = 'en';
+    var defaultLang = 'zh-TW';
     document.getElementById('lang-select').value = defaultLang;
     setLang(defaultLang);
     // 将关于图像从白色卡片内部移动到卡片外面（上方居中）
@@ -521,8 +521,8 @@
 <script>
   function setLang(v) {
     const map = {
-      'zh-CN': './cn.html',
       'zh-TW': './zh-TW.html',
+      'zh-CN': './cn.html',
       'en': './index.html',
       'ja': './ja.html'
     };
