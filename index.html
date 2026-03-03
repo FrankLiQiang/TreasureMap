@@ -93,6 +93,17 @@
       padding-left: 1.4rem;
     }
 
+    /* privacy list: no bullet, we include numeric labels in the question text */
+    #privacy-list {
+      list-style: none;
+      padding-left: 0;
+      margin-top: 0.5rem;
+    }
+
+    #privacy-list li {
+      margin-top: 0.9rem;
+    }
+
     section ul li {
       margin-bottom: 0.5rem;
     }
@@ -246,6 +257,7 @@
     <section>
       <h2 id="privacy-title"></h2>
       <p id="privacy-p1"></p>
+      <ul id="privacy-list"></ul>
     </section>
 
     <section>
@@ -275,6 +287,14 @@
           { q: '\u5982\u4f55\u66f4\u6539\u56fe\u7247\u5bc6\u7801\uff1f', a: '\u7528\u539f\u5bc6\u7801\u6253\u5f00\u56fe\u7247\uff0c\u5728\u201c\u9009\u62e9\u56fe\u7247\u201d\u2192\u201c\u52a0\u5bc6\u201d\u4e2d\u8f93\u5165\u65b0\u5bc6\u7801\u4e24\u6b21\u786e\u8ba4\u4ee5\u52a0\u5bc6\u4fdd\u5b58\u4fe1\u606f\u5230\u56fe\u7247\uff0c\u4ece\u800c\u66f4\u6362\u56fe\u7247\u5bc6\u7801\u3002' },
           { q: '\u5982\u4f55\u66f4\u6362\u5bbf\u4e3b\u56fe\u7247\uff1f', a: '\u89e3\u9501\u539f\u56fe\u540e\uff0c\u70b9\u51fb\u201c\u9009\u62e9\u56fe\u7247\u201d\u9009\u65b0\u56fe\uff0c\u518d\u70b9\u201c\u52a0\u5bc6\u201d\u5373\u53ef\u5c06\u4fe1\u606f\u5199\u5165\u65b0\u56fe\uff1b\u539f\u56fe\u4ecd\u53ef\u4fdd\u7559\u3002' },
           { q: '\u5bf9\u5bbf\u4e3b\u56fe\u7247\uff0c\u5982\u4f55\u4f20\u8f93\u4e0e\u5206\u4eab\uff1f\u4ec0\u4e48\u662f\u6821\u9a8c\u7801\uff1f', a: '\u8de8\u5e73\u53f0/\u8bbe\u5907\u4f20\u8f93\u8bf7\u53d1\u9001\u539f\u59cb\u56fe\u7247\uff0c\u5426\u5219\u65e0\u6cd5\u89e3\u5bc6\u3002\\n\u4f7f\u7528\u201c\u590d\u5236\u6821\u9a8c\u7801\u201d\u53ef\u83b7\u53d6\u56fe\u7247\u6821\u9a8c\u7801\uff0c\u53ea\u6709\u76f8\u540c\u6821\u9a8c\u7801\u7684\u56fe\u7247\u624d\u80fd\u89e3\u5bc6\u51fa\u76f8\u540c\u4fe1\u606f\u3002\\n\u53ea\u5206\u4eab\u539f\u56fe\u548c\u6821\u9a8c\u7801\uff0c\u4e0d\u4f1a\u6cc4\u6f0f\u4fe1\u606f\u3002\u53ea\u6709\u539f\u56fe+\u5bc6\u7801+\u672c\u5e94\u7528\u624d\u4f1a\u89e3\u5f00\u56fe\u7247\u4fe1\u606f\u3002' }
+        ],
+        privacyItems: [
+          { q: '1. 信息收集说明', a: '本应用不会主动收集、上传或存储用户的个人文件内容。\n本应用不建立用户账户系统。\n本应用不提供服务器存储服务。\n所有数据处理均在用户本地设备内完成。' },
+          { q: '2. 权限使用说明', a: '为实现功能，本应用可能申请以下权限：\n存储访问权限：用于读取及隐藏文件到宿主图片以及文件自身的加密解密。\n媒体访问权限：以保存隐藏信息到宿主图片。\n上述权限仅用于功能实现，不用于数据收集。' },
+          { q: '3. 数据传输说明', a: '本应用不进行任何远程数据传输。\n本应用不向任何第三方提供用户文件内容。' },
+          { q: '4. 数据安全', a: '所有文件均保存在用户设备本地。\n用户应自行妥善保管密码及设备安全。\n本应用不提供密码找回功能。' },
+          { q: '5. 第三方服务', a: '对于付费用户，本应用不集成广告服务。\n本应用不集成用户行为分析服务。\n如未来集成第三方服务，将在本政策中更新说明。' },
+          { q: '6. 政策变更', a: '本应用有权根据法律或功能更新需要对本政策进行修改。\n修改后将在应用内公布。' }
         ],
         privacyTitle: '\uD83D\uDD12 \u9690\u79c1\u653f\u7b56',
         privacyP1: '\u672c\u5e94\u7528\u4e0d\u6536\u96c6\u4efb\u4f55\u4e2a\u4eba\u4fe1\u606f\uff0c\u4e0d\u8ffd\u8e2a\u7528\u6237\u884c\u4e3a\uff0c\u4e0d\u5411\u7b2c\u4e09\u65b9\u5171\u4eab\u6570\u636e\u3002',
@@ -410,7 +430,28 @@ function setLang(lang) {
       });
 
       document.getElementById('privacy-title').textContent = decodeEscapes(t.privacyTitle);
-      document.getElementById('privacy-p1').textContent = decodeEscapes(t.privacyP1);
+      var privacyP = document.getElementById('privacy-p1');
+      var privacyList = document.getElementById('privacy-list');
+      if (t.privacyItems && t.privacyItems.length) {
+        privacyP.style.display = 'none';
+        privacyList.innerHTML = '';
+        (t.privacyItems || []).forEach(function (item) {
+          var li = document.createElement('li');
+          var qEl = document.createElement('div');
+          qEl.className = 'faq-question';
+          qEl.textContent = decodeEscapes(item.q).replace(/^[\s\u3000]+/, '');
+          var aEl = document.createElement('div');
+          aEl.className = 'faq-answer';
+          aEl.textContent = decodeEscapes(item.a).replace(/^[\s\u3000]+/, '');
+          li.appendChild(qEl);
+          li.appendChild(aEl);
+          privacyList.appendChild(li);
+        });
+      } else {
+        privacyList.innerHTML = '';
+        privacyP.style.display = '';
+        privacyP.textContent = decodeEscapes(t.privacyP1);
+      }
       document.getElementById('contact-title').textContent = decodeEscapes(t.contactTitle);
       document.getElementById('contact-p1').textContent = decodeEscapes(t.contactP1);
       document.getElementById('contact-btn').textContent = decodeEscapes(t.contactBtn);
