@@ -97,6 +97,21 @@
       margin-bottom: 0.5rem;
     }
 
+    /* FAQ question / answer layout */
+    section ul li .faq-question {
+      font-weight: 700;
+      display: block;
+      margin-bottom: 0.25rem;
+      color: #1d1d1f;
+    }
+
+    section ul li .faq-answer {
+      display: block;
+      color: #3a3a3c;
+      white-space: pre-wrap;
+      margin-left: 0.25rem;
+    }
+
     a {
       color: #0071e3;
       text-decoration: none;
@@ -210,12 +225,12 @@
           aboutHtml: '<p>“藏宝图”是一款用于保护机密信息的跨平台应用，可将文档、图片、音频和视频等信息安全地嵌入图片，且外观无明显变化。</p>\n<div class="info-line"><span class="info-label info-label-auto"><strong>主要功能：</strong></span><span class="info-value">列表、文字、文件的嵌入，以及文件自身加密（无需图片）</span></div>\n<div class="info-line"><span class="info-label info-label-auto"><strong>应用场景：</strong></span><span class="info-value">重要信息保存、异地备份和加密通讯。</span></div>\n<div class="info-line"><span class="info-label info-label-auto"><strong>支持平台：</strong></span><span class="info-value">iOS、Android、macOS、Windows。</span></div>',
         faqTitle: '\u2753 \u5e38\u89c1\u95ee\u9898',
         faqItems: [
-          { q: '如何更改/删除隐藏文件？', a: '想要修改隐藏文件，只有在“文件界面”→“选择文件”，再次选择修改后的文件并加密保存后才会写回图片。要取消隐藏，请在“文件”页面点击“取消选择”并加密保存。正常退出或切换时会删除解密出的隐藏文件，异常退出可能遗留。宿主图片不会被删除。' },
-          { q: '如何对文件自身加密而不依赖宿主图片？', a: '在“文件自身”界面，可对文件单独以密码加密（无需图片）。加密文件仅能用本应用解密，请妥善保管密码，无法找回。本应用无法判断密码是否正确，如果使用了错误的密码解密后，无法用相应软件打开文件，请使用相同的（刚刚错误输入的）密码恢复到解密前状态。' },
-          { q: '如何删除原图？覆盖规则是什么？', a: '宿主图片：Windows/macOS 会覆盖原图。Android/iOS 每次保存会生成新图片；用户自行决定是否删除原图。隐藏文件：解密出的隐藏文件会覆盖同名文件。文件自身：解密或加密出的文件会覆盖同名文件。' },
+          { q: '如何更改/删除隐藏文件？', a: '想要修改隐藏文件，只有在“文件界面”→“选择文件”，再次选择修改后的文件并加密保存后才会写回图片。\n要取消隐藏，请在“文件”页面点击“取消选择”并加密保存。\n正常退出或切换时会删除解密出的隐藏文件，异常退出可能遗留。\n宿主图片不会被删除。' },
+          { q: '如何对文件自身加密而不依赖宿主图片？', a: '在“文件自身”界面，可对文件单独以密码加密（无需图片）。加密文件仅能用本应用解密，请妥善保管密码，无法找回。\n本应用无法判断密码是否正确，如果使用了错误的密码解密后，无法用相应软件打开文件，请使用相同的（刚刚错误输入的）密码恢复到解密前状态。' },
+          { q: '如何删除原图？覆盖规则是什么？', a: '宿主图片：Windows/macOS 会覆盖原图。Android/iOS 每次保存会生成新图片；用户自行决定是否删除原图。\n隐藏文件：解密出的隐藏文件会覆盖同名文件。\n文件自身：解密或加密出的文件会覆盖同名文件。' },
           { q: '如何更改图片密码？', a: '用原密码打开图片，在“选择图片”→“加密”中输入新密码两次确认以加密保存信息到图片，从而更换图片密码。' },
           { q: '如何更换宿主图片？', a: '解锁原图后，点击“选择图片”选新图，再点“加密”即可将信息写入新图；原图仍可保留。' },
-          { q: '对宿主图片，如何传输与分享？什么是校验码？', a: '跨平台/设备传输请发送原始图片，否则无法解密。使用“复制校验码”可获取图片校验码，只有相同校验码的图片才能解密出相同信息。' }
+          { q: '对宿主图片，如何传输与分享？什么是校验码？', a: '跨平台/设备传输请发送原始图片，否则无法解密。\n使用“复制校验码”可获取图片校验码，只有相同校验码的图片才能解密出相同信息。\n只分享原图和校验码，不会泄漏信息。只有原图+密码+本应用才会解开图片信息。' }
         ],
         privacyTitle: '\uD83D\uDD12 \u9690\u79c1\u653f\u7b56',
         privacyP1: '\u672c\u5e94\u7528\u4e0d\u6536\u96c6\u4efb\u4f55\u4e2a\u4eba\u4fe1\u606f\uff0c\u4e0d\u8ffd\u8e2a\u7528\u6237\u884c\u4e3a\uff0c\u4e0d\u5411\u7b2c\u4e09\u65b9\u5171\u4eab\u6570\u636e\u3002',
@@ -233,9 +248,12 @@
         aboutHtml: '<p>「藏寶圖」是一款用於保護機密資訊的跨平台應用，可將文件、圖片、音訊和影片等資訊安全地嵌入圖片，且外觀無明顯變化。</p>\n<div class="info-line"><span class="info-label info-label-auto"><strong>主要功能：</strong></span><span class="info-value">列表、文字、檔案的嵌入，以及檔案本身的加密（無需圖片）。</span></div>\n<div class="info-line"><span class="info-label info-label-auto"><strong>應用場景：</strong></span><span class="info-value">重要資訊保存、異地備份和加密通訊。</span></div>\n<div class="info-line"><span class="info-label info-label-auto"><strong>支援平台：</strong></span><span class="info-value">iOS、Android、macOS、Windows。</span></div>',
         faqTitle: '\u2753 \u5e38\u898b\u554f\u9898',
         faqItems: [
-          { q: '\u5982\u4f55\u958b\u59cb\u4f7f\u7528\uff1f', a: '\u4e0b\u8f09\u61c9\u7528\u5f8c\uff0c\u6309\u7167\u5f15\u5c0e\u5efa\u7acb\u60a8\u7684\u7b2c\u4e00\u5f35\u5730\u5716\u5373\u53ef\u3002' },
-          { q: '\u8cc7\u6599\u5132\u5b58\u5728\u54ea\u88e1\uff1f', a: '\u6240\u6709\u8cc7\u6599\u5747\u5132\u5b58\u5728\u60a8\u7684\u88dd\u7f6e\u672c\u6a5f\uff0c\u4e0d\u6703\u4e0a\u50b3\u81f3\u4efb\u4f55\u4f3a\u670d\u5668\u3002' },
-          { q: '\u652f\u63f4\u54ea\u4e9b\u5e73\u53f0\uff1f', a: '\u76ee\u524d\u652f\u63f4 iOS / Android / macOS / Windows\u3002' }
+          { q: '如何更改／刪除隱藏檔案？', a: '若要修改隱藏檔案，請在「檔案」頁面 → 「選擇檔案」，重新選擇已修改的檔案，然後以「加密」保存，該變更才會寫回圖片。\n要取消隱藏，請在「檔案」頁面點選「取消選擇」，並以「加密」保存。\n正常退出或切換時會刪除解密後的隱藏檔案；異常退出可能會遺留該檔案。\n宿主圖片不會被本應用刪除。' },
+          { q: '如何對檔案自身加密（不依賴宿主圖片）？', a: '在「檔案（自身）」頁面，可對檔案以密碼進行單獨加密（無需圖片）。此方式生成的加密檔案僅能由本應用解密，請妥善保管密碼，無法找回。\n本應用無法總是判斷密碼是否正確。如果使用錯誤密碼進行解密而導致檔案無法被其他軟體開啟，請使用相同（剛剛錯誤輸入的）密碼再次操作以回復到解密前的狀態。' },
+          { q: '如何刪除原圖？覆蓋規則是什麼？', a: '宿主圖片：在 Windows 與 macOS 上，執行「加密」儲存會覆蓋原始圖片檔案；在 Android 與 iOS 上，每次加密儲存會另存為新圖片，是否刪除原圖由使用者自行決定。\n隱藏檔案：解密後的隱藏檔案若與目的資料夾中已有同名檔案，會直接覆蓋該檔案。\n檔案本體：透過本應用解密或匯出／加密產生的檔案，若與目的資料夾中存在同名檔案，亦會被覆蓋。' },
+          { q: '如何更改圖片密碼？', a: '使用原密碼打開圖片，於「選擇圖片」→「加密」中輸入新密碼兩次確認，系統會將資訊儲存到圖片中，完成圖片密碼的變更。' },
+          { q: '如何更換宿主圖片？', a: '在解鎖原圖後，點選「選擇圖片」選擇新圖，然後點「加密」即可將嵌入資訊寫入新圖；原圖會保留，除非使用者手動刪除。' },
+          { q: '對宿主圖片，如何傳輸與分享？什麼是校驗碼？', a: '跨平台或裝置傳送時，請務必傳送原始圖片檔案，否則可能無法正確解密。\n在「選擇圖片」畫面點選「複製校驗碼」可以複製該圖片的校驗碼，只有校驗碼相同的圖片，才能還原出相同的隱藏資訊。\n只分享原圖和校驗碼，不會洩漏資訊。只有原圖+密碼+本應用才會解開圖片資訊。' }
         ],
         privacyTitle: '\uD83D\uDD12 \u96b1\u79c1\u653f\u7b56',
         privacyP1: '\u672c\u61c9\u7528\u4e0d\u6536\u96c6\u4efb\u4f55\u500b\u4eba\u8cc7\u8a0a\uff0c\u4e0d\u8ffd\u8e64\u4f7f\u7528\u8005\u884c\u70ba\uff0c\u4e0d\u5411\u7b2c\u4e09\u65b9\u5171\u4eab\u8cc7\u6599\u3002',
@@ -253,9 +271,12 @@
         aboutHtml: '<p>“TreasureMap” is a cross-platform app for protecting confidential information. It can safely embed documents, videos, audio, and other files into images with no noticeable change in appearance.</p>\n<div class="info-line"><span class="info-label info-label-auto"><strong>Main features:</strong></span><span class="info-value">embedding lists, text, and files, and file-only encryption (no image required).</span></div>\n<div class="info-line"><span class="info-label info-label-auto"><strong>Use cases:</strong></span><span class="info-value">secure storage of important information, off-site backups, and encrypted communication.</span></div>\n<div class="info-line"><span class="info-label info-label-auto"><strong>Supported platforms:</strong></span><span class="info-value">iOS, Android, macOS, Windows.</span></div>',
         faqTitle: '\u2753 FAQ',
         faqItems: [
-          { q: 'How do I get started?', a: 'After downloading, follow the onboarding guide to create your first map.' },
-          { q: 'Where is my data stored?', a: 'All data is stored locally on your device and is never uploaded to any server.' },
-          { q: 'Which platforms are supported?', a: 'Currently supports iOS / Android / macOS / Windows.' }
+          { q: 'How to change/remove a hidden file?', a: 'If you want to modify a hidden file, open the File screen → "Select File", reselect the modified file, then save using "Encrypt" to write the change back into the image.\nTo stop hiding a file, tap "Deselect" on the File screen and save with "Encrypt".\nWhen you exit normally or switch files, the decrypted hidden file is deleted; an abnormal exit may leave it behind.\nThe carrier image is never deleted by the app.' },
+          { q: 'How to encrypt a file without a carrier image?', a: 'In the "File (Self)" screen you can encrypt a file with a password without using an image. Encrypted files created this way can only be decrypted by this app—keep passwords safe, there is no recovery.\nThe app cannot always tell whether a password is correct. If you decrypt with the wrong password and the resulting file cannot be opened by other software, use the same (incorrect) password again to restore the file to its pre-decrypted state.' },
+          { q: 'How do I delete the original image? What are the overwrite rules?', a: 'Carrier image: On Windows and macOS, an encrypted save will overwrite the original image. On Android and iOS, each encrypted save creates a new image; the user may choose whether to delete the original.\nHidden file: A decrypted hidden file will overwrite any same‑named file in the destination folder.\nFile itself: Files produced by decrypting or encrypting will overwrite any same‑named file in the destination folder.' },
+          { q: "How to change an image's password?", a: "Open the image with the current password, go to \"Select Image\" → \"Encrypt\", enter the new password twice and confirm to save the information into the image and change its password." },
+          { q: 'How to replace the carrier image?', a: 'After unlocking the original image, tap "Select Image", choose the new image, then tap "Encrypt" to write the embedded information into the new image. The original image remains unchanged unless you delete it manually.' },
+          { q: 'How do I transfer and share the carrier image? What is the verification code?', a: 'When transferring images between platforms or devices, always send the original image file; otherwise decryption may fail.\nOn the Select Image screen, tap the "Copy Verification Code" button to copy the image\'s verification code; only images with the same verification code will decrypt to the same embedded data.\nSharing only the original image and the verification code does not reveal the embedded data. Only the original image plus the password and this app can unlock the embedded information.' }
         ],
         privacyTitle: '\uD83D\uDD12 Privacy Policy',
         privacyP1: 'This app does not collect any personal information, does not track user behavior, and does not share data with third parties.',
@@ -273,9 +294,12 @@
         aboutHtml: '<p>「トレジャーマップ」は機密情報を保護するためのクロスプラットフォームアプリで、文書、動画、音声、その他のファイルを画像に安全に埋め込め、外見にほとんど変化がありません。</p>\n<div class="info-line"><span class="info-label info-label-auto"><strong>主な機能：</strong></span><span class="info-value">リスト・テキスト・ファイルの埋め込み、およびファイル単体の暗号化（画像は不要）。</span></div>\n<div class="info-line"><span class="info-label info-label-auto"><strong>利用シーン：</strong></span><span class="info-value">重要な情報の保存、オフサイトバックアップ、および暗号化通信。</span></div>\n<div class="info-line"><span class="info-label info-label-auto"><strong>対応プラットフォーム：</strong></span><span class="info-value">iOS、Android、macOS、Windows。</span></div>',
         faqTitle: '\u2753 \u3088\u304f\u3042\u308b\u8cea\u554f',
         faqItems: [
-          { q: '\u4f7f\u3044\u59cb\u3081\u308b\u306b\u306f\uff1f', a: '\u30c0\u30a6\u30f3\u30ed\u30fc\u30c9\u5f8c\u3001\u30ac\u30a4\u30c9\u306b\u5f93\u3063\u3066\u6700\u521d\u306e\u30de\u30c3\u30d7\u3092\u4f5c\u6210\u3057\u3066\u304f\u3060\u3055\u3044\u3002' },
-          { q: '\u30c7\u30fc\u30bf\u306f\u3069\u3053\u306b\u4fdd\u5b58\u3055\u308c\u307e\u3059\u304b\uff1f', a: '\u3059\u3079\u3066\u306e\u30c7\u30fc\u30bf\u306f\u30c7\u30d0\u30a4\u30b9\u306b\u30ed\u30fc\u30ab\u30eb\u4fdd\u5b58\u3055\u308c\u3001\u30b5\u30fc\u30d0\u30fc\u306b\u30a2\u30c3\u30d7\u30ed\u30fc\u30c9\u3055\u308c\u308b\u3053\u3068\u306f\u3042\u308a\u307e\u305b\u3093\u3002' },
-          { q: '\u5bfe\u5fdc\u30d7\u30e9\u30c3\u30c8\u30d5\u30a9\u30fc\u30e0\u306f\uff1f', a: '\u73fe\u5728 iOS / Android / macOS / Windows \u306b\u5bfe\u5fdc\u3057\u3066\u3044\u307e\u3059\u3002' }
+          { q: '隠したファイルはどうやって変更／削除しますか？', a: '隠したファイルを変更するには、「ファイル」画面で「ファイルを選択」を開き、変更済みのファイルを再選択してから「暗号化」で保存してください。\n隠し表示を解除するには、ファイル画面で「選択解除」をタップし、同様に「暗号化」で保存します。\n通常の終了や切替時には復号された隠しファイルは自動で削除されますが、異常終了した場合は残ることがあります。\nホスト画像はアプリによって削除されません。' },
+          { q: 'ファイル自体を画像なしで暗号化するにはどうすればいいですか？', a: 'はい。「ファイル（自身）」画面で、ファイルをパスワードで暗号化できます（画像は不要）。この方法で作成した暗号化ファイルは本アプリでのみ復号可能です。パスワードは必ず厳重に保管してください。\nアプリは常にパスワードの正誤を判別できるわけではありません。誤ったパスワードで復号して他のソフトで開けない場合は、同じ（誤って入力した）パスワードを使って元の状態に戻してください。' },
+          { q: '元画像はどう削除されますか？上書きルールは何ですか？', a: 'ホスト画像については、Windows と macOS では「暗号化」保存が元の画像を上書きします。Android と iOS では、暗号化保存ごとに新しい画像が作成され、元画像を削除するかどうかはユーザーが選べます。\n復号された隠しファイルは、保存先に同名のファイルがあれば上書きします。\nファイル自体（本体）を復号または暗号化して出力した場合も、保存先に同名ファイルがあれば上書きされます。' },
+          { q: '画像のパスワードはどう変更しますか？', a: '現在のパスワードで画像を開き、「画像を選択」→「暗号化」で新しいパスワードを2回入力して確定してください。情報が画像に保存され、画像のパスワードが変更されます。' },
+          { q: '宿主画像をどうやって置き換えますか？', a: '元画像をアンロックした状態で「画像を選択」をタップし、新しい画像を選んでから「暗号化」を押すと、埋め込まれた情報が新しい画像に書き込まれます。元画像は手動で削除しない限り残ります。' },
+          { q: '宿主画像を転送／共有するにはどうすればいいですか？検証コードとは何ですか？', a: 'プラットフォーム間で画像を送る際は必ずオリジナルの画像ファイルを送ってください。そうしないと正しく復号できないことがあります。\n選択画面の「検証コードをコピー」ボタンで画像の検証コードをコピーできます。同じ検証コードの画像のみが同じ埋め込み情報を復号できます。\n元の画像と検証コードだけを共有しても埋め込まれた情報は漏れません。元の画像＋パスワード＋本アプリの組み合わせで初めて、埋め込まれた情報を復号できます。' }
         ],
         privacyTitle: '\uD83D\uDD12 \u30d7\u30e9\u30a4\u30d0\u30b7\u30fc\u30dd\u30ea\u30b7\u30fc',
         privacyP1: '\u3053\u306e\u30a2\u30d7\u30ea\u306f\u500b\u4eba\u60c5\u5831\u3092\u53ce\u96c6\u305b\u305a\u3001\u30e6\u30fc\u30b6\u30fc\u306e\u884c\u52d5\u3092\u8ffd\u8de1\u305b\u305a\u3001\u7b2c\u4e09\u8005\u3068\u30c7\u30fc\u30bf\u3092\u5171\u6709\u3057\u307e\u305b\u3093\u3002',
@@ -305,10 +329,14 @@
       faqList.innerHTML = '';
       t.faqItems.forEach(function (item) {
         var li = document.createElement('li');
-        var strong = document.createElement('strong');
-        strong.textContent = item.q + ' ';
-        li.appendChild(strong);
-        li.appendChild(document.createTextNode(item.a));
+        var qEl = document.createElement('div');
+        qEl.className = 'faq-question';
+        qEl.textContent = item.q;
+        var aEl = document.createElement('div');
+        aEl.className = 'faq-answer';
+        aEl.textContent = item.a;
+        li.appendChild(qEl);
+        li.appendChild(aEl);
         faqList.appendChild(li);
       });
       document.getElementById('privacy-title').textContent = t.privacyTitle;
