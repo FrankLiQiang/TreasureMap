@@ -250,7 +250,12 @@
 
     <section>
       <div class="about-graphic-wrapper">
-        <img src="about.png" alt="About graphic">
+        <img src="about.png" alt="About graphic" oncontextmenu="return false;" draggable="false">
+        <script>
+          document.addEventListener('contextmenu', function (e) {
+            e.preventDefault();
+          });
+        </script>
       </div>
 
       <h2 id="about-title"></h2>
