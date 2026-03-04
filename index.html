@@ -292,8 +292,8 @@
         pageTitle: 'Treasure Map',
         headerSubtitle: 'Technical Support',
         aboutTitle: '\uD83D\uDCD6 About',
-        aboutP1: '“TreasureMap” is a cross-platform app for protecting confidential information. It can safely embed documents, videos, audio, and other files into images with no noticeable change in appearance. \n\n<strong>Main features:</strong> embedding lists, text, and files, and file-only encryption (no image required).\n<strong>Use cases:</strong> secure storage of important information, off-site backups, and encrypted communication.\n<strong>Supported platforms:</strong> iOS, Android, macOS, Windows.',
-        aboutHtml: '<p>“TreasureMap” is a cross-platform app for protecting confidential information. It can safely embed documents, videos, audio, and other files into images with no noticeable change in appearance.</p>\n<div class="info-line"><span class="info-label info-label-auto"><strong>Main features:</strong></span><span class="info-value">embedding lists, text, and files, and file-only encryption (no image required).</span></div>\n<div class="info-line"><span class="info-label info-label-auto"><strong>Use cases:</strong></span><span class="info-value">secure storage of important information, off-site backups, and encrypted communication.</span></div>\n<div class="info-line"><span class="info-label info-label-auto"><strong>Supported platforms:</strong></span><span class="info-value">iOS, Android, macOS, Windows.</span></div>',
+        aboutP1: '“TreasureMap” is a cross-platform app for protecting confidential information. It can safely embed documents, videos, audio, and other files into images with no noticeable change in appearance. And provide an advanced encryption mechanism for standalone files that is not subject to size limitations and does not need to be tied to an image container.\n\n<strong>Main features:</strong> embedding lists, text, and files, and file-only encryption (no image required).\n<strong>Use cases:</strong> secure storage of important information, off-site backups, and encrypted communication.\n<strong>Supported platforms:</strong> iOS, Android, macOS, Windows.',
+        aboutHtml: '<p>“TreasureMap” is a cross-platform app for protecting confidential information. It can safely embed documents, videos, audio, and other files into images with no noticeable change in appearance.And provide an advanced encryption mechanism for standalone files that is not subject to size limitations and does not need to be tied to an image container.</p>\n<div class="info-line"><span class="info-label info-label-auto"><strong>Main features:</strong></span><span class="info-value">embedding lists, text, and files, and file-only encryption (no image required).</span></div>\n<div class="info-line"><span class="info-label info-label-auto"><strong>Use cases:</strong></span><span class="info-value">secure storage of important information, off-site backups, and encrypted communication.</span></div>\n<div class="info-line"><span class="info-label info-label-auto"><strong>Supported platforms:</strong></span><span class="info-value">iOS, Android, macOS, Windows.</span></div>',
         faqTitle: '\u2753 FAQ',
         faqItems: [
           { q: 'How to change/remove a hidden file?', a: 'If you want to modify a hidden file, open the File screen → "Select File", reselect the modified file, then save using "Encrypt" to write the change back into the image.\nTo stop hiding a file, tap "Deselect" on the File screen and save with "Encrypt".\nWhen you exit normally or switch files, the decrypted hidden file is deleted; an abnormal exit may leave it behind.\nThe carrier image is never deleted by the app.' },
@@ -313,7 +313,7 @@
         ],
         privacyTitle: '🔒 Privacy Policy',
         contactTitle: '\uD83D\uDCEC Contact Us',
-        contactP1: 'If you have any questions or feedback, feel free to reach out:',
+        contactP1: '<p>If you have any questions or feedback, feel free to reach out:</p><p>Email: Tmap196@gmail.com</p><p>&nbsp;</p><p>GitHub Issues:</p>',
         contactBtn: 'Submit an Issue',
         footerText: '\u00a9 {year} Frank. Li Qiang \u00b7 TreasureMap'
       },
@@ -398,7 +398,7 @@
         privacyP.textContent = decodeEscapes(t.privacyP1);
       }
       document.getElementById('contact-title').textContent = decodeEscapes(t.contactTitle);
-      document.getElementById('contact-p1').textContent = decodeEscapes(t.contactP1);
+      document.getElementById('contact-p1').innerHTML = decodeEscapes(t.contactP1);
       document.getElementById('contact-btn').textContent = decodeEscapes(t.contactBtn);
       // replace {year} placeholder with current year so footer always stays up-to-date
       var footerRaw = decodeEscapes(t.footerText || '');
