@@ -236,9 +236,9 @@
   <header>
     <div id="lang-selector">
       <select id="lang-select" onchange="setLang(this.value)">
+        <option value="en" selected>English</option>
         <option value="zh-CN">简体中文</option>
         <option value="zh-TW">繁体中文</option>
-        <option value="en" selected>English</option>
         <option value="ja">日本語</option>
       </select>
     </div>
@@ -300,7 +300,7 @@
           { q: 'How to change/remove a hidden file?', a: 'If you want to modify a hidden file, open the File screen → "Select File", reselect the modified file, then save using "Encrypt" to write the change back into the image.\nTo stop hiding a file, tap "Deselect" on the File screen and save with "Encrypt".\nWhen you exit normally or switch files, the decrypted hidden file is deleted; an abnormal exit may leave it behind.\nThe carrier image is never deleted by the app.' },
           { q: 'How to encrypt a file without a carrier image?', a: 'In the "File (Self)" screen you can encrypt a file with a password without using an image. Encrypted files created this way can only be decrypted by this app—keep passwords safe, there is no recovery.\nThe app cannot always tell whether a password is correct. If you decrypt with the wrong password and the resulting file cannot be opened by other software, use the same (incorrect) password again to restore the file to its pre-decrypted state.' },
           { q: 'How do I delete the original image? What are the overwrite rules?', a: 'Carrier image: On Windows and macOS, an encrypted save will overwrite the original image. On Android and iOS, each encrypted save creates a new image; the user may choose whether to delete the original.\nHidden file: A decrypted hidden file will overwrite any same‑named file in the destination folder.\nFile itself: Files produced by decrypting or encrypting will overwrite any same‑named file in the destination folder.' },
-          { q: "How to change an image's password?", a: "Open the image with the current password, go to \"Select Image\" → \"Encrypt\", enter the new password twice and confirm to save the information into the image and change its password." },
+          { q: "How to change an image's password?", a: "Open the image with the current password, go to \"Home\" → \"Encrypt\", enter the new password twice and confirm to save the information into the image and change its password." },
           { q: 'How to replace the carrier image?', a: 'After unlocking the original image, tap "Select Image", choose the new image, then tap "Encrypt" to write the embedded information into the new image. The original image remains unchanged unless you delete it manually.' },
           { q: 'How do I transfer and share the carrier image? What is the verification code?', a: 'When transferring images between platforms or devices, always send the original image file; otherwise decryption may fail.\nOn the Select Image screen, tap the "Copy Verification Code" button to copy the image\'s verification code; only images with the same verification code will decrypt to the same embedded data.\nSharing only the original image and the verification code does not reveal the embedded data. Only the original image plus the password and this app can unlock the embedded information.' }
         ],
@@ -410,7 +410,7 @@
         var img = wrapper.querySelector('#about-graphic');
         if (img) {
           img.style.maxWidth = '360px';
-          img.style.width = '60%';
+          img.style.width = '80%';
           img.style.height = 'auto';
           img.style.display = 'inline-block';
           img.style.borderRadius = '8px';
@@ -424,9 +424,9 @@
 <script>
   function setLang(v) {
     const map = {
+      'en': './index.html',
       'zh-CN': './cn.html',
       'zh-TW': './zh-TW.html',
-      'en': './index.html',
       'ja': './ja.html'
     };
     location.href = map[v] || './index.html';

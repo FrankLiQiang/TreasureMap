@@ -236,9 +236,9 @@
   <header>
     <div id="lang-selector">
       <select id="lang-select" onchange="setLang(this.value)">
+        <option value="en">English</option>
         <option value="zh-CN">简体中文</option>
-        <option value="zh-TW">繁体中文</option>
-        <option value="en" selected>English</option>
+        <option value="zh-TW" selected>繁体中文</option>
         <option value="ja">日本語</option>
       </select>
     </div>
@@ -250,14 +250,15 @@
 
     <section>
       <div class="about-graphic-wrapper">
-        <img id="about-graphic" class="protected" src="about.png" alt="About graphic" oncontextmenu="return false;" draggable="false">
-          <script>
-            document.addEventListener('contextmenu', function (e) {
-              if (e.target && e.target.tagName === 'IMG') {
-                e.preventDefault();
-              }
-            }, { capture: true });
-          </script>
+        <img id="about-graphic" class="protected" src="about.png" alt="About graphic" oncontextmenu="return false;"
+          draggable="false">
+        <script>
+          document.addEventListener('contextmenu', function (e) {
+            if (e.target && e.target.tagName === 'IMG') {
+              e.preventDefault();
+            }
+          }, { capture: true });
+        </script>
       </div>
       <h2 id="about-title"></h2>
       <div id="about-p1"></div>
@@ -289,32 +290,32 @@
       'zh-TW': {
         htmlLang: 'zh-TW',
         pageTitle: '藏寶圖',
-        headerSubtitle: '\u6280\u8853\u652f\u63f4',
-        aboutTitle: '\uD83D\uDCD6 \u95dc\u65bc\u672c\u61c9\u7528',
-        aboutP1: '\u300c\u85cf\u5bf6\u5716\u300d\u662f\u4e00\u6b3e\u7528\u65bc\u4fdd\u8b77\u6a5f\u5bc6\u8cc7\u8a0a\u7684\u8de8\u5e73\u53f0\u61c9\u7528\uff0c\u53ef\u5c07\u6587\u4ef6\u3001\u5716\u7247\u3001\u97f3\u8a0a\u548c\u5f71\u7247\u7b49\u8cc7\u8a0a\u5b89\u5168\u5730\u5d4c\u5165\u5716\u7247\uff0c\u4e14\u5916\u89c0\u7121\u660e\u986f\u8b8a\u5316\u3002\n\n<strong>\u4e3b\u8981\u529f\u80fd\uff1a</strong>\u5217\u8868\u3001\u6587\u5b57\u3001\u6a94\u6848\u7684\u5d4c\u5165\uff0c\u4ee5\u53ca\u6a94\u6848\u672c\u8eab\u7684\u52a0\u5bc6\uff08\u7121\u9700\u5716\u7247\uff09\u3002\n<strong>\u61c9\u7528\u5834\u666f\uff1a</strong>\u91cd\u8981\u8cc7\u8a0a\u4fdd\u5b58\u3001\u7570\u5730\u5099\u4efd\u548c\u52a0\u5bc6\u901a\u8a0a\u3002\n<strong>\u652f\u63f4\u5e73\u53f0\uff1a</strong> iOS\u3001Android\u3001macOS\u3001Windows\u3002',
-        aboutHtml: '<p>\u300c\u85cf\u5bf6\u5716\u300d\u662f\u4e00\u6b3e\u7528\u65bc\u4fdd\u8b77\u6a5f\u5bc6\u8cc7\u8a0a\u7684\u8de8\u5e73\u53f0\u61c9\u7528\uff0c\u53ef\u5c07\u6587\u4ef6\u3001\u5716\u7247\u3001\u97f3\u8a0a\u548c\u5f71\u7247\u7b49\u8cc7\u8a0a\u5b89\u5168\u5730\u5d4c\u5165\u5716\u7247\uff0c\u4e14\u5916\u89c0\u7121\u660e\u986f\u8b8a\u5316\u3002</p>\n<div class="info-line"><span class="info-label info-label-auto"><strong>\u4e3b\u8981\u529f\u80fd\uff1a</strong></span><span class="info-value">\u5217\u8868\u3001\u6587\u5b57\u3001\u6a94\u6848\u7684\u5d4c\u5165\uff0c\u4ee5\u53ca\u6a94\u6848\u672c\u8eab\u7684\u52a0\u5bc6\uff08\u7121\u9700\u5716\u7247\uff09\u3002</span></div>\n<div class="info-line"><span class="info-label info-label-auto"><strong>\u61c9\u7528\u5834\u666f\uff1a</strong></span><span class="info-value">\u91cd\u8981\u8cc7\u8a0a\u4fdd\u5b58\u3001\u7570\u5730\u5099\u4efd\u548c\u52a0\u5bc6\u901a\u8a0a\u3002</span></div>\n<div class="info-line"><span class="info-label info-label-auto"><strong>\u652f\u63f4\u5e73\u53f0\uff1a</strong></span><span class="info-value">iOS\u3001Android\u3001macOS\u3001Windows\u3002</span></div>',
-        faqTitle: '\u2753 \u5e38\u898b\u554f\u9898',
+        headerSubtitle: '技術支援',
+        aboutTitle: '📖 關於本應用',
+        aboutP1: '「藏寶圖」是一款用於保護機密資訊的跨平台應用，可將檔案、圖片、音訊和影片等資訊安全地嵌入圖片，且外觀無明顯變化。並提供不受大小限制、無需依附於圖片載體的獨立檔案級加密機制。',
+        aboutHtml: '<p>「藏寶圖」是一款用於保護機密資訊的跨平台應用，可將檔案、圖片、音訊和影片等資訊安全地嵌入圖片，且外觀無明顯變化。並提供不受大小限制、無需依附於圖片載體的獨立檔案的高級加密機制。</p><div class="info-line"><span class="info-label"><strong>主要功能：</strong></span><span class="info-value">列表、文字、檔案的嵌入，以及檔案自身加密（無需圖片）</span></div> <div class="info-line"><span class="info-label"><strong>應用場景：</strong></span><span class="info-value">重要資訊保存、異地備份。</span></div> <div class="info-line"><span class="info-label"><strong>支援平台：</strong></span><span class="info-value">iOS、Android、macOS、Windows。</span></div>',
+        faqTitle: '❓ 常見問題',
         faqItems: [
-          { q: '\u5982\u4f55\u66f4\u6539\uff0f\u522a\u9664\u96b1\u85cf\u6a94\u6848\uff1f', a: '\u82e5\u8981\u4fee\u6539\u96b1\u85cf\u6a94\u6848\uff0c\u8acb\u5728\u300c\u6a94\u6848\u300d\u9801\u9762 \u2192 \u300c\u9078\u64c7\u6a94\u6848\u300d\uff0c\u91cd\u65b0\u9078\u64c7\u5df2\u4fee\u6539\u7684\u6a94\u6848\uff0c\u7136\u5f8c\u4ee5\u300c\u52a0\u5bc6\u300d\u4fdd\u5b58\uff0c\u8a72\u8b8a\u66f4\u624d\u6703\u5beb\u56de\u5716\u7247\u3002\\n\u8981\u53d6\u6d88\u96b1\u85cf\uff0c\u8acb\u5728\u300c\u6a94\u6848\u300d\u9801\u9762\u9ede\u9078\u300c\u53d6\u6d88\u9078\u64c7\u300d\uff0c\u4e26\u4ee5\u300c\u52a0\u5bc6\u300d\u4fdd\u5b58\u3002\\n\u6b63\u5e38\u9000\u51fa\u6216\u5207\u63db\u6642\u6703\u522a\u9664\u89e3\u5bc6\u5f8c\u7684\u96b1\u85cf\u6a94\u6848\uff1b\u7570\u5e38\u9000\u51fa\u53ef\u80fd\u6703\u907a\u7559\u8a72\u6a94\u6848\u3002\\n\u5bbf\u4e3b\u5716\u7247\u4e0d\u6703\u88ab\u672c\u61c9\u7528\u522a\u9664\u3002' },
-          { q: '\u5982\u4f55\u5c0d\u6a94\u6848\u81ea\u8eab\u52a0\u5bc6\uff08\u4e0d\u4f9d\u8cf4\u5bbf\u4e3b\u5716\u7247\uff09\uff1f', a: '\u5728\u300c\u6a94\u6848\uff08\u81ea\u8eab\uff09\u300d\u9801\u9762\uff0c\u53ef\u5c0d\u6a94\u6848\u4ee5\u5bc6\u78bc\u9032\u884c\u55ae\u7368\u52a0\u5bc6\uff08\u7121\u9700\u5716\u7247\uff09\u3002\u6b64\u65b9\u5f0f\u751f\u6210\u7684\u52a0\u5bc6\u6a94\u6848\u50c5\u80fd\u7531\u672c\u61c9\u7528\u89e3\u5bc6\uff0c\u8acb\u59a5\u5584\u4fdd\u7ba1\u5bc6\u78bc\uff0c\u7121\u6cd5\u627e\u56de\u3002\\n\u672c\u61c9\u7528\u7121\u6cd5\u7e3d\u662f\u5224\u65b7\u5bc6\u78bc\u662f\u5426\u6b63\u78ba\u3002\u5982\u679c\u4f7f\u7528\u932f\u8aa4\u5bc6\u78bc\u9032\u884c\u89e3\u5bc6\u800c\u5c0e\u81f4\u6a94\u6848\u7121\u6cd5\u88ab\u5176\u4ed6\u8edf\u9ad4\u958b\u555f\uff0c\u8acb\u4f7f\u7528\u76f8\u540c\uff08\u525b\u525b\u932f\u8aa4\u8f38\u5165\u7684\uff09\u5bc6\u78bc\u518d\u6b21\u64cd\u4f5c\u4ee5\u56de\u5fa9\u5230\u89e3\u5bc6\u524d\u7684\u72c0\u614b\u3002' },
-          { q: '\u5982\u4f55\u522a\u9664\u539f\u5716\uff1f\u8986\u84cb\u898f\u5247\u662f\u4ec0\u9ebc\uff1f', a: '\u5bbf\u4e3b\u5716\u7247\uff1a\u5728 Windows \u8207 macOS \u4e0a\uff0c\u57f7\u884c\u300c\u52a0\u5bc6\u300d\u5132\u5b58\u6703\u8986\u84cb\u539f\u59cb\u5716\u7247\u6a94\u6848\uff1b\u5728 Android \u8207 iOS \u4e0a\uff0c\u6bcf\u6b21\u52a0\u5bc6\u5132\u5b58\u6703\u53e6\u5b58\u70ba\u65b0\u5716\u7247\uff0c\u662f\u5426\u522a\u9664\u539f\u5716\u7531\u4f7f\u7528\u8005\u81ea\u884c\u6c7a\u5b9a\u3002\\n\u96b1\u85cf\u6a94\u6848\uff1a\u89e3\u5bc6\u5f8c\u7684\u96b1\u85cf\u6a94\u6848\u82e5\u8207\u76ee\u7684\u8cc7\u6599\u593e\u4e2d\u5df2\u6709\u540c\u540d\u6a94\u6848\uff0c\u6703\u76f4\u63a5\u8986\u84cb\u8a72\u6a94\u6848\u3002\\n\u6a94\u6848\u672c\u9ad4\uff1a\u900f\u904e\u672c\u61c9\u7528\u89e3\u5bc6\u6216\u532f\u51fa\uff0f\u52a0\u5bc6\u7522\u751f\u7684\u6a94\u6848\uff0c\u82e5\u8207\u76ee\u7684\u8cc7\u6599\u593e\u4e2d\u5b58\u5728\u540c\u540d\u6a94\u6848\uff0c\u4ea6\u6703\u88ab\u8986\u84cb\u3002' },
-          { q: '\u5982\u4f55\u66f4\u6539\u5716\u7247\u5bc6\u78bc\uff1f', a: '\u4f7f\u7528\u539f\u5bc6\u78bc\u6253\u958b\u5716\u7247\uff0c\u65bc\u300c\u9078\u64c7\u5716\u7247\u300d\u2192\u300c\u52a0\u5bc6\u300d\u4e2d\u8f38\u5165\u65b0\u5bc6\u78bc\u5169\u6b21\u78ba\u8a8d\uff0c\u7cfb\u7d71\u6703\u5c07\u8cc7\u8a0a\u5132\u5b58\u5230\u5716\u7247\u4e2d\uff0c\u5b8c\u6210\u5716\u7247\u5bc6\u78bc\u7684\u8b8a\u66f4\u3002' },
-          { q: '\u5982\u4f55\u66f4\u63db\u5bbf\u4e3b\u5716\u7247\uff1f', a: '\u5728\u89e3\u9396\u539f\u5716\u5f8c\uff0c\u9ede\u9078\u300c\u9078\u64c7\u5716\u7247\u300d\u9078\u64c7\u65b0\u5716\uff0c\u7136\u5f8c\u9ede\u300c\u52a0\u5bc6\u300d\u5373\u53ef\u5c07\u5d4c\u5165\u8cc7\u8a0a\u5beb\u5165\u65b0\u5716\uff1b\u539f\u5716\u6703\u4fdd\u7559\uff0c\u9664\u975e\u4f7f\u7528\u8005\u624b\u52d5\u522a\u9664\u3002' },
-          { q: '\u5c0d\u5bbf\u4e3b\u5716\u7247\uff0c\u5982\u4f55\u50b3\u8f38\u8207\u5206\u4eab\uff1f\u4ec0\u9ebc\u662f\u6821\u9a57\u78bc\uff1f', a: '\u8de8\u5e73\u53f0\u6216\u88dd\u7f6e\u50b3\u9001\u6642\uff0c\u8acb\u52d9\u5fc5\u50b3\u9001\u539f\u59cb\u5716\u7247\u6a94\u6848\uff0c\u5426\u5247\u53ef\u80fd\u7121\u6cd5\u6b63\u78ba\u89e3\u5bc6\u3002\\n\u5728\u300c\u9078\u64c7\u5716\u7247\u300d\u756b\u9762\u9ede\u9078\u300c\u8907\u88fd\u6821\u9a57\u78bc\u300d\u53ef\u4ee5\u8907\u88fd\u8a72\u5716\u7247\u7684\u6821\u9a57\u78bc\uff0c\u53ea\u6709\u6821\u9a57\u78bc\u76f8\u540c\u7684\u5716\u7247\uff0c\u624d\u80fd\u9084\u539f\u51fa\u76f8\u540c\u7684\u96b1\u85cf\u8cc7\u8a0a\u3002\\n\u53ea\u5206\u4eab\u539f\u5716\u548c\u6821\u9a57\u78bc\uff0c\u4e0d\u6703\u6d29\u6f0f\u8cc7\u8a0a\u3002\u53ea\u6709\u539f\u5716+\u5bc6\u78bc+\u672c\u61c9\u7528\u624d\u6703\u89e3\u958b\u5716\u7247\u8cc7\u8a0a\u3002' }
+          { q: '如何更改/刪除隱藏檔案？', a: '若要修改隱藏檔案，只有在「檔案」頁面 →「選擇檔案」，重新選擇修改後的檔案並「加密」保存後才會寫回圖片。\n要取消隱藏，請在「檔案」頁面點擊「取消選擇」並加密保存。\n正常退出或切換時會刪除解密出的隱藏檔案，異常退出可能遺留。' },
+          { q: '如何對檔案自身加密而不依賴宿主圖片？', a: '在「檔案自身」界面，可對檔案單獨以密碼加密（無需圖片）。加密檔案僅能用本應用解密，請妥善保管密碼，無法找回。\n本應用無法判斷密碼是否正確，如果使用了錯誤的密碼解密後，無法用相應軟體打開檔案，請使用相同的（剛剛錯誤輸入的）密碼恢復到解密前狀態。' },
+          { q: '如何刪除原圖？覆蓋規則是什麼？', a: '宿主圖片：Windows/macOS 會覆蓋原圖。Android/iOS 每次保存會生成新圖片；用戶自行決定是否刪除原圖。\n隱藏檔案：解密出的隱藏檔案會覆蓋同名檔案。\n檔案自身：解密或加密出的檔案會覆蓋同名檔案。' },
+          { q: '如何更改圖片密碼？', a: '用原密碼打開圖片，在「首頁」→「加密」中輸入新密碼兩次確認以加密保存資訊到圖片，從而更改圖片密碼。' },
+          { q: '如何更改宿主圖片？', a: '解鎖原圖後，點擊「選擇圖片」選擇新圖，再點擊「加密」即可將資訊寫入新圖；原圖仍可保留。' },
+          { q: '對宿主圖片，如何傳輸與分享？什麼是校驗碼？', a: '跨平台/裝置傳輸請務必傳送原始圖片檔案，否則無法解密。\n使用「複製校驗碼」可獲取圖片校驗碼，只有相同校驗碼的圖片才能解密出相同資訊。\n只分享原圖和校驗碼，不會洩漏資訊。只有原圖+密碼+本應用才會解開圖片資訊。' }
         ],
         privacyItems: [
-          { q: '1. \u8cc7\u8a0a\u8490\u96c6\u8aaa\u660e', a: '\u672c\u61c9\u7528\u4e0d\u6703\u4e3b\u52d5\u8490\u96c6\u3001\u4e0a\u50b3\u6216\u5132\u5b58\u4f7f\u7528\u8005\u7684\u500b\u4eba\u6a94\u6848\u5167\u5bb9\u3002\n\u672c\u61c9\u7528\u4e0d\u5efa\u7acb\u5e33\u865f\u7cfb\u7d71\u3002\n\u672c\u61c9\u7528\u4e0d\u63d0\u4f9b\u96f2\u7aef\u5132\u5b58\u670d\u52d9\u3002\n\u6240\u6709\u8cc7\u6599\u8655\u7406\u5747\u65bc\u4f7f\u7528\u8005\u672c\u5730\u88dd\u7f6e\u5167\u5b8c\u6210\u3002' },
-          { q: '2. \u6b0a\u9650\u4f7f\u7528\u8aaa\u660e', a: '\u70ba\u5be6\u73fe\u529f\u80fd\uff0c\u672c\u61c9\u7528\u53ef\u80fd\u7533\u8acb\u4ee5\u4e0b\u6b0a\u9650\uff1a\n\u5132\u5b58\u5b58\u53d6\u6b0a\u9650\uff1a\u7528\u65bc\u8b80\u53d6\u4e26\u5c07\u6a94\u6848\u96b1\u85cf\u5230\u5bbf\u4e3b\u5716\u7247\uff0c\u53ca\u5c0d\u6a94\u6848\u672c\u8eab\u9032\u884c\u52a0\u5bc6\u8207\u89e3\u5bc6\u3002\n\u5a92\u9ad4\u5b58\u53d6\u6b0a\u9650\uff1a\u7528\u65bc\u5c07\u96b1\u85cf\u8cc7\u8a0a\u4fdd\u5b58\u5230\u5bbf\u4e3b\u5716\u7247\u3002\n\u4e0a\u8ff0\u6b0a\u9650\u50c5\u7528\u65bc\u529f\u80fd\u5be6\u73fe\uff0c\u4e0d\u7528\u65bc\u8cc7\u6599\u8490\u96c6\u3002' },
-          { q: '3. \u8cc7\u6599\u50b3\u8f38\u8aaa\u660e', a: '\u672c\u61c9\u7528\u4e0d\u9032\u884c\u4efb\u4f55\u9060\u7aef\u8cc7\u6599\u50b3\u8f38\u3002\n\u672c\u61c9\u7528\u4e0d\u5411\u7b2c\u4e09\u65b9\u63d0\u4f9b\u4f7f\u7528\u8005\u6a94\u6848\u5167\u5bb9\u3002' },
-          { q: '4. \u8cc7\u6599\u5b89\u5168', a: '\u6240\u6709\u6a94\u6848\u5747\u5132\u5b58\u5728\u4f7f\u7528\u8005\u88dd\u7f6e\u672c\u5730\u3002\n\u4f7f\u7528\u8005\u61c9\u81ea\u884c\u59a5\u5584\u4fdd\u7ba1\u5bc6\u78bc\u53ca\u88dd\u7f6e\u5b89\u5168\u3002\n\u672c\u61c9\u7528\u4e0d\u63d0\u4f9b\u5bc6\u78bc\u627e\u56de\u529f\u80fd\u3002' },
-          { q: '5. \u7b2c\u4e09\u65b9\u670d\u52d9', a: '\u672c\u61c9\u7528\u672a\u6574\u5408\u5ee3\u544a\u670d\u52d9\u3002\n\u672c\u61c9\u7528\u672a\u6574\u5408\u4f7f\u7528\u884c\u70ba\u5206\u6790\u670d\u52d9\u3002\n\u5982\u672a\u4f86\u6574\u5408\u76f8\u95dc\u670d\u52d9\uff0c\u5c07\u66f4\u65b0\u672c\u653f\u7b56\u5167\u5bb9\u3002' },
-          { q: '6. \u653f\u7b56\u8b8a\u66f4', a: '\u672c\u61c9\u7528\u6709\u6b0a\u4f9d\u6cd5\u5f8b\u6216\u529f\u80fd\u66f4\u65b0\u9700\u8981\u4fee\u6539\u672c\u653f\u7b56\u3002\n\u4fee\u6539\u5f8c\u5c07\u65bc\u61c9\u7528\u5167\u516c\u5e03\u3002' }
+          { q: '1. 資訊蒐集說明', a: '本應用不會主動蒐集、上傳或存儲用戶的個人檔案內容。\n本應用不建立用戶帳號系統。\n本應用不提供雲端存儲服務。\n所有數據處理均在用戶本地裝置內完成。' },
+          { q: '2. 權限使用說明', a: '為實現功能，本應用可能申請以下權限：\n存儲存取權限：用於讀取及隱藏檔案到宿主圖片以及對檔案本身進行加密與解密。\n媒體存取權限：以保存隱藏資訊到宿主圖片。\n上述權限僅用於功能實現，不用於數據蒐集。' },
+          { q: '3. 數據傳輸說明', a: '本應用不進行任何遠程數據傳輸。\n本應用不向任何第三方提供用戶檔案內容。' },
+          { q: '4. 數據安全', a: '所有檔案均保存在用戶裝置本地。\n用戶應自行妥善保管密碼及裝置安全。\n本應用不提供密碼找回功能。' },
+          { q: '5. 第三方服務', a: '對於付費用戶，本應用不集成廣告服務。\n本應用不集成用戶行為分析服務。\n如未來集成第三方服務，將在本政策中更新說明。' },
+          { q: '6. 政策變更', a: '本應用有權根據法律或功能更新需要對本政策進行修改。\n修改後將會在應用內公布。' }
         ],
         privacyTitle: '🔒 隱私政策',
-        contactTitle: '\uD83D\uDCEC \u806f\u7d61\u6211\u5011',
-        contactP1: '\u5982\u6709\u4efb\u4f55\u554f\u9898\u6216\u5efa\u8b70\uff0c\u6b61\u8fce\u900f\u904e\u4ee5\u4e0b\u65b9\u5f0f\u806f\u7d61\u6211\u5011\uff1a',
-        contactBtn: '\u63d0\u4ea4\u554f\u9898',
-        footerText: '\u00a9 {year} Frank. Li Qiang \u00b7 TreasureMap'
+        contactTitle: '📬 聯絡我們',
+        contactP1: '<p>如有任何問題或建議，歡迎通過以下方式聯絡我們：</p><p>電子郵件：treasuremap365.lq@gmail.com</p><p>&nbsp;</p><p>GitHub Issues:</p>',
+        contactBtn: '提交問題/建議',
+        footerText: '© {year} Frank. Li Qiang · TreasureMap'
       },
     };
 
@@ -322,28 +323,15 @@
       var t = i18n[lang];
       if (!t) return;
 
-      function decodeEscapes(s) {
-        if (typeof s !== 'string') return s;
-        // convert literal backslash escapes like "\\n", "\\uXXXX" or "U0001f4d6" into real chars
-        s = s.replace(/\\r/g, '\r').replace(/\\t/g, '\t').replace(/\\n/g, '\n');
-        // \UXXXXXXXX (uppercase U) -> code point
-        s = s.replace(/\\U([0-9a-fA-F]{8})/g, function (_, g) { return String.fromCodePoint(parseInt(g, 16)); });
-        // bare UXXXXXXXX (some sources may have lost the backslash)
-        s = s.replace(/\bU([0-9a-fA-F]{8})\b/g, function (_, g) { return String.fromCodePoint(parseInt(g, 16)); });
-        // \uXXXX -> basic multilingual plane
-        s = s.replace(/\\u([0-9a-fA-F]{4})/g, function (_, g) { return String.fromCharCode(parseInt(g, 16)); });
-        return s;
-      }
-
       document.documentElement.lang = t.htmlLang;
-      document.title = decodeEscapes(t.pageTitle);
+      document.title = t.pageTitle;
       var siteTitle = document.getElementById('site-title');
-      if (siteTitle) siteTitle.textContent = decodeEscapes(t.pageTitle);
-      document.getElementById('header-subtitle').textContent = decodeEscapes(t.headerSubtitle);
-      document.getElementById('about-title').textContent = decodeEscapes(t.aboutTitle);
+      if (siteTitle) siteTitle.textContent = t.pageTitle;
+      document.getElementById('header-subtitle').textContent = t.headerSubtitle;
+      document.getElementById('about-title').textContent = t.aboutTitle;
 
-      var aboutP = decodeEscapes(t.aboutP1 || '');
-      var aboutHtml = t.aboutHtml ? decodeEscapes(t.aboutHtml) : null;
+      var aboutP = t.aboutP1 || '';
+      var aboutHtml = t.aboutHtml ? t.aboutHtml : null;
       if (aboutHtml) {
         // ensure label spans use the auto class so labels are left-aligned
         aboutHtml = aboutHtml.replace(/<span class="info-label">/g, '<span class="info-label info-label-auto">');
@@ -357,23 +345,23 @@
         el.textContent = (el.textContent || '').replace(/^[\s\u3000]+/, '');
       });
 
-      document.getElementById('faq-title').textContent = decodeEscapes(t.faqTitle);
+      document.getElementById('faq-title').textContent = t.faqTitle;
       var faqList = document.getElementById('faq-list');
       faqList.innerHTML = '';
       (t.faqItems || []).forEach(function (item) {
         var li = document.createElement('li');
         var qEl = document.createElement('div');
         qEl.className = 'faq-question';
-        qEl.textContent = decodeEscapes(item.q).replace(/^[\s\u3000]+/, '');
+        qEl.textContent = item.q.replace(/^[\s\u3000]+/, '');
         var aEl = document.createElement('div');
         aEl.className = 'faq-answer';
-        aEl.textContent = decodeEscapes(item.a).replace(/^[\s\u3000]+/, '');
+        aEl.textContent = item.a.replace(/^[\s\u3000]+/, '');
         li.appendChild(qEl);
         li.appendChild(aEl);
         faqList.appendChild(li);
       });
 
-      document.getElementById('privacy-title').textContent = decodeEscapes(t.privacyTitle);
+      document.getElementById('privacy-title').textContent = t.privacyTitle;
       var privacyP = document.getElementById('privacy-p1');
       var privacyList = document.getElementById('privacy-list');
       if (t.privacyItems && t.privacyItems.length) {
@@ -383,10 +371,10 @@
           var li = document.createElement('li');
           var qEl = document.createElement('div');
           qEl.className = 'faq-question';
-          qEl.textContent = decodeEscapes(item.q).replace(/^[\s\u3000]+/, '');
+          qEl.textContent = item.q.replace(/^[\s\u3000]+/, '');
           var aEl = document.createElement('div');
           aEl.className = 'faq-answer';
-          aEl.textContent = decodeEscapes(item.a).replace(/^[\s\u3000]+/, '');
+          aEl.textContent = item.a.replace(/^[\s\u3000]+/, '');
           li.appendChild(qEl);
           li.appendChild(aEl);
           privacyList.appendChild(li);
@@ -394,13 +382,14 @@
       } else {
         privacyList.innerHTML = '';
         privacyP.style.display = '';
-        privacyP.textContent = decodeEscapes(t.privacyP1);
+        privacyP.textContent = t.privacyP1;
       }
-      document.getElementById('contact-title').textContent = decodeEscapes(t.contactTitle);
-      document.getElementById('contact-p1').textContent = decodeEscapes(t.contactP1);
-      document.getElementById('contact-btn').textContent = decodeEscapes(t.contactBtn);
+      document.getElementById('contact-title').textContent = t.contactTitle;
+      // contactP1 may contain HTML (paragraphs/links). Use innerHTML so paragraphs break correctly.
+      document.getElementById('contact-p1').innerHTML = t.contactP1;
+      document.getElementById('contact-btn').textContent = t.contactBtn;
       // replace {year} placeholder with current year so footer always stays up-to-date
-      var footerRaw = decodeEscapes(t.footerText || '');
+      var footerRaw = t.footerText || '';
       var footerRendered = footerRaw.replace('{year}', new Date().getFullYear());
       document.getElementById('footer-text').innerHTML = footerRendered;
     }
@@ -421,7 +410,7 @@
         var img = wrapper.querySelector('#about-graphic');
         if (img) {
           img.style.maxWidth = '360px';
-          img.style.width = '60%';
+          img.style.width = '80%';
           img.style.height = 'auto';
           img.style.display = 'inline-block';
           img.style.borderRadius = '8px';
@@ -435,9 +424,9 @@
 <script>
   function setLang(v) {
     const map = {
-      'zh-TW': './zh-TW.html',
-      'zh-CN': './cn.html',
       'en': './index.html',
+      'zh-CN': './cn.html',
+      'zh-TW': './zh-TW.html',
       'ja': './ja.html'
     };
     location.href = map[v] || './index.html';
