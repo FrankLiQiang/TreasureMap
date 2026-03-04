@@ -4,7 +4,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>TreasureMap – 技術サポート</title>
+  <title>トレジャーマップ – 技術サポート</title>
   <style>
     *,
     *::before,
@@ -236,13 +236,13 @@
   <header>
     <div id="lang-selector">
       <select id="lang-select" onchange="setLang(this.value)">
+        <option value="en">English</option>
         <option value="zh-CN">简体中文</option>
         <option value="zh-TW">繁体中文</option>
-        <option value="en" selected>English</option>
-        <option value="ja">日本語</option>
+        <option value="ja" selected>日本語</option>
       </select>
     </div>
-    <h1 id="site-title">TreasureMap</h1>
+    <h1 id="site-title">トレジャーマップ</h1>
     <p id="header-subtitle"></p>
   </header>
 
@@ -250,16 +250,16 @@
 
     <section>
       <div class="about-graphic-wrapper">
-        <img id="about-graphic" class="protected" src="about.png" alt="About graphic" oncontextmenu="return false;" draggable="false">
-          <script>
-            document.addEventListener('contextmenu', function (e) {
-              if (e.target && e.target.tagName === 'IMG') {
-                e.preventDefault();
-              }
-            }, { capture: true });
-          </script>
+        <img id="about-graphic" class="protected" src="about.png" alt="About graphic" oncontextmenu="return false;"
+          draggable="false">
+        <script>
+          document.addEventListener('contextmenu', function (e) {
+            if (e.target && e.target.tagName === 'IMG') {
+              e.preventDefault();
+            }
+          }, { capture: true });
+        </script>
       </div>
-
       <h2 id="about-title"></h2>
       <div id="about-p1"></div>
     </section>
@@ -290,61 +290,48 @@
       'ja': {
         htmlLang: 'ja',
         pageTitle: 'トレジャーマップ',
-        headerSubtitle: '\u30c6\u30af\u30cb\u30ab\u30eb\u30b5\u30dd\u30fc\u30c8',
-        aboutTitle: '\uD83D\uDCD6 \u30a2\u30d7\u30ea\u306b\u3064\u3044\u3066',
-        aboutP1: '\u300c\u30c8\u30ec\u30b8\u30e3\u30fc\u30de\u30c3\u30d7\u300d\u306f\u6a5f\u5bc6\u60c5\u5831\u3092\u4fdd\u8b77\u3059\u308b\u305f\u3081\u306e\u30af\u30ed\u30b9\u30d7\u30e9\u30c3\u30c8\u30d5\u30a9\u30fc\u30e0\u30a2\u30d7\u30ea\u3067\u3001\u6587\u66f8\u3001\u52d5\u753b\u3001\u97f3\u58f0\u3001\u305d\u306e\u4ed6\u306e\u30d5\u30a1\u30a4\u30eb\u3092\u753b\u50cf\u306b\u5b89\u5168\u306b\u57cb\u3081\u8fbc\u3081\u3001\u5916\u898b\u306b\u307b\u3068\u3093\u3069\u5909\u5316\u304c\u3042\u308a\u307e\u305b\u3093\u3002\n\n<strong>\u4e3b\u306a\u6a5f\u80fd\uff1a</strong>\u30ea\u30b9\u30c8\u30fb\u30c6\u30ad\u30b9\u30c8\u30fb\u30d5\u30a1\u30a4\u30eb\u306e\u57cb\u3081\u8fbc\u307f\u3001\u304a\u3088\u3073\u30d5\u30a1\u30a4\u30eb\u5358\u4f53\u306e\u6697\u53f7\u5316\uff08\u753b\u50cf\u306f\u4e0d\u8981\uff09\u3002\n<strong>\u5229\u7528\u30b7\u30fc\u30f3\uff1a</strong>\u91cd\u8981\u306a\u60c5\u5831\u306e\u4fdd\u5b58\u3001\u30aa\u30d5\u30b5\u30a4\u30c8\u30d0\u30c3\u30af\u30a2\u30c3\u30d7\u3001\u304a\u3088\u3073\u6697\u53f7\u5316\u901a\u4fe1\u3002\n<strong>\u5bfe\u5fdc\u30d7\u30e9\u30c3\u30c8\u30d5\u30a9\u30fc\u30e0\uff1a</strong> iOS\u3001Android\u3001macOS\u3001Windows\u3002',
-        aboutHtml: '<p>\u300c\u30c8\u30ec\u30b8\u30e3\u30fc\u30de\u30c3\u30d7\u300d\u306f\u6a5f\u5bc6\u60c5\u5831\u3092\u4fdd\u8b77\u3059\u308b\u305f\u3081\u306e\u30af\u30ed\u30b9\u30d7\u30e9\u30c3\u30c8\u30d5\u30a9\u30fc\u30e0\u30a2\u30d7\u30ea\u3067\u3001\u6587\u66f8\u3001\u52d5\u753b\u3001\u97f3\u58f0\u3001\u305d\u306e\u4ed6\u306e\u30d5\u30a1\u30a4\u30eb\u3092\u753b\u50cf\u306b\u5b89\u5168\u306b\u57cb\u3081\u8fbc\u3081\u3001\u5916\u898b\u306b\u307b\u3068\u3093\u3069\u5909\u5316\u304c\u3042\u308a\u307e\u305b\u3093\u3002</p>\n<div class="info-line"><span class="info-label info-label-auto"><strong>\u4e3b\u306a\u6a5f\u80fd\uff1a</strong></span><span class="info-value">\u30ea\u30b9\u30c8\u30fb\u30c6\u30ad\u30b9\u30c8\u30fb\u30d5\u30a1\u30a4\u30eb\u306e\u57cb\u3081\u8fbc\u307f\u3001\u304a\u3088\u3073\u30d5\u30a1\u30a4\u30eb\u5358\u4f53\u306e\u6697\u53f7\u5316\uff08\u753b\u50cf\u306f\u4e0d\u8981\uff09\u3002</span></div>\n<div class="info-line"><span class="info-label info-label-auto"><strong>\u5229\u7528\u30b7\u30fc\u30f3\uff1a</strong></span><span class="info-value">\u91cd\u8981\u306a\u60c5\u5831\u306e\u4fdd\u5b58\u3001\u30aa\u30d5\u30b5\u30a4\u30c8\u30d0\u30c3\u30af\u30a2\u30c3\u30d7\u3001\u304a\u3088\u3073\u6697\u53f7\u5316\u901a\u4fe1\u3002</span></div>\n<div class="info-line"><span class="info-label info-label-auto"><strong>\u5bfe\u5fdc\u30d7\u30e9\u30c3\u30c8\u30d5\u30a9\u30fc\u30e0\uff1a</strong></span><span class="info-value">iOS\u3001Android\u3001macOS\u3001Windows\u3002</span></div>',
-        faqTitle: '\u2753 \u3088\u304f\u3042\u308b\u8cea\u554f',
+        headerSubtitle: '技術サポート',
+        aboutTitle: '📖 このアプリについて',
+        aboutP1: 'トレジャーマップは、機密情報を保護し、文書、画像、音声、動画などの情報を見た目に目立つ変化なく安全に埋め込むクロスプラットフォームアプリです。 また、サイズに制限がなく、画像キャリアに接続する必要のない高度な暗号化機構も提供します。',
+        aboutHtml: '<p>トレジャーマップは、機密情報を保護し、文書、画像、音声、動画などの情報を見た目に目立つ変化なく安全に埋め込むクロスプラットフォームアプリです。 また、サイズに制限がなく、画像キャリアに接続する必要のない高度な暗号化機構も提供します。</p><div class="info-line"><span class="info-label"><strong>主な特徴:</strong></span><span class="info-value">リスト、テキスト、ファイル、ファイル暗号化の埋め込み(画像不要)</span></div><div class="info-line"><span class="info-label"><strong>応用シナリオ:</strong></span><span class="info-value">重要な情報は異なる場所に保存・バックアップされています。</span></div><div class="info-line"><span class="info-label"><strong>対応プラットフォーム:</strong></span><span class="info-value">iOS、Android、macOS、Windows。</span></div>',
+        faqTitle: '❓ よくある質問',
         faqItems: [
-          { q: '\u96a0\u3057\u305f\u30d5\u30a1\u30a4\u30eb\u306f\u3069\u3046\u3084\u3063\u3066\u5909\u66f4\uff0f\u524a\u9664\u3057\u307e\u3059\u304b\uff1f', a: '\u96a0\u3057\u305f\u30d5\u30a1\u30a4\u30eb\u3092\u5909\u66f4\u3059\u308b\u306b\u306f\u3001\u300c\u30d5\u30a1\u30a4\u30eb\u300d\u753b\u9762\u3067\u300c\u30d5\u30a1\u30a4\u30eb\u3092\u9078\u629e\u300d\u3092\u958b\u304d\u3001\u5909\u66f4\u6e08\u307f\u306e\u30d5\u30a1\u30a4\u30eb\u3092\u518d\u9078\u629e\u3057\u3066\u304b\u3089\u300c\u6697\u53f7\u5316\u300d\u3067\u4fdd\u5b58\u3057\u3066\u304f\u3060\u3055\u3044\u3002\n\u96a0\u3057\u8868\u793a\u3092\u89e3\u9664\u3059\u308b\u306b\u306f\u3001\u30d5\u30a1\u30a4\u30eb\u753b\u9762\u3067\u300c\u9078\u629e\u89e3\u9664\u300d\u3092\u30bf\u30c3\u30d7\u3057\u3001\u540c\u69d8\u306b\u300c\u6697\u53f7\u5316\u300d\u3067\u4fdd\u5b58\u3057\u307e\u3059\u3002\n\u901a\u5e38\u306e\u7d42\u4e86\u3084\u5207\u66ff\u6642\u306b\u306f\u5fa9\u53f7\u3055\u308c\u305f\u96a0\u3057\u30d5\u30a1\u30a4\u30eb\u306f\u81ea\u52d5\u3067\u524a\u9664\u3055\u308c\u307e\u3059\u304c\u3001\u7570\u5e38\u7d42\u4e86\u3057\u305f\u5834\u5408\u306f\u6b8b\u308b\u3053\u3068\u304c\u3042\u308a\u307e\u3059\u3002\n\u30db\u30b9\u30c8\u753b\u50cf\u306f\u30a2\u30d7\u30ea\u306b\u3088\u3063\u3066\u524a\u9664\u3055\u308c\u307e\u305b\u3093\u3002' },
-          { q: '\u30d5\u30a1\u30a4\u30eb\u81ea\u4f53\u3092\u753b\u50cf\u306a\u3057\u3067\u6697\u53f7\u5316\u3059\u308b\u306b\u306f\u3069\u3046\u3059\u308c\u3070\u3044\u3044\u3067\u3059\u304b\uff1f', a: '\u306f\u3044\u3002\u300c\u30d5\u30a1\u30a4\u30eb\uff08\u81ea\u8eab\uff09\u300d\u753b\u9762\u3067\u3001\u30d5\u30a1\u30a4\u30eb\u3092\u30d1\u30b9\u30ef\u30fc\u30c9\u3067\u6697\u53f7\u5316\u3067\u304d\u307e\u3059\uff08\u753b\u50cf\u306f\u4e0d\u8981\uff09\u3002\u3053\u306e\u65b9\u6cd5\u3067\u4f5c\u6210\u3057\u305f\u6697\u53f7\u5316\u30d5\u30a1\u30a4\u30eb\u306f\u672c\u30a2\u30d7\u30ea\u3067\u306e\u307f\u5fa9\u53f7\u53ef\u80fd\u3067\u3059\u3002\u30d1\u30b9\u30ef\u30fc\u30c9\u306f\u5fc5\u305a\u53b3\u91cd\u306b\u4fdd\u7ba1\u3057\u3066\u304f\u3060\u3055\u3044\u3002\\n\u30a2\u30d7\u30ea\u306f\u5e38\u306b\u30d1\u30b9\u30ef\u30fc\u30c9\u306e\u6b63\u8aa4\u3092\u5224\u5225\u3067\u304d\u308b\u308f\u3051\u3067\u306f\u3042\u308a\u307e\u305b\u3093\u3002\u8aa4\u3063\u305f\u30d1\u30b9\u30ef\u30fc\u30c9\u3067\u5fa9\u53f7\u3057\u3066\u4ed6\u306e\u30bd\u30d5\u30c8\u3067\u958b\u3051\u306a\u3044\u5834\u5408\u306f\u3001\u540c\u3058\uff08\u8aa4\u3063\u3066\u5165\u529b\u3057\u305f\uff09\u30d1\u30b9\u30ef\u30fc\u30c9\u3092\u4f7f\u3063\u3066\u5143\u306e\u72b6\u614b\u306b\u623b\u3057\u3066\u304f\u3060\u3055\u3044\u3002' },
-          { q: '\u5143\u753b\u50cf\u306f\u3069\u3046\u524a\u9664\u3055\u308c\u307e\u3059\u304b\uff1f\u4e0a\u66f8\u304d\u30eb\u30fc\u30eb\u306f\u4f55\u3067\u3059\u304b\uff1f', a: '\u30db\u30b9\u30c8\u753b\u50cf\u306b\u3064\u3044\u3066\u306f\u3001Windows \u3068 macOS \u3067\u306f\u300c\u6697\u53f7\u5316\u300d\u4fdd\u5b58\u304c\u5143\u306e\u753b\u50cf\u3092\u4e0a\u66f8\u304d\u3057\u307e\u3059\u3002Android \u3068 iOS \u3067\u306f\u3001\u6697\u53f7\u5316\u4fdd\u5b58\u3054\u3068\u306b\u65b0\u3057\u3044\u753b\u50cf\u304c\u4f5c\u6210\u3055\u308c\u3001\u5143\u753b\u50cf\u3092\u524a\u9664\u3059\u308b\u304b\u3069\u3046\u304b\u306f\u30e6\u30fc\u30b6\u30fc\u304c\u9078\u3079\u307e\u3059\u3002\\n\u5fa9\u53f7\u3055\u308c\u305f\u96a0\u3057\u30d5\u30a1\u30a4\u30eb\u306f\u3001\u4fdd\u5b58\u5148\u306b\u540c\u540d\u306e\u30d5\u30a1\u30a4\u30eb\u304c\u3042\u308c\u3070\u4e0a\u66f8\u304d\u3057\u307e\u3059\u3002\\n\u30d5\u30a1\u30a4\u30eb\u81ea\u4f53\uff08\u672c\u4f53\uff09\u3092\u5fa9\u53f7\u307e\u305f\u306f\u6697\u53f7\u5316\u3057\u3066\u51fa\u529b\u3057\u305f\u5834\u5408\u3082\u3001\u4fdd\u5b58\u5148\u306b\u540c\u540d\u30d5\u30a1\u30a4\u30eb\u304c\u3042\u308c\u3070\u4e0a\u66f8\u304d\u3055\u308c\u307e\u3059\u3002' },
-          { q: '\u753b\u50cf\u306e\u30d1\u30b9\u30ef\u30fc\u30c9\u306f\u3069\u3046\u5909\u66f4\u3057\u307e\u3059\u304b\uff1f', a: '\u73fe\u5728\u306e\u30d1\u30b9\u30ef\u30fc\u30c9\u3067\u753b\u50cf\u3092\u958b\u304d\u3001\u300c\u753b\u50cf\u3092\u9078\u629e\u300d\u2192\u300c\u6697\u53f7\u5316\u300d\u3067\u65b0\u3057\u3044\u30d1\u30b9\u30ef\u30fc\u30c9\u30922\u56de\u5165\u529b\u3057\u3066\u78ba\u5b9a\u3057\u3066\u304f\u3060\u3055\u3044\u3002\u60c5\u5831\u304c\u753b\u50cf\u306b\u4fdd\u5b58\u3055\u308c\u3001\u753b\u50cf\u306e\u30d1\u30b9\u30ef\u30fc\u30c9\u304c\u5909\u66f4\u3055\u308c\u307e\u3059\u3002' },
-          { q: '\u5bbf\u4e3b\u753b\u50cf\u3092\u3069\u3046\u3084\u3063\u3066\u7f6e\u304d\u63db\u3048\u307e\u3059\u304b\uff1f', a: '\u5143\u753b\u50cf\u3092\u30a2\u30f3\u30ed\u30c3\u30af\u3057\u305f\u72b6\u614b\u3067\u300c\u753b\u50cf\u3092\u9078\u629e\u300d\u3092\u30bf\u30c3\u30d7\u3057\u3001\u65b0\u3057\u3044\u753b\u50cf\u3092\u9078\u3093\u3067\u304b\u3089\u300c\u6697\u53f7\u5316\u300d\u3092\u62bc\u3059\u3068\u3001\u57cb\u3081\u8fbc\u307e\u308c\u305f\u60c5\u5831\u304c\u65b0\u3057\u3044\u753b\u50cf\u306b\u66f8\u304d\u8fbc\u307e\u308c\u307e\u3059\u3002\u5143\u753b\u50cf\u306f\u624b\u52d5\u3067\u524a\u9664\u3057\u306a\u3044\u9650\u308a\u6b8b\u308a\u307e\u3059\u3002' },
-          { q: '\u5bbf\u4e3b\u753b\u50cf\u3092\u8ee2\u9001\uff0f\u5171\u6709\u3059\u308b\u306b\u306f\u3069\u3046\u3059\u308c\u3070\u3044\u3044\u3067\u3059\u304b\uff1f\u691c\u8a3c\u30b3\u30fc\u30c9\u3068\u306f\u4f55\u3067\u3059\u304b\uff1f', a: '\u30d7\u30e9\u30c3\u30c8\u30d5\u30a9\u30fc\u30e0\u9593\u3067\u753b\u50cf\u3092\u9001\u308b\u969b\u306f\u5fc5\u305a\u30aa\u30ea\u30b8\u30ca\u30eb\u306e\u753b\u50cf\u30d5\u30a1\u30a4\u30eb\u3092\u9001\u3063\u3066\u304f\u3060\u3055\u3044\u3002\u305d\u3046\u3057\u306a\u3044\u3068\u6b63\u3057\u304f\u5fa9\u53f7\u3067\u304d\u306a\u3044\u3053\u3068\u304c\u3042\u308a\u307e\u3059\u3002\\n\u9078\u629e\u753b\u9762\u306e\u300c\u691c\u8a3c\u30b3\u30fc\u30c9\u3092\u30b3\u30d4\u30fc\u300d\u30dc\u30bf\u30f3\u3067\u753b\u50cf\u306e\u691c\u8a3c\u30b3\u30fc\u30c9\u3092\u30b3\u30d4\u30fc\u3067\u304d\u307e\u3059\u3002\u540c\u3058\u691c\u8a3c\u30b3\u30fc\u30c9\u306e\u753b\u50cf\u306e\u307f\u304c\u540c\u3058\u57cb\u3081\u8fbc\u307f\u60c5\u5831\u3092\u5fa9\u53f7\u3067\u304d\u307e\u3059\u3002\\n\u5143\u306e\u753b\u50cf\u3068\u691c\u8a3c\u30b3\u30fc\u30c9\u3060\u3051\u3092\u5171\u6709\u3057\u3066\u3082\u57cb\u3081\u8fbc\u307e\u308c\u305f\u60c5\u5831\u306f\u6f0f\u308c\u307e\u305b\u3093\u3002\u5143\u306e\u753b\u50cf\uff0b\u30d1\u30b9\u30ef\u30fc\u30c9\uff0b\u672c\u30a2\u30d7\u30ea\u306e\u7d44\u307f\u5408\u308f\u305b\u3067\u521d\u3081\u3066\u3001\u57cb\u3081\u8fbc\u307e\u308c\u305f\u60c5\u5831\u3092\u5fa9\u53f7\u3067\u304d\u307e\u3059\u3002' }
+          { q: '隠しファイルをどうやって変更・削除すればいいですか?', a: '隠しファイルを修正したい場合は、「ファイルイ」画面→「ファイル選択」で再度画像を書き戻し、暗号化して保存します。\n非表示を解除するには、「ファイル」画面の「選択解除」をクリックしてセーブデータを暗号化してください。\n通常通り終了や切り替えを行うと、復号された隠しファイルは削除され、異常な退出が残ることがあります。' },
+          { q: 'ホストイメージに頼らずにファイル自体を暗号化するにはどうすればいいですか?', a: '「ファイル自体」画面では、ファイルを個別にパスワードで暗号化できます(画像は不要)。 暗号化されたファイルはこのアプリケーションでのみ復号可能です。暗号化されたファイルは本アプリでのみ復号できます。パスワードは大切に保管してください。紛失した場合、復元できません。\n本アプリではパスワードが正しいかどうかを判定できません。誤ったパスワードで復号した結果、対応するソフトでファイルを開けない場合は、同じ（先ほど誤って入力した）パスワードを使用して、復号前の状態に復元してください。' },
+          { q: '元の画像はどうやって削除すればいいですか? オーバーライドルールとは何ですか?', a: 'ホストイメージ:Windows/macOSは元のイメージを上書きします。 Android/iOSは保存するたびに新しい画像を生成します。 ユーザーは元の画像を削除する裁量があります。\n隠しファイル:復号化された隠しファイルは同じ名前のファイルを上書きします。\nファイル自体:復号または暗号化されたファイルは、同じ名前のファイルを上書きします。' },
+          { q: '写真のパスワードはどうやって変更すればいいですか?', a: '元のパスワードで画像を開き、「ホーム」→「暗号化」で新しいパスワードを2回入力して確認し、情報を画像に暗号化して保存することで、画像のパスワードを変更できます。' },
+          { q: 'ホストの画像はどうやって変更すればいいですか?', a: '元の画像をロック解除した後、「画像選択」をクリックして新しい画像を選択し、「暗号化」をクリックして新しい画像に情報を書き込みます。 元の画像は今でも保持可能です。' },
+          { q: 'ホスト画像をどのように送信し共有すればよいのでしょうか? チェックサムとは何ですか?', a: 'クロスプラットフォーム/デバイス転送の場合は、元の画像を送信してください。そうでなければ復号できません。\n「検証コードをコピー」を使って画像のチェックサムを取得し、同じ検証コードを持つ画像だけが同じ情報を復号できます。\n元の画像と検証コードのみが共有され、情報の漏洩は一切ありません。 画像情報が解除されるのは元の画像+パスワード+このアプリケーションだけです。' }
         ],
         privacyItems: [
-          { q: '\u7b2c1\u6761 \u60c5\u5831\u306e\u53d6\u5f97\u306b\u3064\u3044\u3066', a: '\u672c\u30a2\u30d7\u30ea\u306f\u3001\u5229\u7528\u8005\u306e\u500b\u4eba\u30d5\u30a1\u30a4\u30eb\u5185\u5bb9\u3092\u53ce\u96c6\u3001\u9001\u4fe1\u3001\u4fdd\u5b58\u3059\u308b\u3053\u3068\u306f\u3042\u308a\u307e\u305b\u3093\u3002\n\u672c\u30a2\u30d7\u30ea\u306f\u30a2\u30ab\u30a6\u30f3\u30c8\u767b\u9332\u6a5f\u80fd\u3092\u63d0\u4f9b\u3057\u3066\u304a\u308a\u307e\u305b\u3093\u3002\n\u30af\u30e9\u30a6\u30c9\u4fdd\u5b58\u30b5\u30fc\u30d3\u30b9\u3082\u63d0\u4f9b\u3057\u3066\u304a\u308a\u307e\u305b\u3093\u3002\n\u3059\u3079\u3066\u306e\u30c7\u30fc\u30bf\u51e6\u7406\u306f\u5229\u7528\u8005\u306e\u7aef\u672b\u5185\u3067\u884c\u308f\u308c\u307e\u3059\u3002' },
-          { q: '\u7b2c2\u6761 \u6a29\u9650\u306b\u3064\u3044\u3066', a: '\u672c\u30a2\u30d7\u30ea\u306f\u6a5f\u80fd\u3092\u63d0\u4f9b\u3059\u308b\u305f\u3081\u3001\u4ee5\u4e0b\u306e\u6a29\u9650\u3092\u8981\u6c42\u3059\u308b\u5834\u5408\u304c\u3042\u308a\u307e\u3059\u3002\n\u30b9\u30c8\u30ec\u30fc\u30b8\u30a2\u30af\u30bb\u30b9\uff1a\u30d5\u30a1\u30a4\u30eb\u3092\u8aad\u307f\u53d6\u308a\u3001\u30db\u30b9\u30c8\u753b\u50cf\u306b\u30d5\u30a1\u30a4\u30eb\u3092\u96a0\u853d\u3059\u308b\u305f\u3081\u3001\u53ca\u3073\u30d5\u30a1\u30a4\u30eb\u81ea\u4f53\u306e\u6697\u53f7\u5316\uff0f\u5fa9\u53f7\u306b\u4f7f\u7528\u3057\u307e\u3059\u3002\n\u30e1\u30c7\u30a3\u30a2\u30a2\u30af\u30bb\u30b9\uff1a\u30db\u30b9\u30c8\u753b\u50cf\u306b\u96a0\u3057\u60c5\u5831\u3092\u4fdd\u5b58\u3059\u308b\u305f\u3081\u306b\u4f7f\u7528\u3057\u307e\u3059\u3002\n\u4e0a\u8a18\u306e\u6a29\u9650\u306f\u6a5f\u80fd\u306e\u5b9f\u73fe\u306e\u307f\u306b\u4f7f\u7528\u3055\u308c\u3001\u30c7\u30fc\u30bf\u53ce\u96c6\u306b\u306f\u4f7f\u7528\u3057\u307e\u305b\u3093\u3002' },
-          { q: '\u7b2c3\u6761 \u30c7\u30fc\u30bf\u901a\u4fe1\u306b\u3064\u3044\u3066', a: '\u672c\u30a2\u30d7\u30ea\u306f\u5916\u90e8\u30b5\u30fc\u30d0\u30fc\u3078\u306e\u30c7\u30fc\u30bf\u9001\u4fe1\u3092\u884c\u3044\u307e\u305b\u3093\u3002\n\u7b2c\u4e09\u8005\u3078\u5229\u7528\u8005\u306e\u30d5\u30a1\u30a4\u30eb\u5185\u5bb9\u3092\u63d0\u4f9b\u3059\u308b\u3053\u3068\u306f\u3042\u308a\u307e\u305b\u3093\u3002' },
-          { q: '\u7b2c4\u6761 \u30c7\u30fc\u30bf\u5b89\u5168\u6027', a: '\u3059\u3079\u3066\u306e\u30c7\u30fc\u30bf\u306f\u5229\u7528\u8005\u306e\u7aef\u672b\u5185\u306b\u4fdd\u5b58\u3055\u308c\u307e\u3059\u3002\n\u5229\u7528\u8005\u306f\u30d1\u30b9\u30ef\u30fc\u30c9\u304a\u3088\u3073\u7aef\u672b\u306e\u7ba1\u7406\u3092\u81ea\u5df1\u8cac\u4efb\u3067\u884c\u3046\u3082\u306e\u3068\u3057\u307e\u3059\u3002\n\u672c\u30a2\u30d7\u30ea\u306f\u30d1\u30b9\u30ef\u30fc\u30c9\u5fa9\u65e7\u6a5f\u80fd\u3092\u63d0\u4f9b\u3057\u3066\u304a\u308a\u307e\u305b\u3093\u3002' },
-          { q: '\u7b2c5\u6761 \u7b2c\u4e09\u8005\u30b5\u30fc\u30d3\u30b9', a: '\u672c\u30a2\u30d7\u30ea\u306f\u5e83\u544a\u30b5\u30fc\u30d3\u30b9\u3092\u7d71\u5408\u3057\u3066\u304a\u308a\u307e\u305b\u3093\u3002\n\u5229\u7528\u72b6\u6cc1\u5206\u6790\u30b5\u30fc\u30d3\u30b9\u3082\u7d71\u5408\u3057\u3066\u304a\u308a\u307e\u305b\u3093\u3002\n\u5c06\u6765\u7d71\u5408\u3059\u308b\u5834\u5408\u306f\u3001\u672c\u30dd\u30ea\u30b7\u30fc\u3092\u66f4\u65b0\u3057\u307e\u3059\u3002' },
-          { q: '\u7b2c6\u6761 \u30dd\u30ea\u30b7\u30fc\u5909\u66f4', a: '\u672c\u30a2\u30d7\u30ea\u306f\u3001\u6cd5\u4ee4\u307e\u305f\u306f\u6a5f\u80fd\u5909\u66f4\u306b\u5fdc\u3058\u3066\u672c\u30dd\u30ea\u30b7\u30fc\u3092\u6539\u5b9a\u3059\u308b\u5834\u5408\u304c\u3042\u308a\u307e\u3059\u3002\n\u6539\u5b9a\u5f8c\u306f\u30a2\u30d7\u30ea\u5185\u3067\u544a\u77e5\u3057\u307e\u3059\u3002' }
+          { q: '1. 情報収集の説明', a: 'このアプリはユーザーの個人ファイルの内容を積極的に収集、アップロード、保存することはありません。\nこのアプリはユーザーアカウントシステムを確立していません。\nこのアプリはサーバーストレージサービスを提供していません。\nすべてのデータ処理はユーザーのローカルデバイス内で行われます。' },
+          { q: '2. 許可の使用説明', a: 'この関数を実装するために、このアプリケーションは以下の権限を要求することができます:\nストレージアクセス:ホストイメージへのファイルの読み取りと非表示、ファイル自体の暗号化・復号に使用されます。\nメディアアクセス:ホスト画像に隠された情報を保存するためのもの。\n上記の権限は機能実装のみに使用され、データ収集には使用されません。' },
+          { q: '3. データ転送の説明', a: 'このアプリはリモートデータ送信を行いません。\nこのアプリは、ユーザーファイルのコンテンツを第三者に提供しません。' },
+          { q: '4. データセキュリティ', a: 'すべてのファイルはユーザーのデバイスにローカルに保存されます。\nユーザーはパスワードやデバイスを安全に管理すべきです。\nこのアプリにはパスワード回復機能はありません。' },
+          { q: '5. 第三者サービス', a: '有料ユーザー向けには、このアプリは広告サービスを統合していません。\nこのアプリはユーザー行動分析サービスを統合していません。\n将来的に第三者サービスを統合する場合は、この方針の説明を更新します。' },
+          { q: '6. 政策変更', a: 'アプリは法律により必要とされる方針や機能更新に応じて、本ポリシーを変更する権利を留保します。\n変更点はアプリ内で発表されます。' }
         ],
         privacyTitle: '🔒 プライバシーポリシー',
-        contactTitle: '\uD83D\uDCEC \u304a\u554f\u3044\u5408\u308f\u305b',
-        contactP1: '\u3054\u8cea\u554f\u3084\u3054\u610f\u898b\u304c\u3054\u3056\u3044\u307e\u3057\u305f\u3089\u3001\u4ee5\u4e0b\u306e\u65b9\u6cd5\u3067\u304a\u554f\u3044\u5408\u308f\u305b\u304f\u3060\u3055\u3044\uff1a',
-        contactBtn: 'Issue \u3092\u9001\u308b',
-        footerText: '\u00a9 {year} Frank. Li Qiang \u00b7 TreasureMap'
-      }
+        contactTitle: '📬 お問い合わせ',
+        contactP1: '<p>ご質問やご提案があれば、どうぞお気軽に以下までお問い合わせください:</p><p>メール:treasuremap365.lq@gmail.com</p>',
+        contactBtn: '問題を報告',
+        footerText: '© {year} Frank. Li Qiang · TreasureMap'
+      },
     };
 
     function setLang(lang) {
       var t = i18n[lang];
       if (!t) return;
 
-      function decodeEscapes(s) {
-        if (typeof s !== 'string') return s;
-        // convert literal backslash escapes like "\\n", "\\uXXXX" or "U0001f4d6" into real chars
-        s = s.replace(/\\r/g, '\r').replace(/\\t/g, '\t').replace(/\\n/g, '\n');
-        // \UXXXXXXXX (uppercase U) -> code point
-        s = s.replace(/\\U([0-9a-fA-F]{8})/g, function (_, g) { return String.fromCodePoint(parseInt(g, 16)); });
-        // bare UXXXXXXXX (some sources may have lost the backslash)
-        s = s.replace(/\bU([0-9a-fA-F]{8})\b/g, function (_, g) { return String.fromCodePoint(parseInt(g, 16)); });
-        // \uXXXX -> basic multilingual plane
-        s = s.replace(/\\u([0-9a-fA-F]{4})/g, function (_, g) { return String.fromCharCode(parseInt(g, 16)); });
-        return s;
-      }
-
       document.documentElement.lang = t.htmlLang;
-      document.title = decodeEscapes(t.pageTitle);
+      document.title = t.pageTitle;
       var siteTitle = document.getElementById('site-title');
-      if (siteTitle) siteTitle.textContent = decodeEscapes(t.pageTitle);
-      document.getElementById('header-subtitle').textContent = decodeEscapes(t.headerSubtitle);
-      document.getElementById('about-title').textContent = decodeEscapes(t.aboutTitle);
+      if (siteTitle) siteTitle.textContent = t.pageTitle;
+      document.getElementById('header-subtitle').textContent = t.headerSubtitle;
+      document.getElementById('about-title').textContent = t.aboutTitle;
 
-      var aboutP = decodeEscapes(t.aboutP1 || '');
-      var aboutHtml = t.aboutHtml ? decodeEscapes(t.aboutHtml) : null;
+      var aboutP = t.aboutP1 || '';
+      var aboutHtml = t.aboutHtml ? t.aboutHtml : null;
       if (aboutHtml) {
         // ensure label spans use the auto class so labels are left-aligned
         aboutHtml = aboutHtml.replace(/<span class="info-label">/g, '<span class="info-label info-label-auto">');
@@ -358,23 +345,23 @@
         el.textContent = (el.textContent || '').replace(/^[\s\u3000]+/, '');
       });
 
-      document.getElementById('faq-title').textContent = decodeEscapes(t.faqTitle);
+      document.getElementById('faq-title').textContent = t.faqTitle;
       var faqList = document.getElementById('faq-list');
       faqList.innerHTML = '';
       (t.faqItems || []).forEach(function (item) {
         var li = document.createElement('li');
         var qEl = document.createElement('div');
         qEl.className = 'faq-question';
-        qEl.textContent = decodeEscapes(item.q).replace(/^[\s\u3000]+/, '');
+        qEl.textContent = item.q.replace(/^[\s\u3000]+/, '');
         var aEl = document.createElement('div');
         aEl.className = 'faq-answer';
-        aEl.textContent = decodeEscapes(item.a).replace(/^[\s\u3000]+/, '');
+        aEl.textContent = item.a.replace(/^[\s\u3000]+/, '');
         li.appendChild(qEl);
         li.appendChild(aEl);
         faqList.appendChild(li);
       });
 
-      document.getElementById('privacy-title').textContent = decodeEscapes(t.privacyTitle);
+      document.getElementById('privacy-title').textContent = t.privacyTitle;
       var privacyP = document.getElementById('privacy-p1');
       var privacyList = document.getElementById('privacy-list');
       if (t.privacyItems && t.privacyItems.length) {
@@ -384,10 +371,10 @@
           var li = document.createElement('li');
           var qEl = document.createElement('div');
           qEl.className = 'faq-question';
-          qEl.textContent = decodeEscapes(item.q).replace(/^[\s\u3000]+/, '');
+          qEl.textContent = item.q.replace(/^[\s\u3000]+/, '');
           var aEl = document.createElement('div');
           aEl.className = 'faq-answer';
-          aEl.textContent = decodeEscapes(item.a).replace(/^[\s\u3000]+/, '');
+          aEl.textContent = item.a.replace(/^[\s\u3000]+/, '');
           li.appendChild(qEl);
           li.appendChild(aEl);
           privacyList.appendChild(li);
@@ -395,26 +382,27 @@
       } else {
         privacyList.innerHTML = '';
         privacyP.style.display = '';
-        privacyP.textContent = decodeEscapes(t.privacyP1);
+        privacyP.textContent = t.privacyP1;
       }
-      document.getElementById('contact-title').textContent = decodeEscapes(t.contactTitle);
-      document.getElementById('contact-p1').textContent = decodeEscapes(t.contactP1);
-      document.getElementById('contact-btn').textContent = decodeEscapes(t.contactBtn);
+      document.getElementById('contact-title').textContent = t.contactTitle;
+      // contactP1 may contain HTML (paragraphs/links). Use innerHTML so paragraphs break correctly.
+      document.getElementById('contact-p1').innerHTML = t.contactP1;
+      document.getElementById('contact-btn').textContent = t.contactBtn;
       // replace {year} placeholder with current year so footer always stays up-to-date
-      var footerRaw = decodeEscapes(t.footerText || '');
+      var footerRaw = t.footerText || '';
       var footerRendered = footerRaw.replace('{year}', new Date().getFullYear());
       document.getElementById('footer-text').innerHTML = footerRendered;
     }
     var defaultLang = 'ja';
     document.getElementById('lang-select').value = defaultLang;
     setLang(defaultLang);
-    // 将关于图像从白色卡片内部移动到卡片外面（上方居中）
+    // 「about」画像を白いカード内部からカード外（上部中央）に移動する
     (function moveAboutGraphic() {
       try {
         var main = document.querySelector('main');
         var wrapper = document.querySelector('.about-graphic-wrapper');
         if (!main || !wrapper) return;
-        // 如果已经在 main 顶部则不移动
+        // すでに main の先頭にある場合は移動しない
         if (main.firstElementChild === wrapper) return;
         main.insertBefore(wrapper, main.firstElementChild);
         wrapper.style.textAlign = 'center';
@@ -422,7 +410,7 @@
         var img = wrapper.querySelector('#about-graphic');
         if (img) {
           img.style.maxWidth = '360px';
-          img.style.width = '60%';
+          img.style.width = '80%';
           img.style.height = 'auto';
           img.style.display = 'inline-block';
           img.style.borderRadius = '8px';
@@ -436,10 +424,10 @@
 <script>
   function setLang(v) {
     const map = {
-      'ja': './ja.html',
       'en': './index.html',
-      'zh-CN': './cn.html',
+      'ja': './cn.html',
       'zh-TW': './zh-TW.html',
+      'ja': './ja.html'
     };
     location.href = map[v] || './index.html';
   }
