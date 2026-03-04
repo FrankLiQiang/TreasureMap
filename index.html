@@ -250,14 +250,15 @@
 
     <section>
       <div class="about-graphic-wrapper">
-        <img id="about-graphic" class="protected" src="about.png" alt="About graphic" oncontextmenu="return false;" draggable="false">
-          <script>
-            document.addEventListener('contextmenu', function (e) {
-              if (e.target && e.target.tagName === 'IMG') {
-                e.preventDefault();
-              }
-            }, { capture: true });
-          </script>
+        <img id="about-graphic" class="protected" src="about.png" alt="About graphic" oncontextmenu="return false;"
+          draggable="false">
+        <script>
+          document.addEventListener('contextmenu', function (e) {
+            if (e.target && e.target.tagName === 'IMG') {
+              e.preventDefault();
+            }
+          }, { capture: true });
+        </script>
       </div>
 
       <h2 id="about-title"></h2>
@@ -313,7 +314,7 @@
         ],
         privacyTitle: '🔒 Privacy Policy',
         contactTitle: '\uD83D\uDCEC Contact Us',
-        contactP1: '<p>If you have any questions or feedback, feel free to reach out:</p><p>Email: Tmap196@gmail.com</p><p>&nbsp;</p><p>GitHub Issues:</p>',
+        contactP1: '<p>If you have any questions or feedback, feel free to reach out:</p><p>Email: treasuremap365.lq@gmail.com</p><p>&nbsp;</p><p>GitHub Issues:</p>',
         contactBtn: 'Submit an Issue',
         footerText: '\u00a9 {year} Frank. Li Qiang \u00b7 TreasureMap'
       },
@@ -323,28 +324,15 @@
       var t = i18n[lang];
       if (!t) return;
 
-      function decodeEscapes(s) {
-        if (typeof s !== 'string') return s;
-        // convert literal backslash escapes like "\\n", "\\uXXXX" or "U0001f4d6" into real chars
-        s = s.replace(/\\r/g, '\r').replace(/\\t/g, '\t').replace(/\\n/g, '\n');
-        // \UXXXXXXXX (uppercase U) -> code point
-        s = s.replace(/\\U([0-9a-fA-F]{8})/g, function (_, g) { return String.fromCodePoint(parseInt(g, 16)); });
-        // bare UXXXXXXXX (some sources may have lost the backslash)
-        s = s.replace(/\bU([0-9a-fA-F]{8})\b/g, function (_, g) { return String.fromCodePoint(parseInt(g, 16)); });
-        // \uXXXX -> basic multilingual plane
-        s = s.replace(/\\u([0-9a-fA-F]{4})/g, function (_, g) { return String.fromCharCode(parseInt(g, 16)); });
-        return s;
-      }
-
       document.documentElement.lang = t.htmlLang;
-      document.title = decodeEscapes(t.pageTitle);
+      document.title = t.pageTitle;
       var siteTitle = document.getElementById('site-title');
-      if (siteTitle) siteTitle.textContent = decodeEscapes(t.pageTitle);
-      document.getElementById('header-subtitle').textContent = decodeEscapes(t.headerSubtitle);
-      document.getElementById('about-title').textContent = decodeEscapes(t.aboutTitle);
+      if (siteTitle) siteTitle.textContent = t.pageTitle;
+      document.getElementById('header-subtitle').textContent = t.headerSubtitle;
+      document.getElementById('about-title').textContent = t.aboutTitle;
 
-      var aboutP = decodeEscapes(t.aboutP1 || '');
-      var aboutHtml = t.aboutHtml ? decodeEscapes(t.aboutHtml) : null;
+      var aboutP = t.aboutP1 || '';
+      var aboutHtml = t.aboutHtml ? t.aboutHtml : null;
       if (aboutHtml) {
         // ensure label spans use the auto class so labels are left-aligned
         aboutHtml = aboutHtml.replace(/<span class="info-label">/g, '<span class="info-label info-label-auto">');
@@ -358,23 +346,23 @@
         el.textContent = (el.textContent || '').replace(/^[\s\u3000]+/, '');
       });
 
-      document.getElementById('faq-title').textContent = decodeEscapes(t.faqTitle);
+      document.getElementById('faq-title').textContent = t.faqTitle;
       var faqList = document.getElementById('faq-list');
       faqList.innerHTML = '';
       (t.faqItems || []).forEach(function (item) {
         var li = document.createElement('li');
         var qEl = document.createElement('div');
         qEl.className = 'faq-question';
-        qEl.textContent = decodeEscapes(item.q).replace(/^[\s\u3000]+/, '');
+        qEl.textContent = item.q.replace(/^[\s\u3000]+/, '');
         var aEl = document.createElement('div');
         aEl.className = 'faq-answer';
-        aEl.textContent = decodeEscapes(item.a).replace(/^[\s\u3000]+/, '');
+        aEl.textContent = item.a.replace(/^[\s\u3000]+/, '');
         li.appendChild(qEl);
         li.appendChild(aEl);
         faqList.appendChild(li);
       });
 
-      document.getElementById('privacy-title').textContent = decodeEscapes(t.privacyTitle);
+      document.getElementById('privacy-title').textContent = t.privacyTitle;
       var privacyP = document.getElementById('privacy-p1');
       var privacyList = document.getElementById('privacy-list');
       if (t.privacyItems && t.privacyItems.length) {
@@ -384,10 +372,10 @@
           var li = document.createElement('li');
           var qEl = document.createElement('div');
           qEl.className = 'faq-question';
-          qEl.textContent = decodeEscapes(item.q).replace(/^[\s\u3000]+/, '');
+          qEl.textContent = item.q.replace(/^[\s\u3000]+/, '');
           var aEl = document.createElement('div');
           aEl.className = 'faq-answer';
-          aEl.textContent = decodeEscapes(item.a).replace(/^[\s\u3000]+/, '');
+          aEl.textContent = item.a.replace(/^[\s\u3000]+/, '');
           li.appendChild(qEl);
           li.appendChild(aEl);
           privacyList.appendChild(li);
@@ -395,13 +383,13 @@
       } else {
         privacyList.innerHTML = '';
         privacyP.style.display = '';
-        privacyP.textContent = decodeEscapes(t.privacyP1);
+        privacyP.textContent = t.privacyP1;
       }
-      document.getElementById('contact-title').textContent = decodeEscapes(t.contactTitle);
-      document.getElementById('contact-p1').innerHTML = decodeEscapes(t.contactP1);
-      document.getElementById('contact-btn').textContent = decodeEscapes(t.contactBtn);
+      document.getElementById('contact-title').textContent = t.contactTitle;
+      document.getElementById('contact-p1').innerHTML = t.contactP1;
+      document.getElementById('contact-btn').textContent = t.contactBtn;
       // replace {year} placeholder with current year so footer always stays up-to-date
-      var footerRaw = decodeEscapes(t.footerText || '');
+      var footerRaw = t.footerText || '';
       var footerRendered = footerRaw.replace('{year}', new Date().getFullYear());
       document.getElementById('footer-text').innerHTML = footerRendered;
     }
