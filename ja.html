@@ -1,10 +1,10 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ja">
 
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>TreasureMap – 技术支持</title>
+  <title>TreasureMap – 技術サポート</title>
   <style>
     *,
     *::before,
@@ -250,12 +250,14 @@
 
     <section>
       <div class="about-graphic-wrapper">
-        <img id="about-graphic" src="about.png" alt="About graphic" oncontextmenu="return false;" draggable="false">
-        <script>
-          document.addEventListener('contextmenu', function (e) {
-            e.preventDefault();
-          });
-        </script>
+        <img id="about-graphic" class="protected" src="about.png" alt="About graphic" oncontextmenu="return false;" draggable="false">
+          <script>
+            document.addEventListener('contextmenu', function (e) {
+              if (e.target && e.target.tagName === 'IMG') {
+                e.preventDefault();
+              }
+            }, { capture: true });
+          </script>
       </div>
 
       <h2 id="about-title"></h2>
