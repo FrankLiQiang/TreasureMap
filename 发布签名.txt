@@ -1,0 +1,209 @@
+版本管理：
+ C:\APP\ffigen_showdart\showdart\pubspec.yaml
+version: 1.0.0+2
+
+	发布签名 Release keystore
+
+生成签名的命令行：
+keytool -genkeypair -v -keystore release.keystore -alias release -keyalg RSA -keysize 2048 -validity 10000
+
+## 1) 准备发布签名（Release keystore）
+### 方式 A：Android Studio 生成
+`Build > Generate Signed Bundle / APK… > Android App Bundle > Create new…`
+
+### 方式 B：命令行生成（推荐可控）
+````bash
+keytool -genkeypair -v \
+  -keystore release.keystore \
+  -alias release \
+  -keyalg RSA -keysize 2048 -validity 10000
+````
+
+Windwos：
+C:\Users\lqcn\.gradle\gradle.properties
+
+C:\APP\ffigen_showdart\showdart\android\app\release
+
+------------------------------------------------------------------------------------
+
+Mac：
+/Users/liqiang/.gradle/gradle.properties
+C:\APP\TreasureMap\treasuremap.jks
+
+在MAC生成加固混淆的aab版本的命令是什么
+
+cd /Users/liqiang/StudioProjects/ffigen_showdart/showdart
+flutter build appbundle --release --obfuscate --split-debug-info=build/app/outputs/flutter-symbols
+
+生成路径：
+C:\APP\ffigen_showdart\showdart\build\app\outputs\bundle\release\app-release.aab (52.1MB)
+
+
+说明：
+
+--obfuscate 是 Dart 代码混淆。
+--split-debug-info=build/app/outputs/flutter-symbols
+
+会把符号信息单独输出，便于后续定位崩溃，但不要丢。
+产物默认在 showdart/build/app/outputs/bundle/release/ 下。
+
+把 mapping 和 flutter-symbols 一并归档，后面崩溃还原会用到
+
+没明白
+
+意思是这两个目录不要删
+
+这次构建后，你现在至少有这几类文件：
+ 
+安装包：
+app-release.aab
+
+Android 原生混淆映射：
+mapping.txt
+
+Flutter Dart 混淆符号目录：
+flutter-symbols
+
+为什么要留着：
+
+mapping.txt 是给 Android/R8 用的。Java/Kotlin 层如果崩溃，堆栈里的类名和方法名可能已经被混淆成 a、b、c，这个文件能把它还原。
+flutter-symbols 是给 Flutter/Dart 层用的。你这次用了 obfuscate，Dart 崩溃栈也会被混淆，没有这份符号基本没法准确还原。
+你可以把它理解成：
+AAB 是“发布给用户的包”
+mapping 和 flutter-symbols 是“以后排查线上崩溃必须用的字典”
+
+最稳妥的做法是每个发布版本都单独保存一份，比如按版本号归档：
+
+app-release.aab
+mapping.txt
+flutter-symbols 整个目录
+例如你发 1.0.0+1，可以自己整理成这样一个归档目录：
+
+release-archives/1.0.0+1/
+
+app-release.aab
+mapping.txt
+flutter-symbols/
+注意点：
+
+这三份要一一对应，不能混用别的版本的 mapping 或 symbols。
+一旦以后重新 build 了新版本，就要重新保存新版本对应的 mapping 和 symbols。
+AAB 安装包
+mapping.txt：		C:\APP\ffigen_showdart\showdart\build\app\outputs\mapping\release
+flutter-symbols 整个目录
+
+这次验证结果：
+1. AAB 已成功生成： app-release.aab
+2. Dart 混淆符号已生成到 flutter-symbols 目录，后续排查崩溃要保留该目录
+3. Android 原生压缩配置已开启，见 build.gradle 、 build.gradle 和 build.gradle
+4. 现有自定义规则很少，但本次构建成功，说明当前依赖组合下暂时不需要额外补 keep 规则，现状见 proguard-rules.pro
+
+结论是：你现在这套配置已经能打出可发布的混淆压缩 AAB，不需要再额外改 build.gradle 才能出包。
+
+例如你发 1.0.0+1，可以自己整理成这样一个归档目录：
+
+release-archives/1.0.0+1/
+- app-release.aab
+- mapping.txt
+- flutter-symbols/
+
+1. 如果是 Android 原生层的 Java/Kotlin 崩溃，用 mapping.txt
+2. 如果是 Flutter/Dart 代码崩溃，用 flutter-symbols
+3. 如果是 C/C++ native 崩溃，比如你这个项目的 FFI 层崩了，还要用 native-debug-symbols.zip
+C:\APP\ffigen_showdart\showdart\build\app\outputs\native-debug-symbols\release\native-debug-symbols.zip
+
+你可以这样粗略区分：
+
+- 日志里出现 a.b.c、com.xxx.a、方法名全变短，通常是 Android 混淆，查 mapping.txt
+- 日志里明显是 Dart/Flutter 栈，但函数名被混淆了，查 flutter-symbols
+- 日志里出现 SIGSEGV、libc.so、ffigen_showdart、tombstone 这类词，通常是 native 层，查 native-debug-symbols.zip
+
+最常见的实际用法，简单记成这样：
+
+1. Android Java/Kotlin 崩溃
+如果你用 Firebase Crashlytics 或 Play Console，上传 mapping.txt 后，控制台里的混淆栈通常就能自动还原。
+也就是说，这份文件很多时候不是你手工天天看，而是平台帮你还原。
+
+2. Flutter/Dart 崩溃
+这类通常需要你拿到崩溃栈文本，然后用 flutter-symbols 对应的符号文件去还原。
+核心意思就是：
+用这次构建生成的 flutter-symbols，去解这次版本对应的 Dart 崩溃日志。
+版本必须一一对应，不能拿别的版本的符号来解。
+
+3. Native C/C++ 崩溃
+如果以后真遇到 FFI 层崩溃，Google Play 或 NDK 相关工具会用 native-debug-symbols.zip 来还原 so 里的符号。
+这个项目有原生库，所以这份其实也应该保存。
+前面我少提醒了这一样，这里补正一下。
+
+你现在可以把它理解成一句话：
+
+- mapping.txt 还原 Android 混淆栈
+- flutter-symbols 还原 Dart 混淆栈
+- native-debug-symbols.zip 还原 C/C++ 崩溃栈
+
+所以对你这个项目，最稳妥的归档其实不是 3 份，而是 4 份：
+
+1. app-release.aab
+2. mapping.txt
+3. flutter-symbols
+4. native-debug-symbols.zip
+
+所以结论是：
+
+1. 不需要为了“能正常运行”去额外做特殊 native 混淆
+2. 但如果你的目标是“提高逆向成本”，那 native 层确实要单独考虑，因为现有 Flutter 混淆对它没效果
+3. FFI 导出的那几个函数名通常无法像 Dart 一样随便混淆掉，它们本来就是对外接口
+
+你现在这套发布配置已经足够正常上架。至于 native 层的“额外加固”，属于可选增强，不是发版必需项。常见可选项有：
+
+1. 只导出必要符号
+你现在这点做得还可以，头文件里只暴露了少量 API。
+
+2. 默认隐藏其他原生符号
+思路是全局设为 hidden，只给 FFI 入口保留 default visibility。你现在已经在导出宏里显式用了 default visibility，见 ffigen_showdart.h。如果后面想继续收紧，可以把非 API 符号默认隐藏。
+
+3. 发布版 strip 符号
+这是降低逆向可读性的常见做法，但要和崩溃排查配套保存 native symbols。你已经有 native-debug-symbols.zip，这就是后续还原 native 崩溃要用的。
+
+4. 打开优化，避免把调试配置带进发布版
+这里反而有个值得注意的点：你的通用 CMake 文件里写了 Debug 构建和调试标志，见 CMakeLists.txt 和 CMakeLists.txt。这不一定直接影响你当前 Android 发布产物，但从工程规范上看，不建议把这种全局 Debug 设置长期放在公共 CMake 里。
+
+例如至少包含以下四类中的三类：
+- 大写字母
+- 小写字母
+- 数字
+- 特殊字符
+
+
+只手动启动 Chromebook 虚拟机，用这条：
+
+C:\Users\lqcn\AppData\Local\Android\Sdk\emulator\emulator.exe -avd Chromebook
+
+如果你的 Android SDK 已经在 PATH 里，可以直接写成：
+
+emulator -avd Chromebook
+
+先查看你本机有哪些虚拟机，可以用：
+
+emulator -list-avds
+
+启动后确认模拟器已经起来：
+
+adb devices
+
+如果你之后想再手动运行 Flutter 项目，再执行：
+
+cd C:\APP\ffigen_showdart\showdart
+flutter devices
+flutter run -d 你的模拟器设备ID --release
+
+通常设备 ID 会是类似 emulator-5554。你要是愿意，我可以顺手再给你一份“手动启动 Chromebook + 手动运行 release”的最短操作清单。
+
+
+
+
+"C:\Program Files (x86)\Windows Kits\10\bin\10.0.26100.0\x64\signtool.exe" sign ^
+  /fd SHA256 /f "C:\cert\codesign.pfx" /p "PFX密码" ^
+  /tr "http://timestamp.digicert.com" /td SHA256 ^
+  /d "ffigen_showdart" /du "https://frankliqiang.github.io/TreasureMap/index.html" ^
+  "C:\APP\ffigen_showdart\Release\Output\TreasureMapSetup.exe"
