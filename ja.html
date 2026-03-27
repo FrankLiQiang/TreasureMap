@@ -223,10 +223,43 @@
         font-size: 0.95rem;
       }
     }
+
+    /* Store badges (Microsoft) */
+    .store-badges {
+      display: flex;
+      justify-content: center;
+      gap: 1rem;
+      margin: 20px 0 36px;
+      flex-wrap: wrap;
+    }
+
+    .store-badges a {
+      display: inline-block;
+    }
+
+    .store-badges img {
+      height: 48px;
+      max-width: 160px;
+      width: auto;
+      display: block;
+    }
   </style>
 </head>
 
 <body>
+
+  .store-badges .store-badge-disabled {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 6px 12px;
+  background: #0b0b0b;
+  border-radius: 10px;
+  box-shadow: 0 1px 2px rgba(0,0,0,0.12);
+  pointer-events: none;
+  opacity: 0.95;
+  cursor: default;
+  }
 
   <header>
     <div id="lang-selector">
@@ -278,11 +311,19 @@
 
   </main>
 
-  <div style="text-align:center; margin:20px 0 36px;">
+  <div class="store-badges">
+    <!-- original link: https://apps.microsoft.com/detail/9nvhjmqmp3bl?referrer=appbadge&hl=ja-jp&gl=JP -->
+    <span class="store-badge-disabled" aria-hidden="true">
+      <img src="https://tools.applemediaservices.com/api/badges/download-on-the-app-store/black/ja-jp" alt="App Store">
+    </span>
+
+    <!-- original link: https://apps.microsoft.com/detail/9nvhjmqmp3bl?referrer=appbadge&hl=ja-jp&gl=JP -->
+    <span class="store-badge-disabled" aria-hidden="true">
+      <img src="https://play.google.com/intl/ja/badges/images/generic/ja_badge_web_generic.png" alt="Google Play">
+    </span>
     <a href="https://apps.microsoft.com/detail/9nvhjmqmp3bl?referrer=appbadge&hl=ja-jp&gl=JP" target="_blank"
       rel="noopener noreferrer">
-      <img src="https://get.microsoft.com/images/ja%20light.svg" alt="Microsoft Store"
-        style="height:48px; max-width:90%;">
+      <img src="https://get.microsoft.com/images/ja%20light.svg" alt="Microsoft Store">
     </a>
   </div>
 
