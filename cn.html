@@ -277,13 +277,15 @@
     /* Special handling for Google PNG which contains transparent vertical padding.
        Crop and nudge the image so visible content aligns with SVG badges. */
     .badge-box.google {
-      overflow: hidden;
+      /* Google now uses an SVG badge — treat like other badges */
+      overflow: visible;
     }
 
     .badge-box.google img {
-      height: 120% !important;
-      transform: translateY(-6%) !important;
-      -webkit-transform: translateY(-6%) !important;
+      height: 100% !important;
+      width: auto !important;
+      transform: none !important;
+      -webkit-transform: none !important;
       margin: 0 auto;
       display: block;
     }
@@ -369,8 +371,7 @@
     <!-- original link: https://apps.microsoft.com/detail/9nvhjmqmp3bl?referrer=appbadge&hl=ja-jp&gl=JP -->
     <span class="store-badge-disabled" aria-hidden="true">
       <span class="badge-box google">
-        <img src="https://play.google.com/intl/zh-CN/badges/static/images/badges/zh-cn_badge_web_generic.png"
-          alt="Google Play">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/7/78/Google_Play_Store_badge_EN.svg" alt="Google Play">
       </span>
     </span>
     <a href="https://apps.microsoft.com/detail/9nvhjmqmp3bl?referrer=appbadge&hl=zh-cn&gl=JP" target="_blank"
@@ -550,10 +551,10 @@
       document.querySelectorAll('.badge-box').forEach(function (el) {
         el.style.height = inner + 'px';
       });
-      // For Google PNG, keep the nudge but recompute based on inner height
+      // Google is now an SVG badge — set its height to match inner box
       document.querySelectorAll('.badge-box.google img').forEach(function (img) {
-        img.style.height = Math.round(inner * 1.15) + 'px';
-        img.style.transform = 'translateY(-6%)';
+        img.style.height = Math.round(inner) + 'px';
+        img.style.transform = 'none';
       });
     }
     window.addEventListener('load', apply);
