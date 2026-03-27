@@ -224,10 +224,11 @@
       }
     }
 
-    /* Store badges (Microsoft) */
+    /* Store badges (Microsoft / App Store / Google Play) — match CN page styling */
     .store-badges {
       display: flex;
       justify-content: center;
+      align-items: center;
       gap: 1rem;
       margin: 20px 0 36px;
       flex-wrap: wrap;
@@ -237,11 +238,43 @@
       display: inline-block;
     }
 
-    .store-badges img {
+    .store-badges>* {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      height: 66px;
+      padding: 0 8px;
+      line-height: 0;
+    }
+
+    .badge-box {
       height: 48px;
-      max-width: 160px;
-      width: auto;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      overflow: visible;
+    }
+
+    .badge-box img {
+      height: 100% !important;
+      width: auto !important;
       display: block;
+      margin: auto;
+    }
+
+    @media (max-width: 600px) {
+      .store-badges>* {
+        height: 60px;
+        padding: 0 6px;
+      }
+
+      .badge-box {
+        height: 42px;
+      }
+
+      .badge-box img {
+        height: 100% !important;
+      }
     }
   </style>
 </head>
@@ -298,18 +331,24 @@
   </main>
 
   <div class="store-badges">
-    <!-- original link: https://apps.microsoft.com/detail/9nvhjmqmp3bl?referrer=appbadge&hl=ja-jp&gl=JP -->
     <span class="store-badge-disabled" aria-hidden="true">
-      <img src="https://tools.applemediaservices.com/api/badges/download-on-the-app-store/black/ja-jp" alt="App Store">
+      <span class="badge-box google">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/7/78/Google_Play_Store_badge_EN.svg" alt="Google Play">
+      </span>
     </span>
 
-    <!-- original link: https://apps.microsoft.com/detail/9nvhjmqmp3bl?referrer=appbadge&hl=ja-jp&gl=JP -->
     <span class="store-badge-disabled" aria-hidden="true">
-      <img src="https://play.google.com/intl/ja/badges/images/generic/ja_badge_web_generic.png" alt="Google Play">
+      <span class="badge-box">
+        <img src="https://tools.applemediaservices.com/api/badges/download-on-the-app-store/black/ja-jp"
+          alt="App Store">
+      </span>
     </span>
+
     <a href="https://apps.microsoft.com/detail/9nvhjmqmp3bl?referrer=appbadge&hl=ja-jp&gl=JP" target="_blank"
       rel="noopener noreferrer">
-      <img src="https://get.microsoft.com/images/ja%20light.svg" alt="Microsoft Store">
+      <span class="badge-box">
+        <img src="https://get.microsoft.com/images/ja%20dark.svg" alt="Microsoft Store">
+      </span>
     </a>
   </div>
 
@@ -446,6 +485,37 @@
           img.style.borderRadius = '8px';
         }
       } catch (e) { console.error(e) }
+    })();
+  </script>
+
+  <script>
+    // Measure contact button height and apply to store badges so they match exactly.
+    (function syncBadgeHeights() {
+      function apply() {
+        var btn = document.querySelector('.contact-btn');
+        if (!btn) return;
+        var h = btn.offsetHeight;
+        // increase outer badge containers by 50% relative to contact button
+        document.querySelectorAll('.store-badges > *').forEach(function (el) {
+          el.style.height = Math.round(h * 1.5) + 'px';
+          el.style.display = 'inline-flex';
+          el.style.alignItems = 'center';
+          el.style.justifyContent = 'center';
+        });
+        // inner badge height: slightly smaller than outer, scaled 1.5x as well
+        var inner = Math.max(33, Math.round(h * 1.5) - 12);
+        document.querySelectorAll('.badge-box').forEach(function (el) {
+          el.style.height = inner + 'px';
+        });
+        // Google is an SVG — set its height to match inner box
+        document.querySelectorAll('.badge-box.google img').forEach(function (img) {
+          img.style.height = Math.round(inner) + 'px';
+          img.style.transform = 'none';
+        });
+      }
+      window.addEventListener('load', apply);
+      window.addEventListener('resize', function () { setTimeout(apply, 80); });
+      setTimeout(apply, 50);
     })();
   </script>
 </body>
