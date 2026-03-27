@@ -248,6 +248,107 @@
       width: auto;
       display: block;
     }
+
+    /* Pill-style badge buttons (white background, rounded, shadow) */
+    .badge-button {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: #ffffff;
+      border-radius: 999px;
+      box-shadow: 0 6px 18px rgba(0, 0, 0, 0.12);
+      padding: 8px 18px;
+      min-width: 220px;
+      height: 56px;
+      text-decoration: none;
+    }
+
+    .badge-button.store-badge-disabled {
+      cursor: default;
+      pointer-events: none;
+      opacity: 0.98;
+    }
+
+    .badge-button img {
+      max-height: 36px;
+      max-width: 80%;
+      height: auto;
+      width: auto;
+      display: block;
+    }
+
+    .badge-inner-img {
+      max-height: 36px;
+      width: auto;
+      display: block;
+    }
+
+    /* badge content (icon + text) implemented with inline SVG + text */
+    .badge-content {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      width: 100%;
+      justify-content: center;
+    }
+
+    .badge-icon {
+      flex: 0 0 auto;
+      width: 56px;
+      height: 40px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .badge-text {
+      text-align: left;
+      line-height: 1;
+      color: #333;
+    }
+
+    .badge-subtext {
+      display: block;
+      font-size: 11px;
+      letter-spacing: 0.02em;
+      color: #7a7a7a;
+      text-transform: uppercase;
+    }
+
+    .badge-maintext {
+      display: block;
+      font-size: 18px;
+      font-weight: 600;
+      color: #222;
+      margin-top: 2px;
+    }
+
+    /* inner area for badge images: use white background (no black) with subtle border */
+    .inner-rect {
+      display: inline-block;
+      background: #ffffff;
+      border-radius: 8px;
+      padding: 6px 12px;
+      border: 1px solid rgba(0, 0, 0, 0.06);
+    }
+
+    .inner-rect img {
+      display: block;
+      height: 28px;
+      width: auto;
+    }
+
+    @media (max-width: 600px) {
+      .badge-button {
+        min-width: 140px;
+        height: 48px;
+        padding: 6px 12px;
+      }
+
+      .badge-button img {
+        max-height: 28px;
+      }
+    }
   </style>
 </head>
 
@@ -303,18 +404,62 @@
   </main>
 
   <div class="store-badges">
-    <span class="store-badge-disabled" aria-hidden="true">
-      <img src="https://tools.applemediaservices.com/api/badges/download-on-the-app-store/black/en-us" alt="App Store">
+    <span class="badge-button store-badge-disabled" aria-hidden="true">
+      <div class="badge-content">
+        <div class="badge-icon" aria-hidden="true">
+          <!-- generic download arrow icon for App Store -->
+          <svg width="40" height="28" viewBox="0 0 40 28" fill="none" xmlns="http://www.w3.org/2000/svg"
+            aria-hidden="true">
+            <rect x="0" y="0" width="40" height="28" rx="6" fill="#ffffff" />
+            <path d="M20 8v8" stroke="#111" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" />
+            <path d="M14 14l6-6 6 6" stroke="#111" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" />
+          </svg>
+        </div>
+        <div class="badge-text">
+          <span class="badge-subtext">Download on the</span>
+          <span class="badge-maintext">App Store</span>
+        </div>
+      </div>
     </span>
 
-    <span class="store-badge-disabled" aria-hidden="true">
-      <img src="https://play.google.com/intl/en_us/badges/static/images/badges/en_badge_web_generic.png"
-        alt="Google Play">
+    <span class="badge-button store-badge-disabled" aria-hidden="true">
+      <div class="badge-content">
+        <div class="badge-icon" aria-hidden="true">
+          <!-- generic play triangle for Google Play -->
+          <svg width="40" height="28" viewBox="0 0 40 28" fill="none" xmlns="http://www.w3.org/2000/svg"
+            aria-hidden="true">
+            <rect x="0" y="0" width="40" height="28" rx="6" fill="#ffffff" />
+            <path d="M14 8v12l10-6-10-6z" fill="#111" />
+          </svg>
+        </div>
+        <div class="badge-text">
+          <span class="badge-subtext">Get it on</span>
+          <span class="badge-maintext">Google Play</span>
+        </div>
+      </div>
     </span>
 
-    <a href="https://apps.microsoft.com/detail/9nvhjmqmp3bl?referrer=appbadge&hl=zh-cn&gl=JP" target="_blank"
-      rel="noopener noreferrer">
-      <img src="https://get.microsoft.com/images/en-us%20light.svg" alt="Microsoft Store">
+    <a class="badge-button" href="https://apps.microsoft.com/detail/9nvhjmqmp3bl?referrer=appbadge&hl=zh-cn&gl=JP"
+      target="_blank" rel="noopener noreferrer">
+      <div class="badge-content">
+        <div class="badge-icon" aria-hidden="true">
+          <!-- generic 4-square icon for Microsoft -->
+          <svg width="40" height="28" viewBox="0 0 40 28" fill="none" xmlns="http://www.w3.org/2000/svg"
+            aria-hidden="true">
+            <rect x="0" y="0" width="40" height="28" rx="6" fill="#ffffff" />
+            <g transform="translate(6,5)">
+              <rect x="0" y="0" width="8" height="8" fill="#e74c3c" />
+              <rect x="10" y="0" width="8" height="8" fill="#f1c40f" />
+              <rect x="0" y="10" width="8" height="8" fill="#2ecc71" />
+              <rect x="10" y="10" width="8" height="8" fill="#3498db" />
+            </g>
+          </svg>
+        </div>
+        <div class="badge-text">
+          <span class="badge-subtext">Download from the</span>
+          <span class="badge-maintext">Microsoft Store</span>
+        </div>
+      </div>
     </a>
   </div>
 
