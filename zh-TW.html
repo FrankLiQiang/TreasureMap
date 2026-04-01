@@ -267,6 +267,33 @@
       margin: auto;
     }
 
+    .text-badge {
+      min-width: 138px;
+      padding: 0 16px;
+      border-radius: 10px;
+      background: #111111;
+      color: #ffffff;
+      display: inline-flex;
+      flex-direction: column;
+      align-items: flex-start;
+      justify-content: center;
+      gap: 2px;
+      line-height: 1.05;
+    }
+
+    .text-badge .badge-overline {
+      font-size: 0.66rem;
+      color: rgba(255, 255, 255, 0.72);
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+    }
+
+    .text-badge .badge-title {
+      font-size: 1.05rem;
+      font-weight: 600;
+      letter-spacing: 0.01em;
+    }
+
     @media (max-width: 600px) {
       .store-badges>* {
         height: 60px;
@@ -279,6 +306,15 @@
 
       .badge-box img {
         height: 100% !important;
+      }
+
+      .text-badge {
+        min-width: 124px;
+        padding: 0 14px;
+      }
+
+      .text-badge .badge-title {
+        font-size: 1rem;
       }
     }
   </style>
@@ -349,6 +385,12 @@
         <img src="assets/App_Store_cn.svg" alt="App Store">
       </span>
     </a>
+
+    <span class="store-badge-disabled" aria-hidden="true">
+      <span class="badge-box">
+        <img src="assets/mac-zh-cn.svg" alt="macOS App Store">
+      </span>
+    </span>
 
     <a href="https://apps.microsoft.com/detail/9nvhjmqmp3bl?referrer=appbadge&hl=zh-tw&gl=JP" target="_blank"
       rel="noopener noreferrer">
