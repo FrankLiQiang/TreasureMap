@@ -387,12 +387,6 @@
       </span>
     </a>
 
-    <a href="https://apps.apple.com/us/app/treasure2map/id6759858878" target="_blank" rel="noopener noreferrer">
-      <span class="badge-box">
-        <img src="assets/mac-en-us.svg" alt="macOS App Store">
-      </span>
-    </a>
-
     <a href="https://apps.microsoft.com/detail/9nvhjmqmp3bl?referrer=appbadge&hl=en-us&gl=JP" target="_blank"
       rel="noopener noreferrer">
       <span class="badge-box">
@@ -410,8 +404,8 @@
         pageTitle: 'Treasure Map',
         headerSubtitle: 'Technical Support',
         aboutTitle: '\uD83D\uDCD6 About',
-        aboutP1: '“TreasureMap” is a cross-platform app for protecting confidential information. It can safely embed documents, videos, audio, and other files into images with no noticeable change in appearance. And provide an advanced encryption mechanism for standalone files that is not subject to size limitations and does not need to be tied to an image container.\n\n<strong>Main features:</strong> embedding lists, text, and files, and file-only encryption (no image required).\n<strong>Use cases:</strong> secure storage of important information, off-site backups, and encrypted communication.\n<strong>Supported platforms:</strong> iOS, Android, macOS, Windows.',
-        aboutHtml: '<p>“TreasureMap” is a cross-platform app for protecting confidential information. It can safely embed documents, videos, audio, and other files into images with no noticeable change in appearance.And provide an advanced encryption mechanism for standalone files that is not subject to size limitations and does not need to be tied to an image container.</p>\n<div class="info-line"><span class="info-label info-label-auto"><strong>Main features:</strong></span><span class="info-value">embedding lists, text, and files, and file-only encryption (no image required).</span></div>\n<div class="info-line"><span class="info-label info-label-auto"><strong>Use cases:</strong></span><span class="info-value">secure storage of important information, off-site backups, and encrypted communication.</span></div>\n<div class="info-line"><span class="info-label info-label-auto"><strong>Supported platforms:</strong></span><span class="info-value">iOS, Android, macOS, Windows.</span></div>',
+        aboutP1: '“TreasureMap” is a cross-platform app for protecting confidential information. It can safely embed documents, videos, audio, and other files into images with no noticeable change in appearance. And provide an advanced encryption mechanism for standalone files that is not subject to size limitations and does not need to be tied to an image container.\n\n<strong>Main features:</strong>\n1. Hide any data information in images\n2. File encryption/decryption\n3. Off-site storage of personal privacy and important business data\n4. Encrypted secure communication function\n5. Cold wallet for digital currencies (not limited to Bitcoin)\n<strong>Use cases:</strong> secure storage of important information, off-site backups, and encrypted communication.\n<strong>Supported platforms:</strong> iPhone, iPad, Mac, Android, ChromeBook, Windows',
+        aboutHtml: '<p>“TreasureMap” is a cross-platform app for protecting confidential information. It can safely embed documents, videos, audio, and other files into images with no noticeable change in appearance.And provide an advanced encryption mechanism for standalone files that is not subject to size limitations and does not need to be tied to an image container.</p>\n<div class="info-line"><span class="info-label info-label-auto"><strong>Main features:</strong></span><span class="info-value">1. Hide any data information in images<br>2. File encryption/decryption<br>3. Off-site storage of personal privacy and important business data<br>4. Encrypted secure communication function<br>5. Cold wallet for digital currencies (not limited to Bitcoin)</span></div>\n<div class="info-line"><span class="info-label info-label-auto"><strong>Use cases:</strong></span><span class="info-value">secure storage of important information, off-site backups, and encrypted communication.</span></div>\n<div class="info-line"><span class="info-label info-label-auto"><strong>Supported platforms:</strong></span><span class="info-value">iPhone, iPad, Mac, Android, ChromeBook, Windows</span></div>',
         faqTitle: '\u2753 FAQ',
         faqItems: [
           { q: 'How to change/remove a hidden file?', a: 'If you want to modify a hidden file, open the File screen → "Select File", reselect the modified file, then save using "Encrypt" to write the change back into the image.\nTo stop hiding a file, tap "Deselect" on the File screen and save with "Encrypt".\nWhen you exit normally or switch files, the decrypted hidden file is deleted; an abnormal exit may leave it behind.\nThe carrier image is never deleted by the app.' },
@@ -460,7 +454,7 @@
       // Trim leading fullwidth/normal spaces inside .info-value to avoid visible indentation
       document.querySelectorAll('#about-p1 .info-value').forEach(function (el) {
         if (!el) return;
-        el.textContent = (el.textContent || '').replace(/^[\s\u3000]+/, '');
+        el.innerHTML = (el.innerHTML || '').replace(/^[\s\u3000]+/, '');
       });
 
       document.getElementById('faq-title').textContent = t.faqTitle;

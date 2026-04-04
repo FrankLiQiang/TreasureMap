@@ -379,12 +379,6 @@
       </span>
     </a>
 
-    <a href="https://apps.apple.com/jp/app/treasure2map/id6759858878" target="_blank" rel="noopener noreferrer">
-      <span class="badge-box">
-        <img src="assets/mac-ja-jp.svg" alt="macOS App Store">
-      </span>
-    </a>
-
     <a href="https://apps.microsoft.com/detail/9nvhjmqmp3bl?referrer=appbadge&hl=ja-jp&gl=JP" target="_blank"
       rel="noopener noreferrer">
       <span class="badge-box">
@@ -403,7 +397,7 @@
         headerSubtitle: '技術サポート',
         aboutTitle: '📖 このアプリについて',
         aboutP1: 'トレジャーマップは、機密情報を保護し、文書、画像、音声、動画などの情報を見た目に目立つ変化なく安全に埋め込むクロスプラットフォームアプリです。 また、サイズに制限がなく、画像キャリアに接続する必要のない高度な暗号化機構も提供します。',
-        aboutHtml: '<p>トレジャーマップは、機密情報を保護し、文書、画像、音声、動画などの情報を見た目に目立つ変化なく安全に埋め込むクロスプラットフォームアプリです。 また、サイズに制限がなく、画像キャリアに接続する必要のない高度な暗号化機構も提供します。</p><div class="info-line"><span class="info-label"><strong>主な特徴:</strong></span><span class="info-value">リスト、テキスト、ファイル、ファイル暗号化の埋め込み(画像不要)</span></div><div class="info-line"><span class="info-label"><strong>応用シナリオ:</strong></span><span class="info-value">重要な情報は異なる場所に保存・バックアップされています。</span></div><div class="info-line"><span class="info-label"><strong>対応プラットフォーム:</strong></span><span class="info-value">iOS、Android、macOS、Windows。</span></div>',
+        aboutHtml: '<p>トレジャーマップは、機密情報を保護し、文書、画像、音声、動画などの情報を見た目に目立つ変化なく安全に埋め込むクロスプラットフォームアプリです。 また、サイズに制限がなく、画像キャリアに接続する必要のない高度な暗号化機構も提供します。</p><div class="info-line"><span class="info-label"><strong>主な特徴:</strong></span><span class="info-value">1. 画像内のあらゆるデータ情報を隠蔽する<br>2. ファイルの暗号化／復号化<br>3. 個人情報および重要な業務データのオフサイト保管<br>4. 暗号化された安全な通信機能<br>5. デジタル通貨（ビットコインに限らず）用のコールドウォレット</span></div><div class="info-line"><span class="info-label"><strong>応用シナリオ:</strong></span><span class="info-value">重要な情報は異なる場所に保存・バックアップされています。</span></div><div class="info-line"><span class="info-label"><strong>対応プラットフォーム:</strong></span><span class="info-value">iPhone, iPad, Mac, Android, ChromeBook, Windows</span></div>',
         faqTitle: '❓ よくある質問',
         faqItems: [
           { q: '隠しファイルをどうやって変更・削除すればいいですか?', a: '隠しファイルを修正したい場合は、「ファイルイ」画面→「ファイル選択」で再度画像を書き戻し、暗号化して保存します。\n非表示を解除するには、「ファイル」画面の「選択解除」をクリックしてセーブデータを暗号化してください。\n通常通り終了や切り替えを行うと、復号された隠しファイルは削除され、異常な退出が残ることがあります。' },
@@ -452,7 +446,7 @@
       // Trim leading fullwidth/normal spaces inside .info-value to avoid visible indentation
       document.querySelectorAll('#about-p1 .info-value').forEach(function (el) {
         if (!el) return;
-        el.textContent = (el.textContent || '').replace(/^[\s\u3000]+/, '');
+        el.innerHTML = (el.innerHTML || '').replace(/^[\s\u3000]+/, '');
       });
 
       document.getElementById('faq-title').textContent = t.faqTitle;

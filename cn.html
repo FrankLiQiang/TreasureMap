@@ -409,12 +409,6 @@
       </span>
     </a>
 
-    <a href="https://apps.apple.com/tw/app/treasure2map/id6759858878" target="_blank" rel="noopener noreferrer">
-      <span class="badge-box">
-        <img src="assets/mac-zh-cn.svg" alt="macOS App Store">
-      </span>
-    </a>
-
     <a href="https://apps.microsoft.com/detail/9nvhjmqmp3bl?referrer=appbadge&hl=zh-cn&gl=JP" target="_blank"
       rel="noopener noreferrer">
       <span class="badge-box">
@@ -433,7 +427,7 @@
         headerSubtitle: '技术支持',
         aboutTitle: '📖 关于本应用',
         aboutP1: '“藏宝图”是一款用于保护机密信息的跨平台应用，可将文档、图片、音频和视频等信息安全地嵌入图片，且外观无明显变化。并提供不受大小限制、无需依附于图片载体的独立文件级加密机制。',
-        aboutHtml: '<p>“藏宝图”是一款用于保护机密信息的跨平台应用，可将文档、图片、音频和视频等信息安全地嵌入图片，且外观无明显变化。并提供不受大小限制、无需依附于图片载体的独立文件的高级加密机制。</p><div class="info-line"><span class="info-label"><strong>主要功能：</strong></span><span class="info-value">列表、文字、文件的嵌入，以及文件自身加密（无需图片）</span></div> <div class="info-line"><span class="info-label"><strong>应用场景：</strong></span><span class="info-value">重要信息保存、异地备份。</span></div> <div class="info-line"><span class="info-label"><strong>支持平台：</strong></span><span class="info-value">iOS、Android、macOS、Windows。</span></div>',
+        aboutHtml: '<p>“藏宝图”是一款用于保护机密信息的跨平台应用，可将文档、图片、音频和视频等信息安全地嵌入图片，且外观无明显变化。并提供不受大小限制、无需依附于图片载体的独立文件的高级加密机制。</p><div class="info-line"><span class="info-label"><strong>主要功能：</strong></span><span class="info-value">1.隐藏任何数字信息到图片<br>2.文件自身加密/解密<br>3.个人隐私及重要商务数据异地保存<br>4.加密安全通讯功能<br>5.数字货币（不仅限于比特币）的冷钱包</span></div> <div class="info-line"><span class="info-label"><strong>应用场景：</strong></span><span class="info-value">重要信息保存、异地备份。</span></div> <div class="info-line"><span class="info-label"><strong>支持平台：</strong></span><span class="info-value">iPhone，iPad，Mac，Android，ChromeBook，Windows</span></div>',
         faqTitle: '❓ 常见问题',
         faqItems: [
           { q: '如何更改/删除隐藏文件？', a: '想要修改隐藏文件，只有在“文件界面”→“选择文件”，再次选择修改后的文件并加密保存后才会写回图片。\n要取消隐藏，请在“文件”页面点击“取消选择”并加密保存。\n正常退出或切换时会删除解密出的隐藏文件，异常退出可能遗留。' },
@@ -482,7 +476,7 @@
       // Trim leading fullwidth/normal spaces inside .info-value to avoid visible indentation
       document.querySelectorAll('#about-p1 .info-value').forEach(function (el) {
         if (!el) return;
-        el.textContent = (el.textContent || '').replace(/^[\s\u3000]+/, '');
+        el.innerHTML = (el.innerHTML || '').replace(/^[\s\u3000]+/, '');
       });
 
       document.getElementById('faq-title').textContent = t.faqTitle;
