@@ -133,15 +133,7 @@
     }
 
     .contact-btn {
-      display: inline-block;
-      margin-top: 1rem;
-      padding: 0.6rem 1.4rem;
-      background: #0071e3;
-      color: #fff;
-      border-radius: 8px;
-      font-size: 0.9rem;
-      font-weight: 500;
-      transition: background 0.2s;
+      display: none;
     }
 
     .contact-btn:hover {
@@ -425,7 +417,7 @@
         ],
         privacyTitle: '🔒 隱私政策',
         contactTitle: '📬 聯絡我們',
-        contactP1: '<p>如有任何問題或建議，歡迎通過以下方式聯絡我們：</p><p>電子郵件：treasuremap365.lq@gmail.com</p><p>&nbsp;</p><p>GitHub Issues:</p>',
+        contactP1: '<p>如有任何問題或建議，歡迎通過以下方式聯絡我們：</p><p>電子郵件：treasuremap365.lq@gmail.com</p><p>&nbsp;</p>',
         contactBtn: '提交問題/建議',
         footerText: '© {year} Frank. Li Qiang · TreasureMap'
       },
@@ -536,7 +528,7 @@
     (function syncBadgeHeights() {
       function apply() {
         var btn = document.querySelector('.contact-btn');
-        if (!btn) return;
+        if (!btn || btn.offsetHeight === 0) return;
         var h = btn.offsetHeight;
         document.querySelectorAll('.store-badges > *').forEach(function (el) {
           el.style.height = Math.round(h * 1.5) + 'px';

@@ -133,15 +133,7 @@
     }
 
     .contact-btn {
-      display: inline-block;
-      margin-top: 1rem;
-      padding: 0.6rem 1.4rem;
-      background: #0071e3;
-      color: #fff;
-      border-radius: 8px;
-      font-size: 0.9rem;
-      font-weight: 500;
-      transition: background 0.2s;
+      display: none;
     }
 
     footer {
@@ -529,7 +521,7 @@
     (function syncBadgeHeights() {
       function apply() {
         var btn = document.querySelector('.contact-btn');
-        if (!btn) return;
+        if (!btn || btn.offsetHeight === 0) return;
         var h = btn.offsetHeight;
         // increase outer badge containers by 50% relative to contact button
         document.querySelectorAll('.store-badges > *').forEach(function (el) {
