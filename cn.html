@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="zh-CN">
 
 <head>
   <meta charset="UTF-8" />
@@ -221,11 +221,12 @@
       }
     }
 
-    /* Store badges (Microsoft / App Store / Google Play) — match CN/JA pages */
+    /* Store badges (Microsoft / App Store / Google Play) — same as ja.html */
     .store-badges {
       display: flex;
       justify-content: center;
       align-items: center;
+      /* ensure row children align vertically */
       gap: 1rem;
       margin: 20px 0 36px;
       flex-wrap: wrap;
@@ -235,17 +236,22 @@
       display: inline-block;
     }
 
+    /* Make each badge container equal height and center the badge box */
     .store-badges>* {
       display: inline-flex;
       align-items: center;
       justify-content: center;
       height: 66px;
+      /* outer container height (increased 50%) */
       padding: 0 8px;
       line-height: 0;
+      /* remove inline-image descender spacing */
     }
 
+    /* inner badge box: fixed visual box for each vendor badge */
     .badge-box {
       height: 48px;
+      /* visual badge height (increased 50%) */
       display: inline-flex;
       align-items: center;
       justify-content: center;
@@ -257,6 +263,7 @@
       width: auto !important;
       display: block;
       margin: auto;
+      /* center image inside box */
     }
 
     .text-badge {
@@ -286,6 +293,23 @@
       letter-spacing: 0.01em;
     }
 
+    /* Special handling for Google PNG which contains transparent vertical padding.
+       Crop and nudge the image so visible content aligns with SVG badges. */
+    .badge-box.google {
+      /* Google now uses an SVG badge — treat like other badges */
+      overflow: visible;
+    }
+
+    .badge-box.google img {
+      height: 100% !important;
+      width: auto !important;
+      transform: none !important;
+      -webkit-transform: none !important;
+      margin: 0 auto;
+      display: block;
+    }
+
+    /* Mobile adjustments */
     @media (max-width: 600px) {
       .store-badges>* {
         height: 60px;
@@ -313,12 +337,11 @@
 </head>
 
 <body>
-
   <header>
     <div id="lang-selector">
       <select id="lang-select" onchange="setLang(this.value)">
-        <option value="en" selected>English</option>
-        <option value="zh-CN">简体中文</option>
+        <option value="en">English</option>
+        <option value="zh-CN" selected>简体中文</option>
         <option value="zh-TW">繁体中文</option>
         <option value="ja">日本語</option>
       </select>
@@ -341,7 +364,6 @@
           }, { capture: true });
         </script>
       </div>
-
       <h2 id="about-title"></h2>
       <div id="about-p1"></div>
     </section>
@@ -366,7 +388,7 @@
   </main>
 
   <div class="store-badges">
-    <!-- Google, App Store, Microsoft (Microsoft stays rightmost) -->
+    <!-- swapped: Google first, then App Store, Microsoft remains rightmost -->
     <a href="https://play.google.com/store/apps/details?id=com.frank.showdart" target="_blank"
       rel="noopener noreferrer">
       <span class="badge-box google">
@@ -374,16 +396,16 @@
       </span>
     </a>
 
-    <a href="https://apps.apple.com/us/app/treasure2map/id6759858878" target="_blank" rel="noopener noreferrer">
+    <a href="https://apps.apple.com/tw/app/treasure2map/id6759858878" target="_blank" rel="noopener noreferrer">
       <span class="badge-box">
-        <img src="assets/App_Store_en.svg" alt="App Store">
+        <img src="assets/App_Store_cn.svg" alt="App Store">
       </span>
     </a>
 
-    <a href="https://apps.microsoft.com/detail/9nvhjmqmp3bl?referrer=appbadge&hl=en-us&gl=JP" target="_blank"
+    <a href="https://apps.microsoft.com/detail/9nvhjmqmp3bl?referrer=appbadge&hl=zh-cn&gl=JP" target="_blank"
       rel="noopener noreferrer">
       <span class="badge-box">
-        <img src="assets/microsoft_en.svg" alt="Microsoft Store">
+        <img src="assets/microsoft_cn.svg" alt="Microsoft Store">
       </span>
     </a>
   </div>
@@ -392,35 +414,35 @@
 
   <script>
     var i18n = {
-      'en': {
-        htmlLang: 'en',
-        pageTitle: 'Treasure Map',
-        headerSubtitle: 'Technical Support',
-        aboutTitle: '\uD83D\uDCD6 About',
-        aboutP1: '“TreasureMap” is a cross-platform app for protecting confidential information. It can safely embed documents, videos, audio, and other files into images with no noticeable change in appearance. And provide an advanced encryption mechanism for standalone files that is not subject to size limitations and does not need to be tied to an image container.\n\n<strong>Main features:</strong>\n1. Hide any data information in images\n2. File encryption/decryption\n3. Off-site storage of personal privacy and important business data\n4. Encrypted secure communication function\n5. Cold wallet for digital currencies (not limited to Bitcoin)\n<strong>Use cases:</strong> secure storage of important information, off-site backups, and encrypted communication.\n<strong>Supported platforms:</strong> iPhone, iPad, Mac, Android, ChromeBook, Windows',
-        aboutHtml: '<p>“TreasureMap” is a cross-platform app for protecting confidential information. It can safely embed documents, videos, audio, and other files into images with no noticeable change in appearance.And provide an advanced encryption mechanism for standalone files that is not subject to size limitations and does not need to be tied to an image container.</p>\n<div class="info-line"><span class="info-label info-label-auto"><strong>Main features:</strong></span><span class="info-value">1. Hide any data information in images<br>2. File encryption/decryption<br>3. Off-site storage of personal privacy and important business data<br>4. Encrypted secure communication function<br>5. Cold wallet for digital currencies (not limited to Bitcoin)</span></div>\n<div class="info-line"><span class="info-label info-label-auto"><strong>Use cases:</strong></span><span class="info-value">secure storage of important information, off-site backups, and encrypted communication.</span></div>\n<div class="info-line"><span class="info-label info-label-auto"><strong>Supported platforms:</strong></span><span class="info-value">iPhone, iPad, Mac, Android, ChromeBook, Windows</span></div>',
-        faqTitle: '\u2753 FAQ',
+      'zh-CN': {
+        htmlLang: 'zh-CN',
+        pageTitle: '藏宝图',
+        headerSubtitle: '技术支持',
+        aboutTitle: '📖 关于本应用',
+        aboutP1: '“藏宝图”是一款用于保护机密信息的跨平台应用，可将文档、图片、音频和视频等信息安全地嵌入图片，且外观无明显变化。并提供不受大小限制、无需依附于图片载体的独立文件级加密机制。',
+        aboutHtml: '<p>“藏宝图”是一款用于保护机密信息的跨平台应用，可将文档、图片、音频和视频等信息安全地嵌入图片，且外观无明显变化。并提供不受大小限制、无需依附于图片载体的独立文件的高级加密机制。</p><div class="info-line"><span class="info-label"><strong>主要功能：</strong></span><span class="info-value">1.隐藏任何数字信息到图片<br>2.文件自身加密/解密<br>3.个人隐私及重要商务数据异地保存<br>4.加密安全通讯功能<br>5.数字货币（不仅限于比特币）的冷钱包</span></div> <div class="info-line"><span class="info-label"><strong>应用场景：</strong></span><span class="info-value">重要信息保存、异地备份。</span></div> <div class="info-line"><span class="info-label"><strong>支持平台：</strong></span><span class="info-value">iPhone，iPad，Mac，Android，ChromeBook，Windows</span></div>',
+        faqTitle: '❓ 常见问题',
         faqItems: [
-          { q: 'How to change/remove a hidden file?', a: 'If you want to modify a hidden file, open the File screen → "Select File", reselect the modified file, then save using "Encrypt" to write the change back into the image.\nTo stop hiding a file, tap "Deselect" on the File screen and save with "Encrypt".\nWhen you exit normally or switch files, the decrypted hidden file is deleted; an abnormal exit may leave it behind.\nThe carrier image is never deleted by the app.' },
-          { q: 'How to encrypt a file without a carrier image?', a: 'In the "File (Self)" screen you can encrypt a file with a password without using an image. Encrypted files created this way can only be decrypted by this app—keep passwords safe, there is no recovery.\nThe app cannot always tell whether a password is correct. If you decrypt with the wrong password and the resulting file cannot be opened by other software, use the same (incorrect) password again to restore the file to its pre-decrypted state.' },
-          { q: 'How do I delete the original image? What are the overwrite rules?', a: 'Carrier image: On Windows and macOS, an encrypted save will overwrite the original image. On Android and iOS, each encrypted save creates a new image; the user may choose whether to delete the original.\nHidden file: A decrypted hidden file will overwrite any same‑named file in the destination folder.\nFile itself: Files produced by decrypting or encrypting will overwrite any same‑named file in the destination folder.' },
-          { q: "How to change an image's password?", a: "Open the image with the current password, go to \"Home\" → \"Encrypt\", enter the new password twice and confirm to save the information into the image and change its password." },
-          { q: 'How to replace the carrier image?', a: 'After unlocking the original image, tap "Select Image", choose the new image, then tap "Encrypt" to write the embedded information into the new image. The original image remains unchanged unless you delete it manually.' },
-          { q: 'How do I transfer and share the carrier image? What is the verification code?', a: 'When transferring images between platforms or devices, always send the original image file; otherwise decryption may fail.\nOn the Select Image screen, tap the "Copy Verification Code" button to copy the image\'s verification code; only images with the same verification code will decrypt to the same embedded data.\nSharing only the original image and the verification code does not reveal the embedded data. Only the original image plus the password and this app can unlock the embedded information.' }
+          { q: '如何更改/删除隐藏文件？', a: '想要修改隐藏文件，只有在“文件界面”→“选择文件”，再次选择修改后的文件并加密保存后才会写回图片。\n要取消隐藏，请在“文件”页面点击“取消选择”并加密保存。\n正常退出或切换时会删除解密出的隐藏文件，异常退出可能遗留。' },
+          { q: '如何对文件自身加密而不依赖宿主图片？', a: '在“文件自身”界面，可对文件单独以密码加密（无需图片）。加密文件仅能用本应用解密，请妥善保管密码，否则无法找回。\n本应用无法判断密码是否正确，如果使用了错误的密码解密后，无法用相应软件打开文件，请使用相同的（刚刚错误输入的）密码恢复到解密前状态。' },
+          { q: '如何删除原图？覆盖规则是什么？', a: '宿主图片：Windows/macOS 会覆盖原图。Android/iOS 每次保存会生成新图片；用户自行决定是否删除原图。\n隐藏文件：解密出的隐藏文件会覆盖同名文件。\n文件自身：解密或加密出的文件会覆盖同名文件。' },
+          { q: '如何更改图片密码？', a: '用原密码打开图片，在“主页”→“加密”中输入新密码两次确认以加密保存信息到图片，从而更改图片密码。' },
+          { q: '如何更改宿主图片？', a: '解锁原图后，点击“选择图片”选择新图，再点击“加密”即可将信息写入新图；原图仍可保留。' },
+          { q: '对宿主图片，如何传输与分享？什么是校验码？', a: '跨平台/设备传输请发送原始图片，否则无法解密。\n使用“复制校验码”可获取图片校验码，只有相同校验码的图片才能解密出相同信息。\n只分享原图和校验码，不会泄露信息。只有原图+密码+本应用才会解开图片信息。' }
         ],
         privacyItems: [
-          { q: '1. Information Collection', a: 'This application does not collect, upload, or store users\' personal file contents.\nNo account system is provided.\nNo cloud storage service is offered.\nAll data processing is performed locally on the user\'s device.' },
-          { q: '2. Permissions', a: 'To provide the app\'s functionality, this application may request the following permissions:\nStorage access: used to read files and hide files into host images, and for encryption and decryption of those files.\nMedia access: used to save hidden information into host images.\nThe above permissions are used only to implement the app\'s features and are not used for data collection.' },
-          { q: '3. Data Transmission', a: 'This application does not transmit user data to external servers.\nNo user file content is shared with third parties.' },
-          { q: '4. Data Security', a: 'All files remain on the user\'s device.\nUsers are responsible for safeguarding their passwords and device security.\nPassword recovery is not supported.' },
-          { q: '5. Third-Party Services', a: 'This application does not integrate advertising services.\nNo analytics services are included.\nIf third-party services are added in the future, this policy will be updated accordingly.' },
-          { q: '6. Policy Changes', a: 'This policy may be updated in accordance with legal or functional changes.\nUpdates will be announced within the application.' }
+          { q: '1. 信息收集说明', a: '本应用不会主动收集、上传或存储用户的个人文件内容。\n本应用不建立用户账户系统。\n本应用不提供服务器存储服务。\n所有数据处理均在用户本地设备内完成。' },
+          { q: '2. 权限使用说明', a: '为实现功能，本应用可能申请以下权限：\n存储访问权限：用于读取及隐藏文件到宿主图片以及文件自身的加密解密。\n媒体访问权限：以保存隐藏信息到宿主图片。\n上述权限仅用于功能实现，不用于数据收集。' },
+          { q: '3. 数据传输说明', a: '本应用不进行任何远程数据传输。\n本应用不向任何第三方提供用户文件内容。' },
+          { q: '4. 数据安全', a: '所有文件均保存在用户设备本地。\n用户应自行妥善保管密码及设备安全。\n本应用不提供密码找回功能。' },
+          { q: '5. 第三方服务', a: '对于付费用户，本应用不集成广告服务。\n本应用不集成用户行为分析服务。\n如未来集成第三方服务，将在本政策中更新说明。' },
+          { q: '6. 政策变更', a: '本应用有权根据法律或功能更新需要对本政策进行修改。\n修改后将会在应用内公布。' }
         ],
-        privacyTitle: '🔒 Privacy Policy',
-        contactTitle: '\uD83D\uDCEC Contact Us',
-        contactP1: '<p>If you have any questions or feedback, feel free to reach out:</p><p>Email: treasuremap365.lq@gmail.com</p><p>&nbsp;</p>',
-        contactBtn: 'Submit an Issue',
-        footerText: '\u00a9 {year} Frank. Li Qiang \u00b7 TreasureMap'
+        privacyTitle: '🔒 隐私政策',
+        contactTitle: '📬 联系我们',
+        contactP1: '<p>如有任何问题或建议，欢迎通过以下方式联系我们：</p><p>电子邮件：treasuremap365.lq@gmail.com</p><p>&nbsp;</p>',
+        contactBtn: '提交问题',
+        footerText: '© {year} Frank. Li Qiang · TreasureMap'
       },
     };
 
@@ -490,6 +512,7 @@
         privacyP.textContent = t.privacyP1;
       }
       document.getElementById('contact-title').textContent = t.contactTitle;
+      // contactP1 may contain HTML (paragraphs/links). Use innerHTML so paragraphs break correctly.
       document.getElementById('contact-p1').innerHTML = t.contactP1;
       document.getElementById('contact-btn').textContent = t.contactBtn;
       // replace {year} placeholder with current year so footer always stays up-to-date
@@ -497,7 +520,7 @@
       var footerRendered = footerRaw.replace('{year}', new Date().getFullYear());
       document.getElementById('footer-text').innerHTML = footerRendered;
     }
-    var defaultLang = 'en';
+    var defaultLang = 'zh-CN';
     document.getElementById('lang-select').value = defaultLang;
     setLang(defaultLang);
     // 将关于图像从白色卡片内部移动到卡片外面（上方居中）
@@ -523,32 +546,6 @@
     })();
   </script>
 
-  <script>
-    // Measure contact button height and apply to store badges so they match exactly.
-    (function syncBadgeHeights() {
-      function apply() {
-        var btn = document.querySelector('.contact-btn');
-        if (!btn || btn.offsetHeight === 0) return;
-        var h = btn.offsetHeight;
-        document.querySelectorAll('.store-badges > *').forEach(function (el) {
-          el.style.height = Math.round(h * 1.5) + 'px';
-          el.style.display = 'inline-flex';
-          el.style.alignItems = 'center';
-          el.style.justifyContent = 'center';
-        });
-        var inner = Math.max(33, Math.round(h * 1.5) - 12);
-        document.querySelectorAll('.badge-box').forEach(function (el) { el.style.height = inner + 'px'; });
-        document.querySelectorAll('.badge-box.google img').forEach(function (img) {
-          img.style.height = Math.round(inner) + 'px';
-          img.style.transform = 'none';
-        });
-      }
-      window.addEventListener('load', apply);
-      window.addEventListener('resize', function () { setTimeout(apply, 80); });
-      setTimeout(apply, 50);
-    })();
-  </script>
-
 </body>
 
 <script>
@@ -561,6 +558,38 @@
     };
     location.href = map[v] || './index.html';
   }
+</script>
+
+<script>
+  // Measure contact button height and apply to store badges so they match exactly.
+  (function syncBadgeHeights() {
+    function apply() {
+      var btn = document.querySelector('.contact-btn');
+      if (!btn || btn.offsetHeight === 0) return;
+      var h = btn.offsetHeight;
+      // increase outer badge containers by 50% relative to contact button
+      document.querySelectorAll('.store-badges > *').forEach(function (el) {
+        el.style.height = Math.round(h * 1.5) + 'px';
+        el.style.display = 'inline-flex';
+        el.style.alignItems = 'center';
+        el.style.justifyContent = 'center';
+      });
+      // inner badge height: slightly smaller than outer, scaled 1.5x as well
+      var inner = Math.max(33, Math.round(h * 1.5) - 12);
+      document.querySelectorAll('.badge-box').forEach(function (el) {
+        el.style.height = inner + 'px';
+      });
+      // Google is now an SVG badge — set its height to match inner box
+      document.querySelectorAll('.badge-box.google img').forEach(function (img) {
+        img.style.height = Math.round(inner) + 'px';
+        img.style.transform = 'none';
+      });
+    }
+    window.addEventListener('load', apply);
+    window.addEventListener('resize', function () { setTimeout(apply, 80); });
+    // also run soon in case load already fired
+    setTimeout(apply, 50);
+  })();
 </script>
 
 </html>
