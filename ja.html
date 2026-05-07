@@ -323,7 +323,7 @@
         <option value="ja" selected>日本語</option>
       </select>
     </div>
-    <h1 id="site-title">トレジャーマップ</h1>
+    <h1 id="site-title">宝地図</h1>
     <p id="header-subtitle"></p>
   </header>
 
@@ -393,10 +393,11 @@
       'ja': {
         htmlLang: 'ja',
         pageTitle: 'HideInfo - 情報を隠す',
+        siteTitle: '宝地図',
         headerSubtitle: '技術サポート',
         aboutTitle: '📖 このアプリについて',
-        aboutP1: 'トレジャーマップは、機密情報を保護し、文書、画像、音声、動画などの情報を見た目に目立つ変化なく安全に埋め込むクロスプラットフォームアプリです。 また、サイズに制限がなく、画像キャリアに接続する必要のない高度な暗号化機構も提供します。',
-        aboutHtml: '<p>トレジャーマップは、機密情報を保護し、文書、画像、音声、動画などの情報を見た目に目立つ変化なく安全に埋め込むクロスプラットフォームアプリです。 また、サイズに制限がなく、画像キャリアに接続する必要のない高度な暗号化機構も提供します。</p><div class="info-line"><span class="info-label"><strong>主な特徴:</strong></span><span class="info-value">1. 画像内のあらゆるデータ情報を隠蔽する<br>2. ファイルの暗号化／復号化<br>3. 個人情報および重要な業務データのオフサイト保管<br>4. 暗号化された安全な通信機能<br>5. デジタル通貨（ビットコインに限らず）用のコールドウォレット</span></div><div class="info-line"><span class="info-label"><strong>応用シナリオ:</strong></span><span class="info-value">重要な情報は異なる場所に保存・バックアップされています。</span></div><div class="info-line"><span class="info-label"><strong>対応プラットフォーム:</strong></span><span class="info-value">iPhone, iPad, Mac, Android, ChromeBook, Windows</span></div>',
+        aboutP1: '宝地図は、機密情報を保護し、文書、画像、音声、動画などの情報を見た目に目立つ変化なく安全に埋め込むクロスプラットフォームアプリです。 また、サイズに制限がなく、画像キャリアに接続する必要のない高度な暗号化機構も提供します。',
+        aboutHtml: '<p>宝地図は、機密情報を保護し、文書、画像、音声、動画などの情報を見た目に目立つ変化なく安全に埋め込むクロスプラットフォームアプリです。 また、サイズに制限がなく、画像キャリアに接続する必要のない高度な暗号化機構も提供します。</p><div class="info-line"><span class="info-label"><strong>主な特徴:</strong></span><span class="info-value">1. 画像内のあらゆるデータ情報を隠蔽する<br>2. ファイルの暗号化／復号化<br>3. 個人情報および重要な業務データのオフサイト保管<br>4. 暗号化された安全な通信機能<br>5. デジタル通貨（ビットコインに限らず）用のコールドウォレット</span></div><div class="info-line"><span class="info-label"><strong>応用シナリオ:</strong></span><span class="info-value">重要な情報は異なる場所に保存・バックアップされています。</span></div><div class="info-line"><span class="info-label"><strong>対応プラットフォーム:</strong></span><span class="info-value">iPhone, iPad, Mac, Android, ChromeBook, Windows</span></div>',
         faqTitle: '❓ よくある質問',
         faqItems: [
           { q: '隠しファイルをどうやって変更・削除すればいいですか?', a: '隠しファイルを修正したい場合は、「ファイルイ」画面→「ファイル選択」で再度画像を書き戻し、暗号化して保存します。\n非表示を解除するには、「ファイル」画面の「選択解除」をクリックしてセーブデータを暗号化してください。\n通常通り終了や切り替えを行うと、復号された隠しファイルは削除され、異常な退出が残ることがあります。' },
@@ -422,14 +423,14 @@
       },
     };
 
-    function setLang(lang) {
+    function renderLang(lang) {
       var t = i18n[lang];
       if (!t) return;
 
       document.documentElement.lang = t.htmlLang;
       document.title = t.pageTitle;
       var siteTitle = document.getElementById('site-title');
-      if (siteTitle) siteTitle.textContent = t.pageTitle;
+      if (siteTitle) siteTitle.textContent = t.siteTitle || t.pageTitle;
       document.getElementById('header-subtitle').textContent = t.headerSubtitle;
       document.getElementById('about-title').textContent = t.aboutTitle;
 
@@ -498,6 +499,7 @@
     }
     var defaultLang = 'ja';
     document.getElementById('lang-select').value = defaultLang;
+    renderLang(defaultLang);
     // 「about」画像を白いカード内部からカード外（上部中央）に移動する
     (function moveAboutGraphic() {
       try {

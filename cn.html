@@ -352,7 +352,7 @@
         <option value="ja">日本語</option>
       </select>
     </div>
-    <h1 id="site-title">TreasureMap</h1>
+    <h1 id="site-title">藏宝图</h1>
     <p id="header-subtitle"></p>
   </header>
 
@@ -423,6 +423,7 @@
       'zh-CN': {
         htmlLang: 'zh-CN',
         pageTitle: 'HideInfo - 隐藏信息',
+        siteTitle: '藏宝图',
         headerSubtitle: '技术支持',
         aboutTitle: '📖 关于本应用',
         aboutP1: '“藏宝图”是一款用于保护机密信息的跨平台应用，可将文档、图片、音频和视频等信息安全地嵌入图片，且外观无明显变化。并提供不受大小限制、无需依附于图片载体的独立文件级加密机制。',
@@ -452,14 +453,14 @@
       },
     };
 
-    function setLang(lang) {
+    function renderLang(lang) {
       var t = i18n[lang];
       if (!t) return;
 
       document.documentElement.lang = t.htmlLang;
       document.title = t.pageTitle;
       var siteTitle = document.getElementById('site-title');
-      if (siteTitle) siteTitle.textContent = t.pageTitle;
+      if (siteTitle) siteTitle.textContent = t.siteTitle || t.pageTitle;
       document.getElementById('header-subtitle').textContent = t.headerSubtitle;
       document.getElementById('about-title').textContent = t.aboutTitle;
 
@@ -528,6 +529,7 @@
     }
     var defaultLang = 'zh-CN';
     document.getElementById('lang-select').value = defaultLang;
+    renderLang(defaultLang);
     // 将关于图像从白色卡片内部移动到卡片外面（上方居中）
     (function moveAboutGraphic() {
       try {

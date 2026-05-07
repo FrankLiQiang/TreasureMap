@@ -401,6 +401,7 @@
       'en': {
         htmlLang: 'en',
         pageTitle: 'HideInfo',
+        siteTitle: 'TreasureMap',
         headerSubtitle: 'Technical Support',
         aboutTitle: '\uD83D\uDCD6 About',
         aboutP1: '“TreasureMap” is a cross-platform app for protecting confidential information. It can safely embed documents, videos, audio, and other files into images with no noticeable change in appearance. And provide an advanced encryption mechanism for standalone files that is not subject to size limitations and does not need to be tied to an image container.\n\n<strong>Main features:</strong>\n1. Hide any data information in images\n2. File encryption/decryption\n3. Off-site storage of personal privacy and important business data\n4. Encrypted secure communication function\n5. Cold wallet for digital currencies (not limited to Bitcoin)\n<strong>Use cases:</strong> secure storage of important information, off-site backups, and encrypted communication.\n<strong>Supported platforms:</strong> iPhone, iPad, Mac, Android, ChromeBook, Windows',
@@ -430,14 +431,14 @@
       },
     };
 
-    function setLang(lang) {
+    function renderLang(lang) {
       var t = i18n[lang];
       if (!t) return;
 
       document.documentElement.lang = t.htmlLang;
       document.title = t.pageTitle;
       var siteTitle = document.getElementById('site-title');
-      if (siteTitle) siteTitle.textContent = t.pageTitle;
+      if (siteTitle) siteTitle.textContent = t.siteTitle || t.pageTitle;
       document.getElementById('header-subtitle').textContent = t.headerSubtitle;
       document.getElementById('about-title').textContent = t.aboutTitle;
 
@@ -505,6 +506,7 @@
     }
     var defaultLang = 'en';
     document.getElementById('lang-select').value = defaultLang;
+    renderLang(defaultLang);
     // 将关于图像从白色卡片内部移动到卡片外面（上方居中）
     (function moveAboutGraphic() {
       try {
