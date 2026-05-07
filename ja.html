@@ -3,8 +3,14 @@
 
 <head>
   <meta charset="UTF-8" />
+  <title>HideInfo - 情報を隠す</title>
+  <link rel="canonical" href="https://hideinfo.org/ja.html" />
+  <link rel="alternate" hreflang="zh-CN" href="https://hideinfo.org/cn.html" />
+  <link rel="alternate" hreflang="zh-TW" href="https://hideinfo.org/zh-TW.html" />
+  <link rel="alternate" hreflang="ja" href="https://hideinfo.org/ja.html" />
+  <link rel="alternate" hreflang="x-default" href="https://hideinfo.org/" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>トレジャーマップ – 技術サポート</title>
+  <meta name="description" content="HideInfo - 個人情報を簡単に隠して保護できます。" />
   <style>
     *,
     *::before,
@@ -386,7 +392,7 @@
     var i18n = {
       'ja': {
         htmlLang: 'ja',
-        pageTitle: 'トレジャーマップ',
+        pageTitle: 'HideInfo - 情報を隠す',
         headerSubtitle: '技術サポート',
         aboutTitle: '📖 このアプリについて',
         aboutP1: 'トレジャーマップは、機密情報を保護し、文書、画像、音声、動画などの情報を見た目に目立つ変化なく安全に埋め込むクロスプラットフォームアプリです。 また、サイズに制限がなく、画像キャリアに接続する必要のない高度な暗号化機構も提供します。',
@@ -492,7 +498,6 @@
     }
     var defaultLang = 'ja';
     document.getElementById('lang-select').value = defaultLang;
-    setLang(defaultLang);
     // 「about」画像を白いカード内部からカード外（上部中央）に移動する
     (function moveAboutGraphic() {
       try {
@@ -552,7 +557,7 @@
   function setLang(v) {
     const map = {
       'en': './index.html',
-      'ja': './cn.html',
+      'zh-CN': './cn.html',
       'zh-TW': './zh-TW.html',
       'ja': './ja.html'
     };

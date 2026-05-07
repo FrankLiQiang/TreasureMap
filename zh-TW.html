@@ -3,8 +3,14 @@
 
 <head>
   <meta charset="UTF-8" />
+  <title>HideInfo - 隱藏資訊</title>
+  <link rel="canonical" href="https://hideinfo.org/zh-TW.html" />
+  <link rel="alternate" hreflang="zh-CN" href="https://hideinfo.org/cn.html" />
+  <link rel="alternate" hreflang="zh-TW" href="https://hideinfo.org/zh-TW.html" />
+  <link rel="alternate" hreflang="ja" href="https://hideinfo.org/ja.html" />
+  <link rel="alternate" hreflang="x-default" href="https://hideinfo.org/" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>TreasureMap – 技術支援</title>
+  <meta name="description" content="HideInfo - 輕鬆隱藏與保護您的敏感資訊。" />
   <style>
     *,
     *::before,
@@ -393,7 +399,7 @@
     var i18n = {
       'zh-TW': {
         htmlLang: 'zh-TW',
-        pageTitle: '藏寶圖',
+        pageTitle: 'HideInfo - 隱藏資訊',
         headerSubtitle: '技術支援',
         aboutTitle: '📖 關於本應用',
         aboutP1: '「藏寶圖」是一款用於保護機密資訊的跨平台應用，可將檔案、圖片、音訊和影片等資訊安全地嵌入圖片，且外觀無明顯變化。並提供不受大小限制、無需依附於圖片載體的獨立檔案級加密機制。',
@@ -499,7 +505,6 @@
     }
     var defaultLang = 'zh-TW';
     document.getElementById('lang-select').value = defaultLang;
-    setLang(defaultLang);
     // 将关于图像从白色卡片内部移动到卡片外面（上方居中）
     (function moveAboutGraphic() {
       try {
