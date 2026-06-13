@@ -1,0 +1,286 @@
+{
+    "openMainMenu": "ここをタップしてメインメニューを開く",
+    "@openMainMenu": {
+        "description": "メイン画面ヒント、画像をタップしてメインメニューを開く。"
+    },
+    "@@locale": "ja",
+    "appName": "宝地図",
+    "@appName": {},
+    "welcome0": "あなた専用のプライベートデータ金庫!",
+    "@welcome0": {},
+    "welcome": "宝地図へようこそ！あなた専用のプライベートデータ金庫!",
+    "@welcome": {},
+    "copyRight": "©2025 李強 無断転載禁止",
+    "@copyRight": {},
+    "logout2": "もう一度押すとアプリが閉じます。",
+    "@logout2": {},
+    "loading": "読み込み中…",
+    "@loading": {
+        "description": "汎用の読み込み中表示。"
+    },
+    "readingFile": "ファイルを読み込んでいます。しばらくお待ちください...",
+    "@readingFile": {
+        "description": "ファイル読み込み中に表示されるメッセージ。"
+    },
+    "selectImage": "画像選択",
+    "@selectImage": {},
+    "chooseAlbumMedia": "写真から選択（写真/動画）",
+    "@chooseAlbumMedia": {
+        "description": "メニュー：写真アプリからメディア（写真/動画）を選択。"
+    },
+    "photoPermissionPurpose": "アプリが写真や画像にアクセスし、情報の保存および読み取りのために画像を情報媒体として選択できるように許可します。",
+    "@photoPermissionPurpose": {
+        "description": "権限要求時に表示される用途テキスト。"
+    },
+    "photoPermissionTitle": "アルバムへの完全なアクセスを許可",
+    "@photoPermissionTitle": {
+        "description": "権限バナーの上部に表示されるタイトル。"
+    },
+    "chooseStillPicture": "静止画像を選択してください",
+    "@chooseStillPicture": {},
+    "saved2Album": "写真はアルバムに保存されました.",
+    "@saved2Album": {},
+    "pleaseChoose": "写真を選択してください",
+    "@pleaseChoose": {},
+    "pleaseChooseIcloudHint": "写真を選択してください\n（iCloud の写真は先に写真アプリでオリジナルをダウンロードしてください）",
+    "@pleaseChooseIcloudHint": {
+        "description": "iCloud 資産のバイト取得に失敗した場合の案内。"
+    },
+    "chooseStillPictureLivePhotoHint": "静止画像を選択してください\n（Live Photo の動画リソースの可能性があります）",
+    "@chooseStillPictureLivePhotoHint": {
+        "description": "選択した資産が Live Photo の動画に見える場合の案内。"
+    },
+    "icloudReadingOriginal": "オリジナルを読み込み中…",
+    "@icloudReadingOriginal": {},
+    "icloudPrepare": "準備中…",
+    "@icloudPrepare": {},
+    "icloudDownloading": "iCloud からダウンロード中… {percent}%",
+    "@icloudDownloading": {
+        "placeholders": {
+            "percent": {
+                "type": "String",
+                "example": "42"
+            }
+        }
+    },
+    "icloudCompleted": "完了",
+    "@icloudCompleted": {},
+    "icloudFailed": "失敗",
+    "@icloudFailed": {},
+    "icloudCanceled": "キャンセル済み",
+    "@icloudCanceled": {},
+    "computing": "計算中…",
+    "@computing": {},
+    "copySha256": "検証コードをコピー",
+    "@copySha256": {},
+    "copiedSha256": "検証コードをコピーしました",
+    "@copiedSha256": {},
+    "imageInfoReading": "画像情報を読み込み中…",
+    "@imageInfoReading": {
+        "description": "復号時に画像/検証コードの読み込みや計算がまだ完了していない場合の表示。"
+    },
+    "chooseFileSelf": "ファイルを選択してください。",
+    "@chooseFileSelf": {},
+    "passwordWithFileName": "ファイル名を使用する。",
+    "@passwordWithFileName": {},
+    "denied": "許可が拒否されました",
+    "setPermission": "この機能を使用するには、設定でフォトアルバムへのアクセスを有効にしてください。",
+    "@setPermission": {},
+    "toSetPermission": "設定に移動",
+    "@toSetPermission": {},
+    "inputPwd": "パスワード入力",
+    "@inputPwd": {},
+    "password": "パスワード",
+    "@password": {},
+    "fileRemind": "隠しファイルは復号されました。アプリが正常に終了すれば自動的に削除されます。\n正常に終了しなかった場合は、情報セキュリティにご注意ください！",
+    "@fileRemind": {},
+    "doNotShowAgain": "次回から表示しない",
+    "@doNotShowAgain": {},
+    "compressedAfter": "圧縮後：",
+    "@compressedAfter": {
+        "description": "圧縮後のファイルサイズの前に表示するラベル。"
+    },
+    "pleaseInputPwd": "パスワードを入力してください",
+    "@pleaseInputPwd": {},
+    "freeChanceLeft": "あと{n}回無料でご利用いただけます。",
+    "@freeChanceLeft": {
+        "description": "未登録ユーザーの無料体験残り回数表示。nはパラメータ。",
+        "placeholders": {
+            "n": {
+                "type": "String",
+                "example": "2"
+            }
+        }
+    },
+    "pwdTooShort": "パスワードが短すぎます",
+    "@pwdTooShort": {},
+    "pwdError": "パスワードが間違っているか、このアプリを使用して非表示にされた画像ではありません。",
+    "@pwdError": {},
+    "versionTooNew": "この画像は新しい暗号化アルゴリズムを使用しています。最新版へ更新するか、このプラットフォームのアプリ更新をお待ちください。",
+    "@versionTooNew": {},
+    "confirmPwd": "パスワード確認",
+    "@confirmPwd": {},
+    "pwdNotSame": "パスワードが一致しません。もう一度お試しください",
+    "@pwdNotSame": {},
+    "readOnly": "閲覧のみ",
+    "@readOnly": {},
+    "edit": "編集できる",
+    "@edit": {},
+    "readOnlyModeHint": "利用したいモードを選んでください。あとで設定画面から変更できます。",
+    "@readOnlyModeHint": {
+        "description": "復号機能を初めて使うときに、閲覧のみと編集できるモードを案内する表示。"
+    },
+    "showPwd": "パスワードを表示",
+    "@showPwd": {},
+    "tryNowAd": "今すぐ体験（広告視聴で無料）",
+    "@tryNowAd": {
+        "description": "ボタン：今すぐ体験（広告視聴で無料）"
+    },
+    "decryption": "復号化",
+    "@decryption": {},
+    "encryption": "暗号化",
+    "@encryption": {},
+    "encryptSuccess": "ファイルの暗号化／復号化に成功しました！",
+    "@encryptSuccess": {},
+    "list": "リスト",
+    "@list": {},
+    "inputSearch": "検索キーワードを入力してください",
+    "@inputSearch": {},
+    "inputTitle": "タイトルを入力してください（単行）",
+    "@inputTitle": {},
+    "locating": "位置を検索中…",
+    "@locating": {
+        "description": "検索結果へ自動スクロールしている間の表示"
+    },
+    "inputContent": "コンテンツを入力してください（複数行入力可）",
+    "@inputContent": {},
+    "addListHint": "タップでタイトルと内容のセット\nを追加できます。\n追加ボタンはドラッグできます。",
+    "@addListHint": {
+        "description": "追加行ボタンのヒント：タップで1行（タイトルと内容のセット）を追加、ボタンはドラッグ可能。"
+    },
+    "searchWrap": "これ以上見つかりません。先頭から再検索します。",
+    "@searchWrap": {
+        "description": "検索到達末尾で先頭から再検索する際に表示するメッセージ。"
+    },
+    "delItemHint": "現在の行を削除します",
+    "@delItemHint": {
+        "description": "リスト項目の削除ボタン付近に表示するヒント。"
+    },
+    "text": "文字",
+    "@text": {},
+    "file": "ファイル",
+    "@file": {},
+    "hideFile": "ファイル隠し",
+    "@hideFile": {},
+    "filePath": "ファイルパス",
+    "@filePath": {},
+    "sizeUnknown": "サイズ不明",
+    "@sizeUnknown": {
+        "description": "UI がファイルサイズを表示すべきだが取得できない場合に表示されるテキスト。"
+    },
+    "chooseFile": "ファイル選択",
+    "@chooseFile": {},
+    "cancelChosen": "選択解除",
+    "@cancelChosen": {},
+    "fileSelf": "ファイル自体",
+    "@fileSelf": {},
+    "hideFileSelf": "ファイルを暗号化／復号化",
+    "@hideFileSelf": {},
+    "noInfo": "まだ情報が入力されていません。",
+    "@noInfo": {},
+    "failed2save": "情報を保存できませんでした。",
+    "@failed2save": {},
+    "saveFailed": "保存に失敗しました。",
+    "@saveFailed": {},
+    "tooLarge": "情報量が多すぎるか、画像が小さすぎます。より大きな画像に変更するか、ファイル自体の暗号化を使用してください。",
+    "@tooLarge": {},
+    "help": "ヘルプ",
+    "@help": {},
+    "about": "情報",
+    "@about": {},
+    "home": "ホーム",
+    "@home": {},
+    "setting": "設置",
+    "@setting": {},
+    "fontSize": "フォントサイズ",
+    "@fontSize": {},
+    "logout": "ログアウト",
+    "@logout": {},
+    "exit": "アプリ終了",
+    "@exit": {},
+    "logoutMessage": "ログアウトしますか?",
+    "@logoutMessage": {},
+    "delete": "削除",
+    "@delete": {},
+    "deleteConfirm": "削除確認",
+    "@deleteConfirm": {},
+    "deleteAsk": " \"title\" を本当に削除しますか?",
+    "deleteImageAsk": "隠し情報を含む新しい画像を作成しました。元の画像を削除しますか？",
+    "@deleteAsk": {},
+    "notFound": " \"title\" が見つかりません",
+    "@notFound": {},
+    "close": "閉じる",
+    "@close": {},
+    "cancel": "キャンセル",
+    "@cancel": {},
+    "empty": "残り",
+    "@empty": {},
+    "tapToView": "扇形をタップ\nして表示",
+    "@tapToView": {
+        "description": "円グラフ中央のヒント：扇形をタップして詳細を表示"
+    },
+    "hint_message": "このアプリが対応する4つの表示言語に限らず、任意の言語で入力できます。",
+    "@hint_message": {
+        "description": "テキスト入力内の言語サポートに関するヒント。"
+    },
+    "confirm": "確認",
+    "@confirm": {},
+    "overwriteConfirmTitle": "上書き確認",
+    "@overwriteConfirmTitle": {},
+    "overwriteExistingFileMessage": "同名のファイルが既にあります。上書きしますか？",
+    "@overwriteExistingFileMessage": {},
+    "vipNoAds": "会員登録で広告なし",
+    "@vipNoAds": {
+        "description": "会員登録後は広告が表示されません"
+    },
+    "adjustHelpFontSize": "ヘルプ本文のフォントサイズを調整",
+    "@adjustHelpFontSize": {
+        "description": "スライダーのラベル：ヘルプ本文のフォントサイズを調整"
+    },
+    "helpFontSmall": "小",
+    "@helpFontSmall": {
+        "description": "ラベル：小さいフォント"
+    },
+    "helpFontLarge": "大",
+    "@helpFontLarge": {
+        "description": "ラベル：大きいフォント"
+    },
+    "userAgreement": "利用規約",
+    "@userAgreement": {
+        "description": "ユーザー契約のタイトル"
+    },
+    "privacyPolicy": "プライバシーポリシー",
+    "@privacyPolicy": {
+        "description": "プライバシーポリシーのタイトル"
+    },
+    "privacyPolicyAgree": "同意する",
+    "@privacyPolicyAgree": {
+        "description": "プライバシーポリシー対話框底部のチェックボックス文言"
+    },
+    "privacyPolicyReject": "拒否する",
+    "@privacyPolicyReject": {
+        "description": "プライバシーポリシー対話框の拒否ボタン文言"
+    },
+    "sha256Hint": "指でピンチ、ドラッグ、回転して画像を操作できます。画像横の「検証コードをコピー」ボタンや下の情報は、アプリのヘルプを参照してください。",
+    "@sha256Hint": {
+        "description": "画像上の簡潔で口語的なヒント：指での操作方法と、検証コードコピーボタンの情報はヘルプを参照する旨を伝える。"
+    },
+    "sha256HintMacWin": "マウスのドラッグやホイールで画像を移動・拡大縮小できます。画像横の「検証コードをコピー」ボタンや下の情報は、アプリのヘルプを参照してください。",
+    "@sha256HintMacWin": {
+        "description": "macOS/Windows 向けの簡潔な口語的ヒント：マウスの操作方法とヘルプ参照の案内。"
+    },
+    "stegoWebUnsupported": "ステガノグラフィーはネイティブアプリが必要です。ウェブ版では利用できません。",
+    "@stegoWebUnsupported": {
+        "description": "ウェブ版でステガノグラフィーのエンコード・デコードを試みた場合に表示。"
+    }
+}
