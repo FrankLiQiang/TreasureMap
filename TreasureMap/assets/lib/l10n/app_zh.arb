@@ -1,0 +1,294 @@
+{
+    "openMainMenu": "点击这里打开主菜单",
+    "@openMainMenu": {
+        "description": "主界面提示，点击图片打开主菜单。"
+    },
+    "@@locale": "zh",
+    "appName": "藏宝图",
+    "@appName": {},
+    "welcome0": "您的私人数据金库！",
+    "@welcome0": {},
+    "welcome": "欢迎使用藏宝图！您的私人数据金库！",
+    "@welcome": {},
+    "copyRight": "© 2025 李强 版权所有",
+    "@copyRight": {},
+    "logout2": "再次按下以关闭应用程序。",
+    "@logout2": {},
+    "loading": "加载中…",
+    "@loading": {
+        "description": "通用加载占位文本。"
+    },
+    "readingFile": "正在读取文件，请稍候...",
+    "@readingFile": {
+        "description": "正在读取文件时的提示。"
+    },
+    "selectImage": "选择图片",
+    "@selectImage": {},
+    "chooseAlbumMedia": "从相册选择(照片/视频)",
+    "@chooseAlbumMedia": {
+        "description": "菜单文字：从系统相册选择媒体(照片/视频)。"
+    },
+    "photoPermissionPurpose": "允许应用访问您的照片与图片，用于选择图片作为信息载体，进行信息存储与信息读取",
+    "@photoPermissionPurpose": {
+        "description": "权限请求用途文本，展示在系统权限对话/横幅中。"
+    },
+    "photoPermissionTitle": "允许完全访问相册",
+    "@photoPermissionTitle": {
+        "description": "权限请求横幅顶部粗体标题。"
+    },
+    "chooseStillPicture": "请选择静止图片",
+    "@chooseStillPicture": {},
+    "pleaseChoose": "请选择图片",
+    "@pleaseChoose": {},
+    "pleaseChooseIcloudHint": "请选择图片\n(iCloud 照片请先在系统相册下载原图)",
+    "@pleaseChooseIcloudHint": {
+        "description": "当 iCloud 资源无法直接读取字节时的提示，建议先在系统相册下载原图。"
+    },
+    "chooseStillPictureLivePhotoHint": "请选择静止图片\n(检测到可能是 Live Photo 视频资源)",
+    "@chooseStillPictureLivePhotoHint": {
+        "description": "当检测到可能选择到了 Live Photo 的视频资源而非静止图片时提示。"
+    },
+    "icloudReadingOriginal": "正在读取原图…",
+    "@icloudReadingOriginal": {
+        "description": "从 iCloud 读取原图时的对话框标题。"
+    },
+    "icloudPrepare": "准备中…",
+    "@icloudPrepare": {},
+    "icloudDownloading": "从 iCloud 下载中… {percent}%",
+    "@icloudDownloading": {
+        "placeholders": {
+            "percent": {
+                "type": "String",
+                "example": "42"
+            }
+        }
+    },
+    "icloudCompleted": "完成",
+    "@icloudCompleted": {},
+    "icloudFailed": "失败",
+    "@icloudFailed": {},
+    "icloudCanceled": "已取消",
+    "@icloudCanceled": {},
+    "computing": "计算中…",
+    "@computing": {
+        "description": "计算校验码时的提示。"
+    },
+    "copySha256": "复制校验码",
+    "@copySha256": {},
+    "copiedSha256": "已复制校验码",
+    "@copiedSha256": {},
+    "imageInfoReading": "图片信息读取中",
+    "@imageInfoReading": {
+        "description": "解密时图片校验码仍在读取或计算中的提示。"
+    },
+    "chooseFileSelf": "请选择文件。",
+    "@chooseFileSelf": {},
+    "passwordWithFileName": "使用文件名作为密码。",
+    "@passwordWithFileName": {},
+    "saved2Album": "图片已保存到相册.",
+    "@saved2Album": {},
+    "denied": "权限被拒绝",
+    "@denied": {},
+    "setPermission": "请在设置中启用相册访问权限以便使用该功能。",
+    "tryNowAd": "立即体验（看广告免费用）",
+    "@tryNowAd": {
+        "description": "按钮：立即体验（看广告免费用）"
+    },
+    "@setPermission": {},
+    "toSetPermission": "去设置",
+    "@toSetPermission": {},
+    "inputPwd": "输入密码",
+    "@inputPwd": {},
+    "password": "密码",
+    "@password": {},
+    "fileRemind": "已经解密隐藏文件，本App如果正常退出会自动删除；\n如果未能正常退出，请注意信息安全！",
+    "@fileRemind": {},
+    "doNotShowAgain": "下次不再显示",
+    "@doNotShowAgain": {},
+    "compressedAfter": "压缩后：",
+    "@compressedAfter": {
+        "description": "显示压缩后文件大小前的标签。"
+    },
+    "pleaseInputPwd": "请输入密码",
+    "@pleaseInputPwd": {},
+    "freeChanceLeft": "您还会有{n}次免费使用机会。",
+    "@freeChanceLeft": {
+        "description": "未注册用户剩余免费体验次数提示，n为参数",
+        "placeholders": {
+            "n": {
+                "type": "String",
+                "example": "2"
+            }
+        }
+    },
+    "pwdTooShort": "密码太短",
+    "@pwdTooShort": {},
+    "pwdError": "密码错误或者这不是一张用本APP隐藏过信息的图片。",
+    "@pwdError": {},
+    "versionTooNew": "这张图片使用了较新的加密算法。请更新到最新版本，或等待当前平台 APP 升级。",
+    "@versionTooNew": {},
+    "confirmPwd": "确认密码",
+    "@confirmPwd": {},
+    "pwdNotSame": "密码不匹配，请重试",
+    "@pwdNotSame": {},
+    "readOnly": "仅查看",
+    "@readOnly": {},
+    "edit": "可修改",
+    "@edit": {},
+    "readOnlyModeHint": "选择您需要的模式，稍后可在设定画面更改。",
+    "@readOnlyModeHint": {
+        "description": "首次使用解密功能时，提示用户选择仅查看或可修改模式。"
+    },
+    "showPwd": "显示密码",
+    "@showPwd": {},
+    "decryption": "解密",
+    "@decryption": {},
+    "encryption": "加密",
+    "@encryption": {},
+    "encryptSuccess": "文件自身加密/解密成功！",
+    "@encryptSuccess": {},
+    "list": "列表",
+    "@list": {},
+    "inputSearch": "请输入搜索关键字",
+    "@inputSearch": {},
+    "inputTitle": "输入标题(单行)",
+    "@inputTitle": {},
+    "locating": "正在定位…",
+    "@locating": {
+        "description": "搜索后自动滚动定位时的提示"
+    },
+    "inputContent": "输入内容(支持多行输入)",
+    "@inputContent": {},
+    "addListHint": "点击，可以追加一行。\n您可以拖动追加按钮。",
+    "@addListHint": {
+        "description": "追加行按钮的提示：点击追加一行；追加按钮可拖动。"
+    },
+    "searchWrap": "未找到更多结果，从顶部重新开始。",
+    "@searchWrap": {
+        "description": "当搜索到末尾并从顶部重新开始时显示的消息。"
+    },
+    "delItemHint": "点击它，删除当前行",
+    "@delItemHint": {
+        "description": "列表项删除按钮提示。"
+    },
+    "text": "文本",
+    "@text": {},
+    "file": "文件",
+    "@file": {},
+    "hideFile": "隐藏文件",
+    "@hideFile": {},
+    "filePath": "文件路径",
+    "@filePath": {},
+    "sizeUnknown": "大小未知",
+    "@sizeUnknown": {
+        "description": "当应显示文件大小但无法得知时展示的占位文本。"
+    },
+    "chooseFile": "选择文件",
+    "@chooseFile": {},
+    "cancelChosen": "取消选择",
+    "@cancelChosen": {},
+    "fileSelf": "文件自身",
+    "@fileSelf": {},
+    "hideFileSelf": "加密/解密 文件",
+    "@hideFileSelf": {},
+    "noInfo": "尚未输入任何信息。",
+    "@noInfo": {},
+    "failed2save": "信息保存失败。",
+    "@failed2save": {},
+    "saveFailed": "保存失败",
+    "@saveFailed": {},
+    "tooLarge": "信息量太大或者图片太小，请更换更大尺寸图片或者使用文件自身加密",
+    "@tooLarge": {},
+    "help": "帮助",
+    "@help": {},
+    "about": "关于",
+    "@about": {},
+    "home": "主页",
+    "@home": {},
+    "setting": "设定",
+    "@setting": {},
+    "fontSize": "字体大小",
+    "@fontSize": {},
+    "logout": "退出登录",
+    "@logout": {},
+    "exit": "退出应用",
+    "@exit": {},
+    "logoutMessage": "退出登录吗?",
+    "@logoutMessage": {},
+    "delete": "删除",
+    "@delete": {},
+    "deleteConfirm": "确认删除",
+    "@deleteConfirm": {},
+    "deleteAsk": "确定要删除 \"title\" 吗？",
+    "deleteImageAsk": "已经为您生成新的存有隐藏信息的图片，是否删除原图？",
+    "@deleteImageAsk": {
+        "description": "当系统相册可能弹出删除原图的确认对话框时在界面上显示的提示。"
+    },
+    "@deleteAsk": {},
+    "notFound": "未找到 \"title\" ",
+    "@notFound": {},
+    "close": "关闭",
+    "@close": {},
+    "cancel": "取消",
+    "@cancel": {},
+    "empty": "剩余",
+    "@empty": {},
+    "tapToView": "点扇区\n查看",
+    "@tapToView": {
+        "description": "饼图中心提示：点按扇区查看详细占比"
+    },
+    "hint_message": "您可以输入任何语言的内容，不仅仅限于本应用支持的四种界面语言。",
+    "@hint_message": {
+        "description": "文本输入内关于语言支持的提示。"
+    },
+    "confirm": "确认",
+    "@confirm": {},
+    "overwriteConfirmTitle": "覆盖确认",
+    "@overwriteConfirmTitle": {},
+    "overwriteExistingFileMessage": "已有同名文件，是否要覆盖？",
+    "@overwriteExistingFileMessage": {},
+    "vipNoAds": "注册会员免广告",
+    "@vipNoAds": {
+        "description": "注册会员后可免广告"
+    },
+    "adjustHelpFontSize": "调整帮助内容字体大小",
+    "@adjustHelpFontSize": {
+        "description": "用于滑块的标签：调整帮助内容的字体大小。"
+    },
+    "helpFontSmall": "小",
+    "@helpFontSmall": {
+        "description": "标签：小字号"
+    },
+    "helpFontLarge": "大",
+    "@helpFontLarge": {
+        "description": "标签：大字号"
+    },
+    "userAgreement": "用户协议",
+    "@userAgreement": {
+        "description": "用户协议 标题"
+    },
+    "privacyPolicy": "隐私政策",
+    "@privacyPolicy": {
+        "description": "隐私政策 标题"
+    },
+    "privacyPolicyAgree": "同意",
+    "@privacyPolicyAgree": {
+        "description": "隐私政策对话框底部复选框文案"
+    },
+    "privacyPolicyReject": "拒绝",
+    "@privacyPolicyReject": {
+        "description": "隐私政策对话框中拒绝按钮文案"
+    },
+    "sha256Hint": "用手指拖动或捏合来移动/缩放/旋转图片。关于\"复制校验码\"按钮和下方信息，请查看帮助。",
+    "@sha256Hint": {
+        "description": "图片上的简短提示（口语）：如何用手指操作图片，并指示查看帮助了解复制校验码按钮和相关信息。"
+    },
+    "sha256HintMacWin": "用鼠标拖动或滚轮来移动或缩放图片。关于\"复制校验码\"按钮和下方信息，请查看帮助。",
+    "@sha256HintMacWin": {
+        "description": "macOS/Windows 的简短提示（口语）：用鼠标拖动或滚輪缩放图片，并指示查看帮助了解复制校验码按钮和相关信息。"
+    },
+    "stegoWebUnsupported": "隐写功能需要原生 App，网页版不支持。",
+    "@stegoWebUnsupported": {
+        "description": "Web 版不支持隐写加解密时的提示。"
+    }
+}
