@@ -44,6 +44,6 @@ _flutter.buildConfig = {"engineRevision":"774a76734848e38c908681d752e465b2a1595a
 // main.dart.js 的地址带上它内容的哈希（tool/build_web.sh 编完后填进来）：
 // 每编一版地址都不同，浏览器不会拿缓存里的旧版
 for (const b of _flutter.buildConfig.builds) {
-  if (b.mainJsPath) b.mainJsPath += '?v=f4e0d2046db9';
+  if (b.mainJsPath) b.mainJsPath += '?v=340a252925bd';
 }
 _flutter.loader.load();
