@@ -38,7 +38,7 @@ addEventListener("message", eventListener);
 if (!window._flutter) {
   window._flutter = {};
 }
-_flutter.buildConfig = {"engineRevision":"774a76734848e38c908681d752e465b2a1595adb","wasmHashes":{"wimp.wasm":"ac6afe7b482323fd25039f86c40a01b80a8125cd67dfe1a1895629db18ad2184","webparagraph/canvaskit.wasm":"3871d8206aad3224e5fdbf12119757ac0deaa93429a320088904acc7cbdfdf6b","skwasm.wasm":"813d734cd8396e66c4a0b9969f8c755cef14461d8e2635a0b71dbce8c117aec3","chromium/canvaskit.wasm":"3bd31188217fdc48451dd34753e11f86f30c240a214676f863d591e3a2e1785e","canvaskit.wasm":"d51d072090a217ea97fb1b673cadba993374840f2404782c229d846af327fda7","skwasm_heavy.wasm":"9637f94252c48f4b1921409dd6761c63a19b4af01a1ed2fafe91f9ea1a498f40"},"builds":[{"compileTarget":"dart2js","renderer":"canvaskit","mainJsPath":"main.dart.js"}]};
+_flutter.buildConfig = {"engineRevision":"774a76734848e38c908681d752e465b2a1595adb","wasmHashes":{"wimp.wasm":"ac6afe7b482323fd25039f86c40a01b80a8125cd67dfe1a1895629db18ad2184","webparagraph/canvaskit.wasm":"3871d8206aad3224e5fdbf12119757ac0deaa93429a320088904acc7cbdfdf6b","skwasm.wasm":"813d734cd8396e66c4a0b9969f8c755cef14461d8e2635a0b71dbce8c117aec3","chromium/canvaskit.wasm":"3bd31188217fdc48451dd34753e11f86f30c240a214676f863d591e3a2e1785e","canvaskit.wasm":"d51d072090a217ea97fb1b673cadba993374840f2404782c229d846af327fda7","skwasm_heavy.wasm":"9637f94252c48f4b1921409dd6761c63a19b4af01a1ed2fafe91f9ea1a498f40"},"builds":[{"compileTarget":"dart2js","renderer":"canvaskit","mainJsPath":"main.dart.js"},{}]};
 
 
 // main.dart.js 的地址带上它内容的哈希（tool/build_web.sh 编完后填进来）：
