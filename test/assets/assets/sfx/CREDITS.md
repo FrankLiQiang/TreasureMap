@@ -5,7 +5,9 @@
 | 文件 | 来源 | 许可 |
 |---|---|---|
 | select0–3、deselect0–2、land0–2 | freesound.org #329099 "Domino pieces 1"，作者 Macif | CC0 |
+| draw、discard | 由上面的 select、land 经 `tool/make_tile_sfx.py` 加工（摸牌：变高、收短、两下；打牌：垫一点闷响） | CC0 |
 | coin0–3 | Kenney "RPG Audio"（www.kenney.nl）中的 handleCoins2，由 `tool/make_coin_sfx.py` 变调 | CC0 |
+| dealRound0–3 | Kenney "Casino Audio"（www.kenney.nl）中的 card-shuffle，由 `tool/make_deal_sfx.py` 剪出四下"刷"，对齐每轮发牌的落牌时刻 | CC0 |
 | coinDrop0–7、coinShower | 程序合成（`tool/make_coin_drop.py`） | — |
 | deal、deal_pluck（备用）、ding0–9、win、wrong | 程序合成 | — |
 | cheer | BigSoundBank #0236 "Shouts and Applauses of Teens #1"（bigsoundbank.com），转单声道、淡入淡出、响度归一 | CC0 |
