@@ -1,0 +1,294 @@
+{
+    "openMainMenu": "Tap here to open the main menu",
+    "@openMainMenu": {
+        "description": "Main screen hint, tap image to open main menu."
+    },
+    "@@locale": "en",
+    "appName": "TreasureMap",
+    "@appName": {},
+    "welcome0": "Your Private Data Vault!",
+    "@welcome0": {},
+    "welcome": "Welcome to Treasure Map! Your Private Data Vault!",
+    "@welcome": {},
+    "copyRight": "© 2025 Frank Li. All rights reserved.",
+    "@copyRight": {},
+    "logout2": "Press again to close the app.",
+    "@logout2": {},
+    "loading": "Loading…",
+    "@loading": {
+        "description": "Generic loading placeholder text."
+    },
+    "readingFile": "Reading file, please wait...",
+    "@readingFile": {
+        "description": "Shown while reading a file from disk."
+    },
+    "selectImage": "Select Image",
+    "@selectImage": {},
+    "chooseAlbumMedia": "Choose from Photos (Image/Video)",
+    "@chooseAlbumMedia": {
+        "description": "Menu label: pick media from iOS Photos (images/videos)."
+    },
+    "photoPermissionPurpose": "Allow the app to access your photos and images to select a picture as an information carrier for storing and reading information.",
+    "@photoPermissionPurpose": {
+        "description": "Purpose text shown during permission requests or transient banners."
+    },
+    "photoPermissionTitle": "Allow Full Album Access",
+    "@photoPermissionTitle": {
+        "description": "Title shown at top of permission banner/dialog."
+    },
+    "saved2Album": "The picture has been saved to the album.",
+    "@saved2Album": {},
+    "chooseStillPicture": "Please select a still image",
+    "@chooseStillPicture": {},
+    "pleaseChoose": "Please select a picture",
+    "@pleaseChoose": {},
+    "pleaseChooseIcloudHint": "Please select a picture.\n(For iCloud photos, download the original in Photos first.)",
+    "@pleaseChooseIcloudHint": {
+        "description": "Shown when iCloud asset bytes are unavailable; advises downloading original in Photos."
+    },
+    "chooseStillPictureLivePhotoHint": "Please select a still image\n(This may be a Live Photo video resource.)",
+    "@chooseStillPictureLivePhotoHint": {
+        "description": "Shown when the selected asset looks like a Live Photo video instead of an image."
+    },
+    "icloudReadingOriginal": "Reading original photo…",
+    "@icloudReadingOriginal": {
+        "description": "Dialog title while loading original photo from iCloud."
+    },
+    "icloudPrepare": "Preparing…",
+    "@icloudPrepare": {},
+    "icloudDownloading": "Downloading from iCloud… {percent}%",
+    "@icloudDownloading": {
+        "placeholders": {
+            "percent": {
+                "type": "String",
+                "example": "42"
+            }
+        }
+    },
+    "icloudCompleted": "Done",
+    "@icloudCompleted": {},
+    "icloudFailed": "Failed",
+    "@icloudFailed": {},
+    "icloudCanceled": "Canceled",
+    "@icloudCanceled": {},
+    "computing": "Computing…",
+    "@computing": {
+        "description": "Shown while computing verification code."
+    },
+    "copySha256": "Copy verification code",
+    "@copySha256": {},
+    "copiedSha256": "Copied verification code",
+    "@copiedSha256": {},
+    "imageInfoReading": "Reading image info…",
+    "@imageInfoReading": {
+        "description": "Shown when decrypting but the image verification code is still being read or computed."
+    },
+    "chooseFileSelf": "Please select a file.",
+    "@chooseFileSelf": {},
+    "passwordWithFileName": "Use the file name.",
+    "@passwordWithFileName": {},
+    "denied": "Permission denied",
+    "@denied": {},
+    "setPermission": "To use this feature, please enable Photo Album access in Settings.",
+    "tryNowAd": "Try now (Free with ads)",
+    "@tryNowAd": {
+        "description": "Button: Try now (Free with ads)"
+    },
+    "@setPermission": {},
+    "toSetPermission": "Go to Settings",
+    "@toSetPermission": {},
+    "inputPwd": "Input Password",
+    "@inputPwd": {},
+    "password": "Password",
+    "@password": {},
+    "fileRemind": "The hidden file has been decrypted. If the app exits normally, it will be deleted automatically.\n If not, please pay attention to information security!",
+    "@fileRemind": {},
+    "doNotShowAgain": "Don't show again",
+    "@doNotShowAgain": {},
+    "compressedAfter": "After compression:",
+    "@compressedAfter": {
+        "description": "Label shown before compressed file size."
+    },
+    "pleaseInputPwd": "Please enter your password",
+    "@pleaseInputPwd": {},
+    "freeChanceLeft": "You still have {n} free trial chance(s) left.",
+    "@freeChanceLeft": {
+        "description": "Show remaining free trial chances for unregistered users, n is a parameter.",
+        "placeholders": {
+            "n": {
+                "type": "String",
+                "example": "2"
+            }
+        }
+    },
+    "pwdTooShort": "Password is too short",
+    "@pwdTooShort": {},
+    "pwdError": "The password is incorrect or this is not a picture that has been hidden using this APP.",
+    "@pwdError": {},
+    "versionTooNew": "This picture uses a newer encryption algorithm. Please update to the latest version or wait for this platform's app update.",
+    "@versionTooNew": {},
+    "confirmPwd": "Confirm Password",
+    "@confirmPwd": {},
+    "pwdNotSame": "Passwords do not match. Please try again.",
+    "@pwdNotSame": {},
+    "readOnly": "View only",
+    "@readOnly": {},
+    "edit": "Can edit",
+    "@edit": {},
+    "readOnlyModeHint": "Choose the mode you want. You can change it later in Settings.",
+    "@readOnlyModeHint": {
+        "description": "Shown on first use of the decrypt feature to explain the view-only and editable modes."
+    },
+    "showPwd": "Show Password",
+    "@showPwd": {},
+    "decryption": "Decrypt",
+    "@decryption": {},
+    "encryption": "Encrypt",
+    "@encryption": {},
+    "encryptSuccess": "File encrypted/decrypted successfully!",
+    "@encryptSuccess": {},
+    "list": "List",
+    "@list": {},
+    "inputSearch": "Please enter a search keyword",
+    "@inputSearch": {},
+    "inputTitle": "Input Title (single line)",
+    "@inputTitle": {},
+    "locating": "Locating…",
+    "@locating": {
+        "description": "Hint shown while auto-scrolling to the searched item."
+    },
+    "inputContent": "Input Content (supports multi-line input)",
+    "@inputContent": {},
+    "addListHint": "Tap to add one title and content.\nYou can drag the add button.",
+    "@addListHint": {
+        "description": "Hint shown near the add-row button: tap to add one row (title and content); button is draggable."
+    },
+    "searchWrap": "No more results; starting from the top.",
+    "@searchWrap": {
+        "description": "Message shown when search reaches the end and restarts from the top."
+    },
+    "delItemHint": "Delete the current row",
+    "@delItemHint": {
+        "description": "Hint shown near the delete button in a list item."
+    },
+    "text": "Text",
+    "@text": {},
+    "file": "File",
+    "@file": {},
+    "hideFile": "Hide File",
+    "@hideFile": {},
+    "filePath": "File Path",
+    "@filePath": {},
+    "sizeUnknown": "Size unknown",
+    "@sizeUnknown": {
+        "description": "Shown when the UI should display a file size but it cannot be determined."
+    },
+    "chooseFile": "Choose File",
+    "@chooseFile": {},
+    "cancelChosen": "Deselect",
+    "@cancelChosen": {},
+    "fileSelf": "File Self",
+    "@fileSelf": {},
+    "hideFileSelf": "Encrypt / Decrypt File",
+    "@hideFileSelf": {},
+    "noInfo": "No information has been entered yet.",
+    "@noInfo": {},
+    "failed2save": "Failed to save information.",
+    "@failed2save": {},
+    "saveFailed": "Save failed.",
+    "@saveFailed": {},
+    "tooLarge": "Information too large or image too small. Please use a larger image or encrypt the file itself.",
+    "@tooLarge": {},
+    "help": "Help",
+    "@help": {},
+    "about": "About",
+    "@about": {},
+    "home": "Home",
+    "@home": {},
+    "setting": "Setting",
+    "@setting": {},
+    "fontSize": "Font Size",
+    "@fontSize": {},
+    "logout": "Sign Out",
+    "@logout": {},
+    "exit": "Exit APP",
+    "@exit": {},
+    "logoutMessage": "Log out ？",
+    "@logoutMessage": {},
+    "tapToView": "Tap a slice\nto view",
+    "@tapToView": {
+        "description": "Pie chart center hint: tap a slice to view details"
+    },
+    "hint_message": "You may enter content in any language, not limited to the four UI languages supported by this app.",
+    "@hint_message": {
+        "description": "Hint shown inside the text input explaining language support."
+    },
+    "delete": "Delete",
+    "@delete": {},
+    "deleteConfirm": "Delete Confirmation",
+    "@deleteConfirm": {},
+    "deleteAsk": "Are you sure you want to delete  \"title\" ?",
+    "deleteImageAsk": "A new image containing hidden information has been created. Delete the original image?",
+    "@deleteImageAsk": {
+        "description": "Shown when the system photo picker may prompt the user to delete the original image after creating a new image with hidden information."
+    },
+    "@deleteAsk": {},
+    "notFound": " \"title\" not found",
+    "@notFound": {},
+    "close": "Close",
+    "@close": {},
+    "cancel": "Cancel",
+    "@cancel": {},
+    "empty": "Remaining",
+    "@empty": {},
+    "confirm": "OK",
+    "@confirm": {},
+    "overwriteConfirmTitle": "Overwrite Confirmation",
+    "@overwriteConfirmTitle": {},
+    "overwriteExistingFileMessage": "A file with the same name already exists. Do you want to overwrite it?",
+    "@overwriteExistingFileMessage": {},
+    "vipNoAds": "No ads for VIP members",
+    "@vipNoAds": {
+        "description": "No ads after registering as a member"
+    },
+    "adjustHelpFontSize": "Adjust help content font size",
+    "@adjustHelpFontSize": {
+        "description": "Label for the slider controlling help content font size."
+    },
+    "helpFontSmall": "Small",
+    "@helpFontSmall": {
+        "description": "Label: small font"
+    },
+    "helpFontLarge": "Large",
+    "@helpFontLarge": {
+        "description": "Label: large font"
+    },
+    "sha256Hint": "Pinch, drag or rotate the image with your fingers. For the 'Copy verification code' button and info below, see the app Help.",
+    "@sha256Hint": {
+        "description": "Short, conversational hint shown on the image: how to gesture the image and where to find help for the copy verification code button."
+    },
+    "sha256HintMacWin": "Drag with the mouse or use the scroll wheel to move and zoom the image. For the 'Copy verification code' button and info below, see the app Help.",
+    "@sha256HintMacWin": {
+        "description": "Short, conversational platform hint for macOS/Windows: use mouse drag or wheel to move/zoom; refer to Help for the copy verification code button."
+    },
+    "userAgreement": "User Agreement",
+    "@userAgreement": {
+        "description": "Title for the user agreement document"
+    },
+    "privacyPolicy": "Privacy Policy",
+    "@privacyPolicy": {
+        "description": "Title for the privacy policy document"
+    },
+    "privacyPolicyAgree": "Agree",
+    "@privacyPolicyAgree": {
+        "description": "Checkbox label shown at the bottom of the privacy policy dialog"
+    },
+    "privacyPolicyReject": "Reject",
+    "@privacyPolicyReject": {
+        "description": "Label for rejecting the privacy policy"
+    },
+    "stegoWebUnsupported": "Steganography requires the native app; not available in the web version.",
+    "@stegoWebUnsupported": {
+        "description": "Shown when steganography encode/decode is attempted on web."
+    }
+}

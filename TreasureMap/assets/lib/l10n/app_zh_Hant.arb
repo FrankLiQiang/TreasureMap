@@ -1,0 +1,286 @@
+{
+  "openMainMenu": "點擊這裡打開主選單",
+  "@openMainMenu": {
+    "description": "主畫面提示，點擊圖片打開主選單。"
+  },
+  "@@locale": "zh_Hant",
+  "appName": "藏寶圖",
+  "@appName": {},
+  "welcome0": "您的私人資料金庫！",
+  "@welcome0": {},
+  "welcome": "歡迎使用藏寶圖！您的私人資料金庫！",
+  "@welcome": {},
+  "copyRight": "©2025 李強 保留所有權利",
+  "@copyRight": {},
+  "logout2": "再按一次即可關閉應用程式。",
+  "@logout2": {},
+  "loading": "載入中…",
+  "@loading": {
+    "description": "通用載入占位文字。"
+  },
+  "readingFile": "正在讀取檔案，請稍候...",
+  "@readingFile": {
+    "description": "讀取檔案時顯示的提示。"
+  },
+  "selectImage": "選擇圖片",
+  "@selectImage": {},
+  "chooseAlbumMedia": "從相簿選擇(相片/影片)",
+  "@chooseAlbumMedia": {
+    "description": "選單文字：從系統相簿選擇媒體(相片/影片)。"
+  },
+  "photoPermissionPurpose": "允許應用存取您的照片與圖片，用於選擇圖片作為資訊載體，進行資訊儲存與資訊讀取",
+  "@photoPermissionPurpose": {
+    "description": "權限請求用途文字，顯示在系統提示或橫幅中。"
+  },
+  "photoPermissionTitle": "允許完全存取相簿",
+  "@photoPermissionTitle": {
+    "description": "權限請求橫幅頂部粗體標題。"
+  },
+  "chooseStillPicture": "請選擇靜態圖片",
+  "@chooseStillPicture": {},
+  "pleaseChoose": "請選擇圖片",
+  "@pleaseChoose": {},
+  "pleaseChooseIcloudHint": "請選擇圖片\n（iCloud 照片請先在系統相簿下載原圖）",
+  "@pleaseChooseIcloudHint": {
+    "description": "當 iCloud 資產無法直接取得位元組時的提示。"
+  },
+  "chooseStillPictureLivePhotoHint": "請選擇靜態圖片\n（偵測到可能是 Live Photo 影片資源）",
+  "@chooseStillPictureLivePhotoHint": {
+    "description": "當偵測到可能選到了 Live Photo 的影片資源時提示。"
+  },
+  "icloudReadingOriginal": "正在讀取原圖…",
+  "@icloudReadingOriginal": {},
+  "icloudPrepare": "準備中…",
+  "@icloudPrepare": {},
+  "icloudDownloading": "從 iCloud 下載中… {percent}%",
+  "@icloudDownloading": {
+    "placeholders": {
+      "percent": {
+        "type": "String",
+        "example": "42"
+      }
+    }
+  },
+  "icloudCompleted": "完成",
+  "@icloudCompleted": {},
+  "icloudFailed": "失敗",
+  "@icloudFailed": {},
+  "icloudCanceled": "已取消",
+  "@icloudCanceled": {},
+  "computing": "計算中…",
+  "@computing": {},
+  "copySha256": "複製校驗碼",
+  "@copySha256": {},
+  "copiedSha256": "已複製校驗碼",
+  "@copiedSha256": {},
+  "imageInfoReading": "圖片資訊讀取中…",
+  "@imageInfoReading": {
+    "description": "解密時圖片/校驗碼仍在讀取或計算中的提示。"
+  },
+  "chooseFileSelf": "請選擇檔案。",
+  "@chooseFileSelf": {},
+  "passwordWithFileName": "使用檔案名稱作為密碼。",
+  "@passwordWithFileName": {},
+  "saved2Album": "圖片已儲存到相簿。",
+  "@saved2Album": {},
+  "denied": "權限被拒絕",
+  "setPermission": "請在設定中啟用相簿存取權限以便使用此功能。",
+  "@setPermission": {},
+  "toSetPermission": "前往設定",
+  "@toSetPermission": {},
+  "inputPwd": "輸入密碼",
+  "@inputPwd": {},
+  "password": "密碼",
+  "@password": {},
+  "pleaseInputPwd": "請輸入密碼",
+  "@pleaseInputPwd": {},
+  "freeChanceLeft": "您還會有{n}次免費使用機會。",
+  "@freeChanceLeft": {
+    "description": "未註冊用戶剩餘免費體驗次數提示，n為參數",
+    "placeholders": {
+      "n": {
+        "type": "String",
+        "example": "2"
+      }
+    }
+  },
+  "pwdTooShort": "密碼太短",
+  "@pwdTooShort": {},
+  "pwdError": "密碼錯誤，或此圖片並非使用本 App 隱藏資訊。",
+  "@pwdError": {},
+  "versionTooNew": "此圖片使用了較新的加密演算法。請更新到最新版本，或等待目前平台的 App 升級。",
+  "@versionTooNew": {},
+  "confirmPwd": "確認密碼",
+  "@confirmPwd": {},
+  "pwdNotSame": "密碼不相符，請重試",
+  "@pwdNotSame": {},
+  "readOnly": "僅查看",
+  "@readOnly": {},
+  "edit": "可修改",
+  "@edit": {},
+  "readOnlyModeHint": "請選擇您需要的模式，稍後可在設定畫面更改。",
+  "@readOnlyModeHint": {
+    "description": "首次使用解密功能時，提示使用者選擇僅查看或可修改模式。"
+  },
+  "showPwd": "顯示密碼",
+  "@showPwd": {},
+  "decryption": "解密",
+  "@decryption": {},
+  "encryption": "加密",
+  "@encryption": {},
+  "encryptSuccess": "檔案本身加密／解密成功！",
+  "@encryptSuccess": {},
+  "list": "清單",
+  "@list": {},
+  "inputSearch": "請輸入搜尋關鍵字",
+  "@inputSearch": {},
+  "inputTitle": "輸入標題(單行)",
+  "@inputTitle": {},
+  "locating": "正在定位…",
+  "@locating": {
+    "description": "搜尋後自動捲動定位時的提示"
+  },
+  "inputContent": "輸入內容(支援多行輸入)",
+  "@inputContent": {},
+  "addListHint": "點擊，可追加一行。\n您可以拖動追加按鈕。",
+  "@addListHint": {
+    "description": "追加行按鈕的提示：點擊追加一行；追加按鈕可拖動。"
+  },
+  "searchWrap": "未找到更多結果，從頂部重新開始。",
+  "@searchWrap": {
+    "description": "當搜尋到末尾並從頂部重新開始時顯示的訊息。"
+  },
+  "delItemHint": "點擊它，刪除當前行",
+  "@delItemHint": {
+    "description": "列表項目刪除按鈕的提示。"
+  },
+  "text": "文字",
+  "@text": {},
+  "file": "檔案",
+  "@file": {},
+  "hideFile": "隱藏檔案",
+  "tryNowAd": "立即體驗（看廣告免費用）",
+  "@tryNowAd": {
+    "description": "按鈕：立即體驗（看廣告免費用）"
+  },
+  "@hideFile": {},
+  "filePath": "檔案路徑",
+  "@filePath": {},
+  "sizeUnknown": "大小未知",
+  "@sizeUnknown": {
+    "description": "當應顯示檔案大小但無法得知時顯示的文字。"
+  },
+  "chooseFile": "選擇檔案",
+  "@chooseFile": {},
+  "cancelChosen": "取消選擇",
+  "@cancelChosen": {},
+  "fileSelf": "檔案本身",
+  "@fileSelf": {},
+  "hideFileSelf": "加密／解密 檔案",
+  "@hideFileSelf": {},
+  "noInfo": "尚未輸入任何資訊。",
+  "@noInfo": {},
+  "failed2save": "資訊儲存失敗。",
+  "@failed2save": {},
+  "saveFailed": "儲存失敗",
+  "@saveFailed": {},
+  "tooLarge": "資訊量太大或者圖片太小，請更換更大尺寸圖片或者使用檔案自身加密",
+  "@tooLarge": {},
+  "help": "說明",
+  "@help": {},
+  "about": "關於",
+  "@about": {},
+  "home": "主頁",
+  "@home": {},
+  "setting": "設定",
+  "@setting": {},
+  "fontSize": "字體大小",
+  "@fontSize": {},
+  "logout": "登出",
+  "@logout": {},
+  "exit": "離開應用程式",
+  "@exit": {},
+  "logoutMessage": "要登出嗎？",
+  "@logoutMessage": {},
+  "delete": "刪除",
+  "@delete": {},
+  "deleteConfirm": "確認刪除",
+  "@deleteConfirm": {},
+  "deleteAsk": "確定要刪除 \"title\" 嗎？",
+  "deleteImageAsk": "已為您生成新的含有隱藏資訊的圖片，是否刪除原圖？",
+  "@deleteAsk": {},
+  "notFound": "未找到 \"title\" ",
+  "@notFound": {},
+  "close": "關閉",
+  "@close": {},
+  "cancel": "取消",
+  "@cancel": {},
+  "empty": "剩餘",
+  "@empty": {},
+  "tapToView": "點扇形\n查看",
+  "@tapToView": {
+    "description": "圓餅圖中心提示：點按扇形查看詳細占比"
+  },
+  "hint_message": "您可以輸入任何語言的內容，不僅僅限於本應用支持的四種界面語言。",
+  "@hint_message": {
+    "description": "文本輸入內關於語言支援的提示。"
+  },
+  "confirm": "確認",
+  "@confirm": {},
+  "overwriteConfirmTitle": "覆蓋確認",
+  "@overwriteConfirmTitle": {},
+  "overwriteExistingFileMessage": "已有同名檔案，是否要覆蓋？",
+  "@overwriteExistingFileMessage": {},
+  "vipNoAds": "註冊會員免廣告",
+  "@vipNoAds": {
+    "description": "註冊會員後可免廣告"
+  },
+  "fileRemind": "已經解密隱藏檔案，本App如果正常退出會自動刪除；\n如果未能正常退出，請注意資訊安全！",
+  "@fileRemind": {},
+  "doNotShowAgain": "下次不再顯示",
+  "@doNotShowAgain": {},
+  "compressedAfter": "壓縮後：",
+  "@compressedAfter": {
+    "description": "顯示壓縮後檔案大小前的標籤。"
+  },
+  "adjustHelpFontSize": "調整說明內容字體大小",
+  "@adjustHelpFontSize": {
+    "description": "滑桿標籤：調整說明/幫助內容的字體大小"
+  },
+  "helpFontSmall": "小",
+  "@helpFontSmall": {
+    "description": "標籤：小字體"
+  },
+  "helpFontLarge": "大",
+  "@helpFontLarge": {
+    "description": "標籤：大字體"
+  },
+  "userAgreement": "使用者協議",
+  "@userAgreement": {
+    "description": "使用者協議 標題"
+  },
+  "privacyPolicy": "隱私政策",
+  "@privacyPolicy": {
+    "description": "隱私政策 標題"
+  },
+  "privacyPolicyAgree": "同意",
+  "@privacyPolicyAgree": {
+    "description": "隱私政策對話框底部核取方塊文案"
+  },
+  "privacyPolicyReject": "拒絕",
+  "@privacyPolicyReject": {
+    "description": "隱私政策對話框中拒絕按鈕文案"
+  },
+  "sha256Hint": "用手指拖動或捏合來移動／縮放／旋轉圖片。關於「複製校驗碼」按鈕和下方資訊，請查看說明。",
+  "@sha256Hint": {
+    "description": "圖片上的簡短提示（口語）：如何用手指操作圖片，並指示查看說明了解複製校驗碼按鈕與相關資訊。"
+  },
+  "sha256HintMacWin": "使用滑鼠拖曳或滾輪來移動或縮放圖片。關於「複製校驗碼」按鈕和下方資訊，請查看說明。",
+  "@sha256HintMacWin": {
+    "description": "macOS/Windows 的簡短提示（口語）：使用滑鼠拖曳或滾輪縮放圖片，並指示查看說明了解複製校驗碼按鈕與相關資訊。"
+  },
+  "stegoWebUnsupported": "隱寫功能需要原生 App，網頁版不支援。",
+  "@stegoWebUnsupported": {
+    "description": "Web 版不支援隱寫加解密時的提示。"
+  }
+}

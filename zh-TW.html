@@ -1,0 +1,573 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+
+<head>
+  <meta charset="UTF-8" />
+  <title>HideInfo - 隱藏資訊</title>
+  <link rel="canonical" href="https://hideinfo.org/zh-TW.html" />
+  <link rel="alternate" hreflang="zh-CN" href="https://hideinfo.org/cn.html" />
+  <link rel="alternate" hreflang="zh-TW" href="https://hideinfo.org/zh-TW.html" />
+  <link rel="alternate" hreflang="ja" href="https://hideinfo.org/ja.html" />
+  <link rel="alternate" hreflang="x-default" href="https://hideinfo.org/" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="HideInfo - 輕鬆隱藏與保護您的敏感資訊。" />
+  <style>
+    *,
+    *::before,
+    *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: "Hiragino Sans", "Hiragino Kaku Gothic ProN", "PingFang TC", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      background: #f5f5f7;
+      color: #1d1d1f;
+      line-height: 1.6;
+    }
+
+    header {
+      background: #1d1d1f;
+      color: #f5f5f7;
+      padding: 2rem 1.5rem;
+      text-align: center;
+      position: relative;
+    }
+
+    header h1 {
+      font-size: 2rem;
+      font-weight: 700;
+      letter-spacing: -0.5px;
+    }
+
+    header p {
+      margin-top: 0.4rem;
+      color: #a1a1a6;
+      font-size: 1rem;
+    }
+
+    #lang-selector {
+      position: absolute;
+      top: 1rem;
+      right: 1.5rem;
+    }
+
+    #lang-selector select {
+      background: #2c2c2e;
+      color: #f5f5f7;
+      border: 1px solid #48484a;
+      border-radius: 6px;
+      padding: 0.35rem 0.6rem;
+      font-size: 0.85rem;
+      cursor: pointer;
+      outline: none;
+    }
+
+    #lang-selector select:hover {
+      border-color: #636366;
+    }
+
+    main {
+      max-width: 760px;
+      margin: 2.5rem auto;
+      padding: 0 1.5rem 3rem;
+    }
+
+    section {
+      background: #ffffff;
+      border-radius: 12px;
+      padding: 2rem;
+      margin-bottom: 1.5rem;
+      box-shadow: 0 1px 4px rgba(0, 0, 0, .08);
+    }
+
+    section h2 {
+      font-size: 1.2rem;
+      font-weight: 600;
+      margin-bottom: 1rem;
+      color: #1d1d1f;
+    }
+
+    section p,
+    section li {
+      font-size: 0.975rem;
+      color: #3a3a3c;
+    }
+
+    section ul {
+      padding-left: 1.4rem;
+    }
+
+    /* privacy list: no bullet, we include numeric labels in the question text */
+    #privacy-list {
+      list-style: none;
+      padding-left: 0;
+      margin-top: 0.5rem;
+    }
+
+    #privacy-list li {
+      margin-top: 0.9rem;
+    }
+
+    section ul li {
+      margin-bottom: 0.5rem;
+    }
+
+    /* FAQ question / answer layout */
+    section ul li .faq-question {
+      font-weight: 700;
+      display: block;
+      margin-bottom: 0.25rem;
+      color: #1d1d1f;
+    }
+
+    section ul li .faq-answer {
+      display: block;
+      color: #3a3a3c;
+      white-space: pre-wrap;
+      margin-left: 0.25rem;
+    }
+
+    a {
+      color: #0071e3;
+      text-decoration: none;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+
+    .contact-btn {
+      display: none;
+    }
+
+    .contact-btn:hover {
+      background: #0077ed;
+      text-decoration: none;
+    }
+
+    footer {
+      text-align: center;
+      padding: 1.5rem;
+      font-size: 0.85rem;
+      color: #6e6e73;
+    }
+
+    .info-line {
+      line-height: 1.6;
+      display: flex;
+      align-items: flex-start;
+      gap: 0.6em;
+    }
+
+    .info-label {
+      flex: 0 0 9.5em;
+      text-align: right;
+      margin: 0;
+      /* spacing now handled by gap */
+    }
+
+    .info-label.info-label-auto {
+      flex: 0 0 auto;
+      text-align: left;
+      width: auto;
+    }
+
+    .info-value {
+      flex: 1 1 0;
+      margin: 0;
+      max-width: 60ch;
+    }
+
+    .info-label-auto {
+      display: inline;
+      width: auto;
+      text-align: left;
+      margin-right: 0.6em;
+    }
+
+    #about-p1 .info-line:first-of-type {
+      margin-top: 0.8em;
+    }
+
+    /* Responsive: move language selector to header's bottom-right on small screens */
+    @media (max-width: 600px) {
+      header {
+        padding: 1.25rem 1rem;
+        text-align: left;
+      }
+
+      /* place selector at header's right-bottom to reduce vertical space */
+      #lang-selector {
+        top: auto;
+        bottom: 8px;
+        right: 12px;
+        position: absolute;
+      }
+
+      /* enlarge touch target and ensure visibility */
+      #lang-selector select {
+        min-width: 44px;
+        min-height: 44px;
+        padding: 0.4rem 0.6rem;
+        font-size: 0.95rem;
+      }
+
+      /* reserve space so title doesn't overlap the selector */
+      #site-title {
+        padding-right: 110px;
+        font-size: 1.25rem;
+      }
+
+      header p {
+        margin-top: 0.3rem;
+        color: #a1a1a6;
+        font-size: 0.95rem;
+      }
+    }
+
+    /* Store badges (Microsoft / App Store / Google Play) — match CN/JA/EN pages */
+    .store-badges {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 1rem;
+      margin: 20px 0 36px;
+      flex-wrap: wrap;
+    }
+
+    .store-badges a {
+      display: inline-block;
+    }
+
+    .store-badges>* {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      height: 66px;
+      padding: 0 8px;
+      line-height: 0;
+    }
+
+    .badge-box {
+      height: 48px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      overflow: visible;
+    }
+
+    .badge-box img {
+      height: 100% !important;
+      width: auto !important;
+      display: block;
+      margin: auto;
+    }
+
+    .text-badge {
+      min-width: 138px;
+      padding: 0 16px;
+      border-radius: 10px;
+      background: #111111;
+      color: #ffffff;
+      display: inline-flex;
+      flex-direction: column;
+      align-items: flex-start;
+      justify-content: center;
+      gap: 2px;
+      line-height: 1.05;
+    }
+
+    .text-badge .badge-overline {
+      font-size: 0.66rem;
+      color: rgba(255, 255, 255, 0.72);
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+    }
+
+    .text-badge .badge-title {
+      font-size: 1.05rem;
+      font-weight: 600;
+      letter-spacing: 0.01em;
+    }
+
+    @media (max-width: 600px) {
+      .store-badges>* {
+        height: 60px;
+        padding: 0 6px;
+      }
+
+      .badge-box {
+        height: 42px;
+      }
+
+      .badge-box img {
+        height: 100% !important;
+      }
+
+      .text-badge {
+        min-width: 124px;
+        padding: 0 14px;
+      }
+
+      .text-badge .badge-title {
+        font-size: 1rem;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <header>
+    <div id="lang-selector">
+      <select id="lang-select" onchange="setLang(this.value)">
+        <option value="en">English</option>
+        <option value="zh-CN">简体中文</option>
+        <option value="zh-TW" selected>繁体中文</option>
+        <option value="ja">日本語</option>
+      </select>
+    </div>
+    <h1 id="site-title">藏寶圖</h1>
+    <p id="header-subtitle"></p>
+  </header>
+
+  <main>
+
+    <section>
+      <div class="about-graphic-wrapper">
+        <img id="about-graphic" class="protected" src="about.png" alt="About graphic" oncontextmenu="return false;"
+          draggable="false">
+        <script>
+          document.addEventListener('contextmenu', function (e) {
+            if (e.target && e.target.tagName === 'IMG') {
+              e.preventDefault();
+            }
+          }, { capture: true });
+        </script>
+      </div>
+      <h2 id="about-title"></h2>
+      <div id="about-p1"></div>
+    </section>
+
+    <section>
+      <h2 id="faq-title"></h2>
+      <ul id="faq-list"></ul>
+    </section>
+
+    <section>
+      <h2 id="privacy-title"></h2>
+      <p id="privacy-p1"></p>
+      <ul id="privacy-list"></ul>
+    </section>
+
+    <section>
+      <h2 id="contact-title"></h2>
+      <p id="contact-p1"></p>
+      <a class="contact-btn" id="contact-btn" href="https://github.com/FrankLiQiang/TreasureMap/issues"></a>
+    </section>
+
+  </main>
+
+  <div class="store-badges">
+    <!-- Google, App Store, Microsoft (Microsoft stays rightmost) -->
+    <a href="https://play.google.com/store/apps/details?id=com.frank.showdart" target="_blank"
+      rel="noopener noreferrer">
+      <span class="badge-box google">
+        <img src="assets/Google_Play_Store_badge_EN.svg" alt="Google Play">
+      </span>
+    </a>
+
+    <a href="https://apps.apple.com/tw/app/treasure2map/id6759858878" target="_blank" rel="noopener noreferrer">
+      <span class="badge-box">
+        <img src="assets/App_Store_cn.svg" alt="App Store">
+      </span>
+    </a>
+
+    <a href="https://apps.microsoft.com/detail/9nvhjmqmp3bl?referrer=appbadge&hl=zh-tw&gl=JP" target="_blank"
+      rel="noopener noreferrer">
+      <span class="badge-box">
+        <img src="assets/microsoft_tw.svg" alt="Microsoft Store">
+      </span>
+    </a>
+  </div>
+
+  <footer id="footer-text"></footer>
+
+  <script>
+    var i18n = {
+      'zh-TW': {
+        htmlLang: 'zh-TW',
+        pageTitle: 'HideInfo - 隱藏資訊',
+        siteTitle: '藏寶圖',
+        headerSubtitle: '技術支援',
+        aboutTitle: '📖 關於本應用',
+        aboutP1: '「藏寶圖」是一款用於保護機密資訊的跨平台應用，可將檔案、圖片、音訊和影片等資訊安全地嵌入圖片，且外觀無明顯變化。並提供不受大小限制、無需依附於圖片載體的獨立檔案級加密機制。',
+        aboutHtml: '<p>「藏寶圖」是一款用於保護機密資訊的跨平台應用，可將檔案、圖片、音訊和影片等資訊安全地嵌入圖片，且外觀無明顯變化。並提供不受大小限制、無需依附於圖片載體的獨立檔案的高級加密機制。</p><div class="info-line"><span class="info-label"><strong>主要功能：</strong></span><span class="info-value">1.隱藏任何數字資訊到圖片<br>2.檔案自身加密/解密<br>3.個人隱私及重要商務資料異地保存<br>4.加密安全通訊功能<br>5.數位貨幣（不限於比特幣）的冷錢包</span></div> <div class="info-line"><span class="info-label"><strong>應用場景：</strong></span><span class="info-value">重要資訊保存、異地備份。</span></div> <div class="info-line"><span class="info-label"><strong>支援平台：</strong></span><span class="info-value">iPhone、iPad、Mac、Android、ChromeBook、Windows</span></div>',
+        faqTitle: '❓ 常見問題',
+        faqItems: [
+          { q: '如何更改/刪除隱藏檔案？', a: '若要修改隱藏檔案，只有在「檔案」頁面 →「選擇檔案」，重新選擇修改後的檔案並「加密」保存後才會寫回圖片。\n要取消隱藏，請在「檔案」頁面點擊「取消選擇」並加密保存。\n正常退出或切換時會刪除解密出的隱藏檔案，異常退出可能遺留。' },
+          { q: '如何對檔案自身加密而不依賴宿主圖片？', a: '在「檔案自身」界面，可對檔案單獨以密碼加密（無需圖片）。加密檔案僅能用本應用解密，請妥善保管密碼，無法找回。\n本應用無法判斷密碼是否正確，如果使用了錯誤的密碼解密後，無法用相應軟體打開檔案，請使用相同的（剛剛錯誤輸入的）密碼恢復到解密前狀態。' },
+          { q: '如何刪除原圖？覆蓋規則是什麼？', a: '宿主圖片：Windows/macOS 會覆蓋原圖。Android/iOS 每次保存會生成新圖片；用戶自行決定是否刪除原圖。\n隱藏檔案：解密出的隱藏檔案會覆蓋同名檔案。\n檔案自身：解密或加密出的檔案會覆蓋同名檔案。' },
+          { q: '如何更改圖片密碼？', a: '用原密碼打開圖片，在「首頁」→「加密」中輸入新密碼兩次確認以加密保存資訊到圖片，從而更改圖片密碼。' },
+          { q: '如何更改宿主圖片？', a: '解鎖原圖後，點擊「選擇圖片」選擇新圖，再點擊「加密」即可將資訊寫入新圖；原圖仍可保留。' },
+          { q: '對宿主圖片，如何傳輸與分享？什麼是校驗碼？', a: '跨平台/裝置傳輸請務必傳送原始圖片檔案，否則無法解密。\n使用「複製校驗碼」可獲取圖片校驗碼，只有相同校驗碼的圖片才能解密出相同資訊。\n只分享原圖和校驗碼，不會洩漏資訊。只有原圖+密碼+本應用才會解開圖片資訊。' }
+        ],
+        privacyItems: [
+          { q: '1. 資訊蒐集說明', a: '本應用不會主動蒐集、上傳或存儲用戶的個人檔案內容。\n本應用不建立用戶帳號系統。\n本應用不提供雲端存儲服務。\n所有數據處理均在用戶本地裝置內完成。' },
+          { q: '2. 權限使用說明', a: '為實現功能，本應用可能申請以下權限：\n存儲存取權限：用於讀取及隱藏檔案到宿主圖片以及對檔案本身進行加密與解密。\n媒體存取權限：以保存隱藏資訊到宿主圖片。\n上述權限僅用於功能實現，不用於數據蒐集。' },
+          { q: '3. 數據傳輸說明', a: '本應用不進行任何遠程數據傳輸。\n本應用不向任何第三方提供用戶檔案內容。' },
+          { q: '4. 數據安全', a: '所有檔案均保存在用戶裝置本地。\n用戶應自行妥善保管密碼及裝置安全。\n本應用不提供密碼找回功能。' },
+          { q: '5. 第三方服務', a: '對於付費用戶，本應用不集成廣告服務。\n本應用不集成用戶行為分析服務。\n如未來集成第三方服務，將在本政策中更新說明。' },
+          { q: '6. 政策變更', a: '本應用有權根據法律或功能更新需要對本政策進行修改。\n修改後將會在應用內公布。' }
+        ],
+        privacyTitle: '🔒 隱私政策',
+        contactTitle: '📬 聯絡我們',
+        contactP1: '<p>如有任何問題或建議，歡迎通過以下方式聯絡我們：</p><p>電子郵件：treasuremap365.lq@gmail.com</p><p>&nbsp;</p>',
+        contactBtn: '提交問題/建議',
+        footerText: '© {year} Frank. Li Qiang · TreasureMap'
+      },
+    };
+
+    function renderLang(lang) {
+      var t = i18n[lang];
+      if (!t) return;
+
+      document.documentElement.lang = t.htmlLang;
+      document.title = t.pageTitle;
+      var siteTitle = document.getElementById('site-title');
+      if (siteTitle) siteTitle.textContent = t.siteTitle || t.pageTitle;
+      document.getElementById('header-subtitle').textContent = t.headerSubtitle;
+      document.getElementById('about-title').textContent = t.aboutTitle;
+
+      var aboutP = t.aboutP1 || '';
+      var aboutHtml = t.aboutHtml ? t.aboutHtml : null;
+      if (aboutHtml) {
+        // ensure label spans use the auto class so labels are left-aligned
+        aboutHtml = aboutHtml.replace(/<span class="info-label">/g, '<span class="info-label info-label-auto">');
+        document.getElementById('about-p1').innerHTML = aboutHtml.replace(/\n\n/g, '<br><br>').replace(/\n/g, '<br>');
+      } else {
+        document.getElementById('about-p1').innerHTML = aboutP.replace(/\n\n/g, '<br><br>').replace(/\n/g, '<br>');
+      }
+      // Trim leading fullwidth/normal spaces inside .info-value to avoid visible indentation
+      document.querySelectorAll('#about-p1 .info-value').forEach(function (el) {
+        if (!el) return;
+        el.innerHTML = (el.innerHTML || '').replace(/^[\s\u3000]+/, '');
+      });
+
+      document.getElementById('faq-title').textContent = t.faqTitle;
+      var faqList = document.getElementById('faq-list');
+      faqList.innerHTML = '';
+      (t.faqItems || []).forEach(function (item) {
+        var li = document.createElement('li');
+        var qEl = document.createElement('div');
+        qEl.className = 'faq-question';
+        qEl.textContent = item.q.replace(/^[\s\u3000]+/, '');
+        var aEl = document.createElement('div');
+        aEl.className = 'faq-answer';
+        aEl.textContent = item.a.replace(/^[\s\u3000]+/, '');
+        li.appendChild(qEl);
+        li.appendChild(aEl);
+        faqList.appendChild(li);
+      });
+
+      document.getElementById('privacy-title').textContent = t.privacyTitle;
+      var privacyP = document.getElementById('privacy-p1');
+      var privacyList = document.getElementById('privacy-list');
+      if (t.privacyItems && t.privacyItems.length) {
+        privacyP.style.display = 'none';
+        privacyList.innerHTML = '';
+        (t.privacyItems || []).forEach(function (item) {
+          var li = document.createElement('li');
+          var qEl = document.createElement('div');
+          qEl.className = 'faq-question';
+          qEl.textContent = item.q.replace(/^[\s\u3000]+/, '');
+          var aEl = document.createElement('div');
+          aEl.className = 'faq-answer';
+          aEl.textContent = item.a.replace(/^[\s\u3000]+/, '');
+          li.appendChild(qEl);
+          li.appendChild(aEl);
+          privacyList.appendChild(li);
+        });
+      } else {
+        privacyList.innerHTML = '';
+        privacyP.style.display = '';
+        privacyP.textContent = t.privacyP1;
+      }
+      document.getElementById('contact-title').textContent = t.contactTitle;
+      // contactP1 may contain HTML (paragraphs/links). Use innerHTML so paragraphs break correctly.
+      document.getElementById('contact-p1').innerHTML = t.contactP1;
+      document.getElementById('contact-btn').textContent = t.contactBtn;
+      // replace {year} placeholder with current year so footer always stays up-to-date
+      var footerRaw = t.footerText || '';
+      var footerRendered = footerRaw.replace('{year}', new Date().getFullYear());
+      document.getElementById('footer-text').innerHTML = footerRendered;
+    }
+    var defaultLang = 'zh-TW';
+    document.getElementById('lang-select').value = defaultLang;
+    renderLang(defaultLang);
+    // 将关于图像从白色卡片内部移动到卡片外面（上方居中）
+    (function moveAboutGraphic() {
+      try {
+        var main = document.querySelector('main');
+        var wrapper = document.querySelector('.about-graphic-wrapper');
+        if (!main || !wrapper) return;
+        // 如果已经在 main 顶部则不移动
+        if (main.firstElementChild === wrapper) return;
+        main.insertBefore(wrapper, main.firstElementChild);
+        wrapper.style.textAlign = 'center';
+        wrapper.style.marginBottom = '1rem';
+        var img = wrapper.querySelector('#about-graphic');
+        if (img) {
+          img.style.maxWidth = '360px';
+          img.style.width = '80%';
+          img.style.height = 'auto';
+          img.style.display = 'inline-block';
+          img.style.borderRadius = '8px';
+        }
+      } catch (e) { console.error(e) }
+    })();
+  </script>
+
+  <script>
+    // Measure contact button height and apply to store badges so they match exactly.
+    (function syncBadgeHeights() {
+      function apply() {
+        var btn = document.querySelector('.contact-btn');
+        if (!btn || btn.offsetHeight === 0) return;
+        var h = btn.offsetHeight;
+        document.querySelectorAll('.store-badges > *').forEach(function (el) {
+          el.style.height = Math.round(h * 1.5) + 'px';
+          el.style.display = 'inline-flex';
+          el.style.alignItems = 'center';
+          el.style.justifyContent = 'center';
+        });
+        var inner = Math.max(33, Math.round(h * 1.5) - 12);
+        document.querySelectorAll('.badge-box').forEach(function (el) { el.style.height = inner + 'px'; });
+        document.querySelectorAll('.badge-box.google img').forEach(function (img) {
+          img.style.height = Math.round(inner) + 'px';
+          img.style.transform = 'none';
+        });
+      }
+      window.addEventListener('load', apply);
+      window.addEventListener('resize', function () { setTimeout(apply, 80); });
+      setTimeout(apply, 50);
+    })();
+  </script>
+
+</body>
+
+<script>
+  function setLang(v) {
+    const map = {
+      'en': './',
+      'zh-CN': './cn.html',
+      'zh-TW': './zh-TW.html',
+      'ja': './ja.html'
+    };
+    location.href = map[v] || './';
+  }
+</script>
+
+</html>

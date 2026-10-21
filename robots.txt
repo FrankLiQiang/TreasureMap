@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://hideinfo.org/sitemap.xml

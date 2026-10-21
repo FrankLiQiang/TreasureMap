@@ -1,11 +1,24 @@
 <!DOCTYPE html>
-<html lang="zh-CN">
+<html lang="en">
+
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>TreasureMap – 技术支持</title>
+  <link rel="canonical" href="https://hideinfo.org/" />
+  <link rel="alternate" hreflang="zh-CN" href="https://hideinfo.org/cn.html" />
+  <link rel="alternate" hreflang="zh-TW" href="https://hideinfo.org/zh-TW.html" />
+  <link rel="alternate" hreflang="ja" href="https://hideinfo.org/ja.html" />
+  <link rel="alternate" hreflang="x-default" href="https://hideinfo.org/" />
+  <meta name="description" content="HideInfo - Protect and hide your sensitive information easily." />
+  <title>HideInfo</title>
   <style>
-    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    *,
+    *::before,
+    *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
 
     body {
       font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
@@ -19,9 +32,41 @@
       color: #f5f5f7;
       padding: 2rem 1.5rem;
       text-align: center;
+      position: relative;
     }
-    header h1 { font-size: 2rem; font-weight: 700; letter-spacing: -0.5px; }
-    header p  { margin-top: 0.4rem; color: #a1a1a6; font-size: 1rem; }
+
+    header h1 {
+      font-size: 2rem;
+      font-weight: 700;
+      letter-spacing: -0.5px;
+    }
+
+    header p {
+      margin-top: 0.4rem;
+      color: #a1a1a6;
+      font-size: 1rem;
+    }
+
+    #lang-selector {
+      position: absolute;
+      top: 1rem;
+      right: 1.5rem;
+    }
+
+    #lang-selector select {
+      background: #2c2c2e;
+      color: #f5f5f7;
+      border: 1px solid #48484a;
+      border-radius: 6px;
+      padding: 0.35rem 0.6rem;
+      font-size: 0.85rem;
+      cursor: pointer;
+      outline: none;
+    }
+
+    #lang-selector select:hover {
+      border-color: #636366;
+    }
 
     main {
       max-width: 760px;
@@ -34,7 +79,7 @@
       border-radius: 12px;
       padding: 2rem;
       margin-bottom: 1.5rem;
-      box-shadow: 0 1px 4px rgba(0,0,0,.08);
+      box-shadow: 0 1px 4px rgba(0, 0, 0, .08);
     }
 
     section h2 {
@@ -44,7 +89,8 @@
       color: #1d1d1f;
     }
 
-    section p, section li {
+    section p,
+    section li {
       font-size: 0.975rem;
       color: #3a3a3c;
     }
@@ -52,23 +98,54 @@
     section ul {
       padding-left: 1.4rem;
     }
-    section ul li { margin-bottom: 0.5rem; }
 
-    a { color: #0071e3; text-decoration: none; }
-    a:hover { text-decoration: underline; }
+    /* privacy list: no bullet, we include numeric labels in the question text */
+    #privacy-list {
+      list-style: none;
+      padding-left: 0;
+      margin-top: 0.5rem;
+    }
+
+    #privacy-list li {
+      margin-top: 0.9rem;
+    }
+
+    section ul li {
+      margin-bottom: 0.5rem;
+    }
+
+    /* FAQ question / answer layout */
+    section ul li .faq-question {
+      font-weight: 700;
+      display: block;
+      margin-bottom: 0.25rem;
+      color: #1d1d1f;
+    }
+
+    section ul li .faq-answer {
+      display: block;
+      color: #3a3a3c;
+      white-space: pre-wrap;
+      margin-left: 0.25rem;
+    }
+
+    a {
+      color: #0071e3;
+      text-decoration: none;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
 
     .contact-btn {
-      display: inline-block;
-      margin-top: 1rem;
-      padding: 0.6rem 1.4rem;
-      background: #0071e3;
-      color: #fff;
-      border-radius: 8px;
-      font-size: 0.9rem;
-      font-weight: 500;
-      transition: background 0.2s;
+      display: none;
     }
-    .contact-btn:hover { background: #0077ed; text-decoration: none; }
+
+    .contact-btn:hover {
+      background: #0077ed;
+      text-decoration: none;
+    }
 
     footer {
       text-align: center;
@@ -76,62 +153,421 @@
       font-size: 0.85rem;
       color: #6e6e73;
     }
+
+    .info-line {
+      line-height: 1.6;
+      display: flex;
+      align-items: flex-start;
+      gap: 0.6em;
+    }
+
+    .info-label {
+      flex: 0 0 9.5em;
+      text-align: right;
+      margin: 0;
+      /* spacing now handled by gap */
+    }
+
+    .info-label.info-label-auto {
+      flex: 0 0 auto;
+      text-align: left;
+      width: auto;
+    }
+
+    .info-value {
+      flex: 1 1 0;
+      margin: 0;
+      max-width: 60ch;
+    }
+
+    .info-label-auto {
+      display: inline;
+      width: auto;
+      text-align: left;
+      margin-right: 0.6em;
+    }
+
+    #about-p1 .info-line:first-of-type {
+      margin-top: 0.8em;
+    }
+
+    /* Responsive: move language selector to header's bottom-right on small screens */
+    @media (max-width: 600px) {
+      header {
+        padding: 1.25rem 1rem;
+        text-align: left;
+      }
+
+      /* place selector at header's right-bottom to reduce vertical space */
+      #lang-selector {
+        top: auto;
+        bottom: 8px;
+        right: 12px;
+        position: absolute;
+      }
+
+      /* enlarge touch target and ensure visibility */
+      #lang-selector select {
+        min-width: 44px;
+        min-height: 44px;
+        padding: 0.4rem 0.6rem;
+        font-size: 0.95rem;
+      }
+
+      /* reserve space so title doesn't overlap the selector */
+      #site-title {
+        padding-right: 110px;
+        font-size: 1.25rem;
+      }
+
+      header p {
+        margin-top: 0.3rem;
+        color: #a1a1a6;
+        font-size: 0.95rem;
+      }
+    }
+
+    /* Store badges (Microsoft / App Store / Google Play) — match CN/JA pages */
+    .store-badges {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 1rem;
+      margin: 20px 0 36px;
+      flex-wrap: wrap;
+    }
+
+    .store-badges a {
+      display: inline-block;
+    }
+
+    .store-badges>* {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      height: 66px;
+      padding: 0 8px;
+      line-height: 0;
+    }
+
+    .badge-box {
+      height: 48px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      overflow: visible;
+    }
+
+    .badge-box img {
+      height: 100% !important;
+      width: auto !important;
+      display: block;
+      margin: auto;
+    }
+
+    .text-badge {
+      min-width: 138px;
+      padding: 0 16px;
+      border-radius: 10px;
+      background: #111111;
+      color: #ffffff;
+      display: inline-flex;
+      flex-direction: column;
+      align-items: flex-start;
+      justify-content: center;
+      gap: 2px;
+      line-height: 1.05;
+    }
+
+    .text-badge .badge-overline {
+      font-size: 0.66rem;
+      color: rgba(255, 255, 255, 0.72);
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+    }
+
+    .text-badge .badge-title {
+      font-size: 1.05rem;
+      font-weight: 600;
+      letter-spacing: 0.01em;
+    }
+
+    @media (max-width: 600px) {
+      .store-badges>* {
+        height: 60px;
+        padding: 0 6px;
+      }
+
+      .badge-box {
+        height: 42px;
+      }
+
+      .badge-box img {
+        height: 100% !important;
+      }
+
+      .text-badge {
+        min-width: 124px;
+        padding: 0 14px;
+      }
+
+      .text-badge .badge-title {
+        font-size: 1rem;
+      }
+    }
   </style>
 </head>
+
 <body>
 
-<header>
-  <h1>TreasureMap</h1>
-  <p>技术支持 · Technical Support</p>
-</header>
+  <header>
+    <div id="lang-selector">
+      <select id="lang-select" onchange="setLang(this.value)">
+        <option value="en" selected>English</option>
+        <option value="zh-CN">简体中文</option>
+        <option value="zh-TW">繁体中文</option>
+        <option value="ja">日本語</option>
+      </select>
+    </div>
+    <h1 id="site-title">TreasureMap</h1>
+    <p id="header-subtitle"></p>
+  </header>
 
-<main>
+  <main>
 
-  <section>
-    <h2>📖 关于本应用 / About</h2>
-    <p>
-“藏宝图”是一款用于保护机密信息的跨平台应用，可将文档、视频、音频和文件等安全嵌入图片，且外观无明显变化。
-主要功能：列表、文字、文件的嵌入，以及文件自身加密（无需图片）。
-支持平台：iOS、Android、macOS、Windows。      
-    </p>
-    <p style="margin-top:0.6rem">
-      TreasureMap is an app that helps you record, organize, and explore your personal collections and interest maps.
-    </p>
-  </section>
+    <section>
+      <div class="about-graphic-wrapper">
+        <img id="about-graphic" class="protected" src="about.png" alt="About graphic" oncontextmenu="return false;"
+          draggable="false">
+        <script>
+          document.addEventListener('contextmenu', function (e) {
+            if (e.target && e.target.tagName === 'IMG') {
+              e.preventDefault();
+            }
+          }, { capture: true });
+        </script>
+      </div>
 
-  <section>
-    <h2>❓ 常见问题 / FAQ</h2>
-    <ul>
-      <li><strong>如何开始使用？</strong> 下载应用后，按照引导创建您的第一张地图即可。</li>
-      <li><strong>数据存储在哪里？</strong> 所有数据均保存在您的设备本地，不会上传至任何服务器。</li>
-      <li><strong>支持哪些平台？</strong> 当前支持 iOS / iPadOS。</li>
-      <li><strong>How do I get started?</strong> After downloading, follow the onboarding guide to create your first map.</li>
-      <li><strong>Where is my data stored?</strong> All data is stored locally on your device and is never uploaded to any server.</li>
-    </ul>
-  </section>
+      <h2 id="about-title"></h2>
+      <div id="about-p1"></div>
+    </section>
 
-  <section>
-    <h2>🔒 隐私政策 / Privacy Policy</h2>
-    <p>
-      本应用不收集任何个人信息，不追踪用户行为，不向第三方共享数据。
-    </p>
-    <p style="margin-top:0.6rem">
-      This app does not collect any personal information, does not track user behavior, and does not share data with third parties.
-    </p>
-  </section>
+    <section>
+      <h2 id="faq-title"></h2>
+      <ul id="faq-list"></ul>
+    </section>
 
-  <section>
-    <h2>📬 联系我们 / Contact Us</h2>
-    <p>如有任何问题或建议，欢迎通过以下方式联系我们：</p>
-    <p style="margin-top:0.4rem">If you have any questions or feedback, feel free to reach out:</p>
-    <a class="contact-btn" href="https://github.com/FrankLiQiang/TreasureMap/issues">提交问题 / Submit an Issue</a>
-  </section>
+    <section>
+      <h2 id="privacy-title"></h2>
+      <p id="privacy-p1"></p>
+      <ul id="privacy-list"></ul>
+    </section>
 
-</main>
+    <section>
+      <h2 id="contact-title"></h2>
+      <p id="contact-p1"></p>
+      <a class="contact-btn" id="contact-btn" href="https://github.com/FrankLiQiang/TreasureMap/issues"></a>
+    </section>
 
-<footer>
-  &copy; 2024 FrankLiQiang &nbsp;·&nbsp; TreasureMap
-</footer>
+  </main>
+
+  <div class="store-badges">
+    <!-- Google, App Store, Microsoft (Microsoft stays rightmost) -->
+    <a href="https://play.google.com/store/apps/details?id=com.frank.showdart" target="_blank"
+      rel="noopener noreferrer">
+      <span class="badge-box google">
+        <img src="assets/Google_Play_Store_badge_EN.svg" alt="Google Play">
+      </span>
+    </a>
+
+    <a href="https://apps.apple.com/us/app/treasure2map/id6759858878" target="_blank" rel="noopener noreferrer">
+      <span class="badge-box">
+        <img src="assets/App_Store_en.svg" alt="App Store">
+      </span>
+    </a>
+
+    <a href="https://apps.microsoft.com/detail/9nvhjmqmp3bl?referrer=appbadge&hl=en-us&gl=JP" target="_blank"
+      rel="noopener noreferrer">
+      <span class="badge-box">
+        <img src="assets/microsoft_en.svg" alt="Microsoft Store">
+      </span>
+    </a>
+  </div>
+
+  <footer id="footer-text"></footer>
+
+  <script>
+    var i18n = {
+      'en': {
+        htmlLang: 'en',
+        pageTitle: 'HideInfo',
+        siteTitle: 'TreasureMap',
+        headerSubtitle: 'Technical Support',
+        aboutTitle: '\uD83D\uDCD6 About',
+        aboutP1: '“TreasureMap” is a cross-platform app for protecting confidential information. It can safely embed documents, videos, audio, and other files into images with no noticeable change in appearance. And provide an advanced encryption mechanism for standalone files that is not subject to size limitations and does not need to be tied to an image container.\n\n<strong>Main features:</strong>\n1. Hide any data information in images\n2. File encryption/decryption\n3. Off-site storage of personal privacy and important business data\n4. Encrypted secure communication function\n5. Cold wallet for digital currencies (not limited to Bitcoin)\n<strong>Use cases:</strong> secure storage of important information, off-site backups, and encrypted communication.\n<strong>Supported platforms:</strong> iPhone, iPad, Mac, Android, ChromeBook, Windows',
+        aboutHtml: '<p>“TreasureMap” is a cross-platform app for protecting confidential information. It can safely embed documents, videos, audio, and other files into images with no noticeable change in appearance.And provide an advanced encryption mechanism for standalone files that is not subject to size limitations and does not need to be tied to an image container.</p>\n<div class="info-line"><span class="info-label info-label-auto"><strong>Main features:</strong></span><span class="info-value">1. Hide any data information in images<br>2. File encryption/decryption<br>3. Off-site storage of personal privacy and important business data<br>4. Encrypted secure communication function<br>5. Cold wallet for digital currencies (not limited to Bitcoin)</span></div>\n<div class="info-line"><span class="info-label info-label-auto"><strong>Use cases:</strong></span><span class="info-value">secure storage of important information, off-site backups, and encrypted communication.</span></div>\n<div class="info-line"><span class="info-label info-label-auto"><strong>Supported platforms:</strong></span><span class="info-value">iPhone, iPad, Mac, Android, ChromeBook, Windows</span></div>',
+        faqTitle: '\u2753 FAQ',
+        faqItems: [
+          { q: 'How to change/remove a hidden file?', a: 'If you want to modify a hidden file, open the File screen → "Select File", reselect the modified file, then save using "Encrypt" to write the change back into the image.\nTo stop hiding a file, tap "Deselect" on the File screen and save with "Encrypt".\nWhen you exit normally or switch files, the decrypted hidden file is deleted; an abnormal exit may leave it behind.\nThe carrier image is never deleted by the app.' },
+          { q: 'How to encrypt a file without a carrier image?', a: 'In the "File (Self)" screen you can encrypt a file with a password without using an image. Encrypted files created this way can only be decrypted by this app—keep passwords safe, there is no recovery.\nThe app cannot always tell whether a password is correct. If you decrypt with the wrong password and the resulting file cannot be opened by other software, use the same (incorrect) password again to restore the file to its pre-decrypted state.' },
+          { q: 'How do I delete the original image? What are the overwrite rules?', a: 'Carrier image: On Windows and macOS, an encrypted save will overwrite the original image. On Android and iOS, each encrypted save creates a new image; the user may choose whether to delete the original.\nHidden file: A decrypted hidden file will overwrite any same‑named file in the destination folder.\nFile itself: Files produced by decrypting or encrypting will overwrite any same‑named file in the destination folder.' },
+          { q: "How to change an image's password?", a: "Open the image with the current password, go to \"Home\" → \"Encrypt\", enter the new password twice and confirm to save the information into the image and change its password." },
+          { q: 'How to replace the carrier image?', a: 'After unlocking the original image, tap "Select Image", choose the new image, then tap "Encrypt" to write the embedded information into the new image. The original image remains unchanged unless you delete it manually.' },
+          { q: 'How do I transfer and share the carrier image? What is the verification code?', a: 'When transferring images between platforms or devices, always send the original image file; otherwise decryption may fail.\nOn the Select Image screen, tap the "Copy Verification Code" button to copy the image\'s verification code; only images with the same verification code will decrypt to the same embedded data.\nSharing only the original image and the verification code does not reveal the embedded data. Only the original image plus the password and this app can unlock the embedded information.' }
+        ],
+        privacyItems: [
+          { q: '1. Information Collection', a: 'This application does not collect, upload, or store users\' personal file contents.\nNo account system is provided.\nNo cloud storage service is offered.\nAll data processing is performed locally on the user\'s device.' },
+          { q: '2. Permissions', a: 'To provide the app\'s functionality, this application may request the following permissions:\nStorage access: used to read files and hide files into host images, and for encryption and decryption of those files.\nMedia access: used to save hidden information into host images.\nThe above permissions are used only to implement the app\'s features and are not used for data collection.' },
+          { q: '3. Data Transmission', a: 'This application does not transmit user data to external servers.\nNo user file content is shared with third parties.' },
+          { q: '4. Data Security', a: 'All files remain on the user\'s device.\nUsers are responsible for safeguarding their passwords and device security.\nPassword recovery is not supported.' },
+          { q: '5. Third-Party Services', a: 'This application does not integrate advertising services.\nNo analytics services are included.\nIf third-party services are added in the future, this policy will be updated accordingly.' },
+          { q: '6. Policy Changes', a: 'This policy may be updated in accordance with legal or functional changes.\nUpdates will be announced within the application.' }
+        ],
+        privacyTitle: '🔒 Privacy Policy',
+        contactTitle: '\uD83D\uDCEC Contact Us',
+        contactP1: '<p>If you have any questions or feedback, feel free to reach out:</p><p>Email: treasuremap365.lq@gmail.com</p><p>&nbsp;</p>',
+        contactBtn: 'Submit an Issue',
+        footerText: '\u00a9 {year} Frank. Li Qiang \u00b7 TreasureMap'
+      },
+    };
+
+    function renderLang(lang) {
+      var t = i18n[lang];
+      if (!t) return;
+
+      document.documentElement.lang = t.htmlLang;
+      document.title = t.pageTitle;
+      var siteTitle = document.getElementById('site-title');
+      if (siteTitle) siteTitle.textContent = t.siteTitle || t.pageTitle;
+      document.getElementById('header-subtitle').textContent = t.headerSubtitle;
+      document.getElementById('about-title').textContent = t.aboutTitle;
+
+      var aboutP = t.aboutP1 || '';
+      var aboutHtml = t.aboutHtml ? t.aboutHtml : null;
+      if (aboutHtml) {
+        // ensure label spans use the auto class so labels are left-aligned
+        aboutHtml = aboutHtml.replace(/<span class="info-label">/g, '<span class="info-label info-label-auto">');
+        document.getElementById('about-p1').innerHTML = aboutHtml.replace(/\n\n/g, '<br><br>').replace(/\n/g, '<br>');
+      } else {
+        document.getElementById('about-p1').innerHTML = aboutP.replace(/\n\n/g, '<br><br>').replace(/\n/g, '<br>');
+      }
+      // Trim leading fullwidth/normal spaces inside .info-value to avoid visible indentation
+      document.querySelectorAll('#about-p1 .info-value').forEach(function (el) {
+        if (!el) return;
+        el.innerHTML = (el.innerHTML || '').replace(/^[\s\u3000]+/, '');
+      });
+
+      document.getElementById('faq-title').textContent = t.faqTitle;
+      var faqList = document.getElementById('faq-list');
+      faqList.innerHTML = '';
+      (t.faqItems || []).forEach(function (item) {
+        var li = document.createElement('li');
+        var qEl = document.createElement('div');
+        qEl.className = 'faq-question';
+        qEl.textContent = item.q.replace(/^[\s\u3000]+/, '');
+        var aEl = document.createElement('div');
+        aEl.className = 'faq-answer';
+        aEl.textContent = item.a.replace(/^[\s\u3000]+/, '');
+        li.appendChild(qEl);
+        li.appendChild(aEl);
+        faqList.appendChild(li);
+      });
+
+      document.getElementById('privacy-title').textContent = t.privacyTitle;
+      var privacyP = document.getElementById('privacy-p1');
+      var privacyList = document.getElementById('privacy-list');
+      if (t.privacyItems && t.privacyItems.length) {
+        privacyP.style.display = 'none';
+        privacyList.innerHTML = '';
+        (t.privacyItems || []).forEach(function (item) {
+          var li = document.createElement('li');
+          var qEl = document.createElement('div');
+          qEl.className = 'faq-question';
+          qEl.textContent = item.q.replace(/^[\s\u3000]+/, '');
+          var aEl = document.createElement('div');
+          aEl.className = 'faq-answer';
+          aEl.textContent = item.a.replace(/^[\s\u3000]+/, '');
+          li.appendChild(qEl);
+          li.appendChild(aEl);
+          privacyList.appendChild(li);
+        });
+      } else {
+        privacyList.innerHTML = '';
+        privacyP.style.display = '';
+        privacyP.textContent = t.privacyP1;
+      }
+      document.getElementById('contact-title').textContent = t.contactTitle;
+      document.getElementById('contact-p1').innerHTML = t.contactP1;
+      document.getElementById('contact-btn').textContent = t.contactBtn;
+      // replace {year} placeholder with current year so footer always stays up-to-date
+      var footerRaw = t.footerText || '';
+      var footerRendered = footerRaw.replace('{year}', new Date().getFullYear());
+      document.getElementById('footer-text').innerHTML = footerRendered;
+    }
+    var defaultLang = 'en';
+    document.getElementById('lang-select').value = defaultLang;
+    renderLang(defaultLang);
+    // 将关于图像从白色卡片内部移动到卡片外面（上方居中）
+    (function moveAboutGraphic() {
+      try {
+        var main = document.querySelector('main');
+        var wrapper = document.querySelector('.about-graphic-wrapper');
+        if (!main || !wrapper) return;
+        // 如果已经在 main 顶部则不移动
+        if (main.firstElementChild === wrapper) return;
+        main.insertBefore(wrapper, main.firstElementChild);
+        wrapper.style.textAlign = 'center';
+        wrapper.style.marginBottom = '1rem';
+        var img = wrapper.querySelector('#about-graphic');
+        if (img) {
+          img.style.maxWidth = '360px';
+          img.style.width = '80%';
+          img.style.height = 'auto';
+          img.style.display = 'inline-block';
+          img.style.borderRadius = '8px';
+        }
+      } catch (e) { console.error(e) }
+    })();
+  </script>
+
+  <script>
+    // Measure contact button height and apply to store badges so they match exactly.
+    (function syncBadgeHeights() {
+      function apply() {
+        var btn = document.querySelector('.contact-btn');
+        if (!btn || btn.offsetHeight === 0) return;
+        var h = btn.offsetHeight;
+        document.querySelectorAll('.store-badges > *').forEach(function (el) {
+          el.style.height = Math.round(h * 1.5) + 'px';
+          el.style.display = 'inline-flex';
+          el.style.alignItems = 'center';
+          el.style.justifyContent = 'center';
+        });
+        var inner = Math.max(33, Math.round(h * 1.5) - 12);
+        document.querySelectorAll('.badge-box').forEach(function (el) { el.style.height = inner + 'px'; });
+        document.querySelectorAll('.badge-box.google img').forEach(function (img) {
+          img.style.height = Math.round(inner) + 'px';
+          img.style.transform = 'none';
+        });
+      }
+      window.addEventListener('load', apply);
+      window.addEventListener('resize', function () { setTimeout(apply, 80); });
+      setTimeout(apply, 50);
+    })();
+  </script>
 
 </body>
+
+<script>
+  function setLang(v) {
+    const map = {
+      'en': './',
+      'zh-CN': './cn.html',
+      'zh-TW': './zh-TW.html',
+      'ja': './ja.html'
+    };
+    location.href = map[v] || './';
+  }
+</script>
+
 </html>
