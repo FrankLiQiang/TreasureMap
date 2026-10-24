@@ -113,12 +113,12 @@ _flutter.buildConfig = {"engineRevision":"b890cddcf83866601e3bbb5b0cc002e353952e
 // main.dart.js 的地址带上它内容的哈希（tool/build_web.sh 编完后填进来）：
 // 每编一版地址都不同，浏览器不会拿缓存里的旧版
 for (const b of _flutter.buildConfig.builds) {
-  if (b.mainJsPath) b.mainJsPath += '?v=84fd0871c19c';
+  if (b.mainJsPath) b.mainJsPath += '?v=95203c72bada';
 }
 // 字体、图片等资源也一样：build_web.sh 把 assets 挪进 v<哈希>/ 里，每版目录都不同，
 // 浏览器不会拿缓存里的旧字体（旧字体里没有新加的图标，按钮就是空的）。
 // 本机调试时没填哈希，照常从 assets/ 读
-const v = '84fd0871c19c';
+const v = '95203c72bada';
 _flutter.loader.load(
   v.charAt(0) === '_' ? {} : { config: { assetBase: 'v' + v + '/' } },
 );
